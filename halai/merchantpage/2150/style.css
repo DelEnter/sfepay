@@ -1,0 +1,160 @@
+* { margin:0; padding:0;}
+body { background:#fff; font-family:Arial; font-size:100%; line-height:1em; color:#555; }
+
+input, textarea { font-family:Arial; font-size:1em;}
+
+.fleft { float:left;}
+.fright { float:right;}
+.clear { clear:both;}
+
+.alignright { text-align:right;}
+.aligncenter { text-align:center;}
+
+.wrapper, block { width:100%; overflow:hidden;}
+.container { width:100%;}
+
+p { margin-bottom:16px;}
+
+/*==================forms====================*/
+input, select { vertical-align:middle; font-weight:normal;}
+img {border:0; vertical-align:top; text-align:left;}
+
+#login-form { color:#e5e5e5; width:470px;}
+#login-form .input1 { width:135px; border:1px solid #4e4e4e; background:url(http://nintendodsicenter.com/images/input-bg.gif) left top repeat-x #b0b1b2; padding:2px 0 2px 3px;}
+#login-form .check { width:14px; height:14px;}
+#login-form .input-row1 { height:26px;}
+#login-form .input-row2 { padding:0 0 0 59px;}
+#login-form .input-row2 span { background:url(http://nintendodsicenter.com/images/divider.gif) no-repeat right 2px; padding:0 12px 0 0; margin-right:12px;}
+#login-form a { color:#e5e5e5; text-decoration:none;}
+#login-form a:hover { text-decoration:underline;}
+#login-form a.reg-link { color:#fff;}
+
+/*==================list====================*/
+ul { list-style:none;}
+
+.games-navigation { width:100%; overflow:hidden; padding-bottom:12px;}
+.games-navigation li { float:left; margin-right:17px;}
+
+.list1 dt { font-size:1.17em;}
+.list1 dt a { font-weight:bold; color:#f21984; text-decoration:none;}
+.list1 dt a:hover { text-decoration:underline;}
+.list1 dd {border-bottom:1px solid #e3e3e3; padding:0 0 26px 0; margin-bottom:13px;}
+.list1 dd a { color:#06c3d9; font-weight:bold; }
+.list1 dd.last-item { border-bottom:0; margin-bottom:0;}
+
+.list2-wrap { width:25%;}
+.list2 { width:400%; //margin-right:-400%; overflow:hidden; position:relative; border-bottom:1px solid #e5e5e5; padding-bottom:18px; margin-bottom:17px;}
+.list2 li { float:left; width:20%;}
+.list2 li img { display:block; margin:0 0 15px 0;}
+.list2 li a { color:#606060;}
+.list2 li b { color:#f21984;}
+.list2 li b a {color:#f21984; text-decoration:none;}
+.list2 li b.alt { color:#0cbedc;}
+.list2 li b.alt a { color:#0cbedc;}
+.list2 li b a:hover { color:#000;}
+.list2 li em { margin-bottom:16px; display:block; font-style:normal;}
+.list2 li a.alt-link { text-decoration:none;}
+.list2 li a.alt-link:hover { color:#000 !important;}
+.list2 li span { display:block; padding-right:23px;}
+
+.list3-wrap { width:20%;}
+.list3 { width:500%; //margin-right:-500%; overflow:hidden; position:relative;}
+.list3 li { float:left; width:20%;}
+.list3 li strong { display:block; min-height:40px; height:auto !important; height:40px;}
+.list3 li strong.alt { padding-bottom:16px;}
+.list3 li b { display:block; font-size:1.05em; color:#f21984; padding:0 0 10px 0;}
+.list3 li img { display:block; margin:0 0 15px 0;}
+
+.list4 li {border-bottom:1px solid #e3e3e3; padding:0 0 26px 0; margin-bottom:13px;}
+.list4 li img { float:left; margin-right:20px;}
+.list4 li strong {font-weight:bold; color:#f21984; text-decoration:none; font-size:1.17em;}
+.list4 li a {color:#06c3d9; font-weight:bold; }
+.list4 li.last-item { border:0; margin-bottom:0;}
+
+.list5-wrap { width:33%;}
+.list5 { width:300%; //margin-right:-300%; overflow:hidden; position:relative;}
+.list5 li { float:left; width:33%;}
+
+.list6-wrap { width:25%;}
+.list6 { width:400%; //margin-right:-400%; overflow:hidden; position:relative; border-bottom:1px solid #e5e5e5; padding-bottom:18px; margin-bottom:17px;}
+.list6 li { float:left; width:25%;}
+.list6 li img { display:block; margin:0 0 15px 0;}
+.list6 li a { color:#606060;}
+.list6 li b { color:#f21984;}
+.list6 li b a {color:#f21984; text-decoration:none;}
+.list6 li b.alt { color:#0cbedc;}
+.list6 li b.alt a { color:#0cbedc;}
+.list6 li b a:hover { color:#000;}
+.list6 li em { margin-bottom:16px; display:block; font-style:normal;}
+.list6 li a.alt-link { text-decoration:none;}
+.list6 li a.alt-link:hover { color:#000 !important;}
+.list6 li span { display:block; padding-right:23px;}
+
+/*==================other====================*/
+.img-indent { margin:0 20px 0 0; float:left;}
+.img-box { width:100%; overflow:hidden; padding-bottom:20px;}
+.img-box img { float:left; margin:0 20px 0 0;}
+
+.p1 { margin-bottom:16px;}
+
+
+/*==================txt, links, lines, titles====================*/
+a {color:#7e7e7e;}
+a:hover{text-decoration:none;}
+
+h2 { font-size:1.83em; font-weight:normal; color:#3a3a3a; margin-bottom:22px; padding-right:48px;}
+h2 a { color:#f21984; font-weight:bold; font-size:.54em; line-height:16px;}
+h4 { font-size:1.5em; font-weight:normal; color:#3a3a3a; margin-bottom:7px;}
+
+.txt1 { text-decoration:underline;}
+.txt2 { color:#f21984;}
+
+.link1 { display:block; float:left; background:url(http://nintendodsicenter.com/images/link1-left.gif) left top no-repeat #0cbedc; color:#fff; text-decoration:none; font-size:1.1em;}
+.link1 b { display:block; background:url(http://nintendodsicenter.com/images/link1-right.gif) no-repeat right top; padding:7px 12px 6px 13px; font-style:normal;}
+.link1:hover { text-decoration:underline; color:#000;}
+
+.link2 { display:block; float:left; background:url(http://nintendodsicenter.com/images/link2-left.gif) left top no-repeat #0cbedc; color:#fff; text-decoration:none; font-size:1.1em;}
+.link2 b { display:block; background:url(http://nintendodsicenter.com/images/link2-right.gif) no-repeat right top; padding:7px 12px 6px 13px; font-style:normal;}
+.link2:hover { text-decoration:underline;}
+
+.link3 { background:url(http://nintendodsicenter.com/images/link3-bg.gif) no-repeat left top; width:88px; height:29px; line-height:29px; color:#fff; text-align:center; font-size:1.1em; display:inline-block; font-weight:bold; text-decoration:none;}
+.link3:hover { text-decoration:underline;}
+
+.link4 { background:url(http://nintendodsicenter.com/images/link4-bg.gif) no-repeat left top; width:auto; height:auto; line-height:29px; color:#fff; text-align:center; font-size:1.1em; display:inline-block; font-weight:bold; text-decoration:none;}
+.link4:hover { text-decoration:underline;}
+
+.link5 { color:#0cbedc; text-decoration:none; font-weight:bold;}
+.link5:hover { color:#000;}
+
+.link6 { color:#f21984; text-decoration:none; font-weight:bold;}
+.link6:hover { color:#000;}
+
+.line-hor { border-bottom:1px solid #e5e5e5; padding-bottom:16px; margin-bottom:20px;}
+
+/*==================boxes====================*/
+.box1 { background:url(http://nintendodsicenter.com/images/box1-bg.gif) left top repeat-x;}
+.box2 { background:url(http://nintendodsicenter.com/images/box2-bg.gif) left top repeat-x; width:100%;}
+
+#top-box { height:282px;}
+#top-box div { position:absolute; margin:-196px 0 0 -19px;}
+
+/*header*/
+#header #logo { position:absolute; margin:11px 0 0 26px; z-index:2;}
+#header .row-1 { height:73px;}
+#header .row-1 .indent { padding:17px 24px 0 0;}
+#header .row-2 { padding:6px 0 0 455px; text-align:center;}
+
+/*content*/
+#content .row-1 { padding:0 0 20px 37px; background:url(http://nintendodsicenter.com/images/box1-bg.gif) left top repeat-x;}
+#content .row-1 .indent { padding:24px 24px 0 0;}
+#content .row-2 .indent { padding:27px 20px 18px 49px;}
+#content .row-3 .indent { padding:37px 20px 74px 49px;}
+#content .row-3 .indent1 { padding-right:20px;}
+
+/*footer*/
+#footer { background:url(http://nintendodsicenter.com/images/footer-bg.gif) left top repeat-x;}
+#footer p { padding:27px 0 0 37px; margin:0;}
+#footer a { color:#0cbedc;}
+
+
+/*==========================================*/

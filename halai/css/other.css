@@ -1,0 +1,66 @@
+body,table,tr,td{ font-size:12px; font-family:Arial, Helvetica, sans-serif; font:"ËÎÌו";}
+
+*{padding:0; margin:0;}
+
+.other_meun_border{ border:1px solid #d9f4ff;}
+.other_meun_title{ width:158px; height:30px; background:url(../images/other/menu_title_bg.gif) no-repeat; color:#FFFFFF; font-size:14px; font-weight:bold; padding:7px 0 0 30px; display:block;}
+.other_meun_title a{ color:#FFFFFF; text-decoration:none} 
+.other_meun_list_bg{ background:url(../images/other/menu_list_bg.gif)}
+.other_meun_list{ font-size:12px; border-bottom:1px solid #d9f4ff; height:25px; padding:0 0 0 30px;}
+.other_meun_list a{ color:#000000;}
+.other_meun_list a:hover{ text-decoration:underline;}
+
+.clear{ clear:both}
+
+.windows{ margin:0 0 0 10px; width:400px; height:50px; font-size:14px; }
+.windows .left{ width:100px; height:10px; float:left; text-align:right; padding:5px 0 0 0} 
+.windows .right{ width:300px; height:15px; float:left;}
+.windows .right2{ width:300px; height:15px; float:left; padding:5px 0 0 0}
+.windows .right3{ width:300px; height:auto; min-height:30px; float:left;}
+
+.windows_01{ width:600px; height:auto; margin:0 0 0 15px}
+.windows_01 .title{ font-size:14px; font-weight:bold; width:500px; height:20px; margin:5px 0 0 0; clear:both; }
+.windows_01 .xuanxian{ width:600px; height:auto; clear:both;}
+.windows_01 .xuanxiang ul{}
+.windows_01 .xuanxiang ul li{list-style:none; width:90px; height:30px; float:left; margin:0 10px 0 0;}
+
+.windows2{ margin:0 0 0 15px; width:650px; height:50px; font-size:14px; }
+
+.windows_icon1{ width:72px; height:27px; background:url(../images/other/icon_010.gif); font-size:14px; line-height:25px; border:0;}
+
+
+.input_text{ width:280px; height:50px;}
+
+.button_edit_01{ width:20px; height:20px; background:url(../images/other/icon5.gif) no-repeat; border:0; cursor:pointer}
+.button_deltet_01{ width:20px; height:20px; background:url(../images/other/icon6.gif) no-repeat; border:0; cursor:pointer}
+.button_peizhi_01{ width:20px; height:20px;  background:url(../images/other/icon7.gif) no-repeat; border:0; cursor:pointer}
+.button_add_01{ width:20px; height:20px;  background:url(../images/other/icon8.gif) no-repeat; border:0; cursor:pointer}
+.button_update_01{ width:20px; height:20px;  background:url(../images/other/icon9.gif) no-repeat; border:0; cursor:pointer}
+
+.button_01{ width:57px; height:23px; background:url(../images/other/icon_001.gif); border:0;}
+.button_02{ width:57px; height:23px; background:url(../images/other/icon_002.gif); border:0;}
+.button_03{ width:57px; height:23px; background:url(../images/other/icon_003.gif); border:0;}
+.button_04{ width:57px; height:23px; background:url(../images/other/icon_004.gif); border:0;}
+.button_05{ width:57px; height:23px; background:url(../images/other/icon_005.gif); border:0;}
+.button_06{ width:57px; height:23px; background:url(../images/other/icon_006.gif); border:0;}
+.button_07{ width:57px; height:23px; background:url(../images/other/icon_007.gif); border:0;}
+.button_08{ width:57px; height:23px; background:url(../images/other/icon_008.gif); border:0;}
+
+.font14px{ font-size:14px;}
+
+.fate{ width:380px; height:auto; float:left; margin:0 10px 0 0}
+.fate .title{ height:22px; padding:3px 0 0 5px; border-top:1px solid #B0B0B0; border-bottom:1px solid #B0B0B0; background:#DBDBDB; font-size:14px; font-weight:bold}
+.fate .title ul{}
+.fate .title ul li{ float:left; width:125px;  height:20px; list-style:none; padding:0 5px 0 0; overflow:hidden}
+.fate .title ul .liicon{ width:20px; height:20px; float:left}
+.fate .title ul .lititle{ width:200px; height:20px; float:left}
+.fate .title ul .add{ width:100px; height:20px; float:right; text-align:right; margin:0 5px 0 0}
+.fate .title2{ height:22px;}
+.fate .title2 ul .lili{ width:125px; float:left; text-align:center; padding:5px 0 0 0; list-style:none; overflow:hidden}
+.fate .title2 .ul_title1{ background:#f1f1f1; width:380px; border-bottom:1px solid #B0B0B0; float:left }
+.fate .title2 .ul_title2{ background:#F6F6F6; width:380px; border-bottom:1px solid #B0B0B0; float:left }
+
+.talbe_list{ border-bottom:1px solid #aca899;  border-top:1px solid #aca899; background:#dbdbdb }
+
+.talbe_list_01{ border-bottom:1px solid #aca899; background:#f1f1f1; font-size:14px }
+.talbe_list_02{ border-bottom:1px solid #aca899; background:#f1f1f1 }

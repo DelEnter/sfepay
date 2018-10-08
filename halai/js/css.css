@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+body{ font-family:Arial, Helvetica, sans-serif; font:"宋体"; font-size:12px; line-height:20px}
+li{ list-style:none}
+a{ color:#000; text-decoration:none}
+a:hover{ color:#F00; text-decoration:underline}
+.clear{ clear:both}
+img{ border:0}
+
+.font_14px{font-size:14px}
+.container{ width:1000px; height:auto; margin:0 auto;}
+
+.container .header2{ height:auto; margin:5px 0 0 0; background:#ffffff;}
+.container .header2 .logo{ width:184px; height:77px; float:left;}
+.container .header2 .slogan{ width:240px; height:37px; float:left; margin:40px 0 0 0;}
+.container .header2 .welcome{ width:300px; float:right; }
+.container .header2 .welcome .help{ height:24px; text-align:right; margin:0 0 0 5px; clear:both}
+.container .header2 .welcome .help li{ float:right; margin:0 0 0 10px;}
+.container .header2 .bordder{border-bottom:2px solid #2263A9; clear:both; margin:0 0 5px 0}
+
+.container .header2 .url{ height:30px; padding:10px 0 0 0; clear:both; color:#226DBC;  }
+.container .header2 .url a{ color:#226DBC}
+
+.container .affiche{ height:24px; background:#E1F2F8; color:#000000; border:1px solid #AFC7D7; clear:both; padding:4px 0 0 6px;}
+
+.container .header2 .welcome .tips{ height:24px; text-align:right; clear:both; margin:25px 0 0 0}
+
+.container .pagebody{ clear:both;}
+.container .pagebody .login{ width:815px; height:auto; min-height:300px; margin:0 auto}
+.container .pagebody .login .login_left{ width:530px; height:auto; float:left;}
+.container .pagebody .login .login_left .login_fontss{ background:#FCFDFD; border-bottom:1px solid #B7C6D0; border-top:1px solid #B7C6D0; border-left:1px solid #B7C6D0; height:auto; margin:20px 0 0 0}
+.container .pagebody .login .login_left .login_fontss ul{ margin:10px 0 10px 0; clear:both; }
+.container .pagebody .login .login_left .login_fontss ul .login_icon{ width:30px; height:30px; margin:0 0 0 10px; float:left}
+.container .pagebody .login .login_left .login_fontss ul .login_font{ width:460px; height:auto; float:left; color:#2A5972; line-height:20px; margin:0 0 0 10px;}
+.container .pagebody .login .login_left .login_button{ margin:10px 0 0 0}
+.container .pagebody .login .login_right{ background:url(../images/bgg.gif) no-repeat; width:282px; height:320px; float:left;}
+.container .pagebody .login .login_right .login_title{ margin:8px 0 0 8px;}
+.container .pagebody .login .login_right .login_page{ width:230px; height:auto; margin:0 auto}
+.container .pagebody .login .login_right .login_page ul{ height:50px;}
+.container .pagebody .login .login_right .login_page ul .page_name{  padding:3px 0 0 0; width:65px; height:35px; float:left}
+.container .pagebody .login .login_right .login_page ul .page_name2{ font-size:12px; padding:3px 0 0 0; width:65px; height:35px; float:left}
+.container .pagebody .login .login_right .login_page ul .page_text{ width:165px; height:20px; float:left}
+.container .pagebody .login .login_right .login_page ul .page_text2{ width:165px; height:20px; float:left}
+.container .pagebody .login .login_right .login_page ul .page_font_red{width:165px; height:20px; float:left; color:#FF0000; margin:5px 0 0 0}
+.container .pagebody .login .login_right .login_page ul .page_code{ width:80px; height:20px; float:left}
+.container .pagebody .login .login_right .login_button{ text-align:center; width:128px; height:35px; margin:3px auto;}
+
+.container .pagebody .login .login_right2{ background:url(../images/bgg2.gif) no-repeat; width:282px; height:550px; float:left;}
+.container .pagebody .login .login_right2 .login_title{ margin:8px 0 0 8px;}
+.container .pagebody .login .login_right2 .login_page{ width:250px; height:auto; margin:0 auto}
+.container .pagebody .login .login_right2 .login_page ul{ height:45px;}
+.container .pagebody .login .login_right2 .login_page ul .page_name{ font-size:14px; padding:3px 0 0 0; width:65px; height:35px; float:left}
+.container .pagebody .login .login_right2 .login_page ul .page_name2{ font-size:12px; padding:3px 0 0 0; width:120px; height:35px; float:left}
+.container .pagebody .login .login_right2 .login_page ul .page_text{ width:125px; height:20px; float:left; margin:2px 0 0 0; }
+.container .pagebody .login .login_right2 .login_page ul .page_text2{ width:165px; height:20px; float:left}
+.container .pagebody .login .login_right2 .login_page ul .page_font_red{width:165px; height:20px; float:left; color:#FF0000; margin:5px 0 0 0}
+.container .pagebody .login .login_right2 .login_page ul .page_code{ width:80px; height:20px; float:left}
+.container .pagebody .login .login_right2 .login_button{ text-align:center; width:128px; height:35px; margin:3px auto;}
+
+.container .pagebody .sidber{ width:175px; height:auto; min-height:620px; _height:620px; background:#EBF4F8; float:left; overflow:hidden}
+.container .pagebody .sidber .button_title{width:174px; margin:0 0 5px 0; #margin:0; height:auto; background:#FFF; padding:0 0 4px 0}
+.container .pagebody .sidber .button_title .ul_bg{ background:url(../images/sidber_bg.gif) no-repeat; width:174px; height:24px; padding:5px 0 0 10px;}
+.container .pagebody .sidber .button_title .ul_bg .liststyle{ width:9px; height:9px; float:left}
+.container .pagebody .sidber .button_title .ul_bg .listfont{ height:18px; font-size:14px; float:left; color:#FFF; margin:0 0 0 6px}
+.container .pagebody .sidber .button_title .ul_list{ width:172px; height:auto; border-bottom:solid 1px #285981; border-left:solid 1px #285981; border-right:solid 1px #285981; margin:-7px 0 0 0!important; margin:0; }
+.container .pagebody .sidber .button_title .ul_list .listli{ width:135px; padding:0 0 0 18px; height:23px; margin:8px auto; border-bottom:1px dashed #999}
+.container .pagebody .sidber .phone{ width:160px; height:50px; margin:10px auto}
+.container .pagebody .sidber .phone .tiaojian{ font-size:14px;}
+.container .pagebody .sidber .phone .phonenumber{ color:#F00; padding:0 0 0 30px}
+
+.container .pagebody .mainbody{ width:814px; height:auto; min-height:620px; float:right; border:1px solid #AFC7D7; overflow:hidden;}
+.container .pagebody .mainbody .search{ width:785px; height:auto; min-height:100px; margin:15px auto 3px auto; clear:both}
+.container .pagebody .mainbody .search .searchtext{ width:250px; height:30px; float:left}
+.container .pagebody .mainbody .search .searchtext .name{ width:90px; height:30px; float:left}
+.container .pagebody .mainbody .search .searchtext .name2{ width:50px; padding:2px 0 0 0; height:30px; float:left}
+.container .pagebody .mainbody .search .searchtext .nameinput{ width:160px; height:30px; float:left}
+
+.container .pagebody .mainbody .search .searchselect{ width:155px; height:30px; float:left}
+.container .pagebody .mainbody .search .searchselect .selectname{ width:60px; height:30px; float:left;}
+.container .pagebody .mainbody .search .searchselect .selectinput{ width:80px; height:30px; float:left;}
+.container .pagebody .mainbody .search .searchbutton{ width:130px; height:40px; margin:3px auto; text-align:center}
+.container .pagebody .mainbody .search .searchbutton2{ width:300px; height:40px; margin:3px auto; text-align:center}
+
+
+.container .pagebody .mainbody .search2{ width:785px; height:auto; min-height:50px; margin:15px auto 3px auto}
+.container .pagebody .mainbody .search2 .searchtext{ width:500px; height:30px; margin:0 auto}
+.container .pagebody .mainbody .search2 .searchtext .name{ width:200px; height:30px; float:left; padding:3px 0 0 0}
+.container .pagebody .mainbody .search2 .searchtext .name2{ width:50px; height:25px; float:left; padding:5px 0 0 0}
+.container .pagebody .mainbody .search2 .searchtext .nameinput{ width:280px; height:30px; float:left}
+
+.container .pagebody .mainbody .search2 .searchselect{ width:155px; height:30px; float:left}
+.container .pagebody .mainbody .search2 .searchselect .selectname{ width:60px; height:30px; float:left;}
+.container .pagebody .mainbody .search2 .searchselect .selectinput{ width:80px; height:30px; float:left;}
+.container .pagebody .mainbody .search2 .searchbutton{ width:130px; height:40px; margin:3px auto; text-align:center}
+
+.container .pagebody .mainbody{ width:814px; height:350; min-height:520px; float:right; border:1px solid #AFC7D7; overflow:hidden;}
+.container .pagebody .mainbody .search3{ width:785px; height:150px; margin:15px auto 3px auto}
+.container .pagebody .mainbody .search3 .searchtext{ width:360px; height:30px; float:left}
+.container .pagebody .mainbody .search3 .searchtext .name{ width:120px; height:30px; float:left}
+.container .pagebody .mainbody .search3 .searchtext .nameinput{ width:120px; height:30px; float:right}
+
+.container .pagebody .mainbody .search3 .searchselect{ width:155px; height:30px; float:left}
+.container .pagebody .mainbody .search3 .searchselect .selectname{ width:60px; height:30px; float:left;}
+.container .pagebody .mainbody .search3 .searchselect .selectinput{ width:80px; height:30px; float:left;}
+.container .pagebody .mainbody .search3 .searchbutton{ width:130px; height:40px; margin:3px auto; text-align:center}
+
+
+.container .pagebody .mainbody .list{ width:770px; height:auto; margin:10px auto}
+.container .pagebody .mainbody .listtitle{ height:56px; }
+.container .pagebody .mainbody .listtitle .top{ height:23px; background:url(../images/title_bg22.gif) no-repeat; padding:5px 0 0 0}
+.container .pagebody .mainbody .listtitle .top .lifonttitle{ width:180px; height:23px; float:left; margin:0 0 0 20px; display:inline; text-align:center}
+.container .pagebody .mainbody .listtitle .top .lilistother{ width:auto; min-width:100px; margin:0 10px 0 10px; float:left}
+.container .pagebody .mainbody .listtitle .top .lilistimg{ width:75px; height:25px; float:right;}
+.container .pagebody .mainbody .listtitle .top .lilistimg2{ width:75px; height:25px; float:right; margin:0 10px 0 0; #margin:0}
+
+.container .pagebody .mainbody .listtitle .bottom{ width:770px; background:url(../images/list_bg.gif) repeat-x bottom; float:left; height:50px;}
+.container .pagebody .mainbody .listtitle .bottom .li_01{ width:33px; float:left; text-align:center; font-weight:bold; margin:5px 5px 0 1px;}
+.container .pagebody .mainbody .listtitle .bottom .li_02{ width:230px; float:left; text-align:center; margin:4px 6px 0 0; font-weight:bold;}
+.container .pagebody .mainbody .listtitle .bottom .li_03{ width:55px;  float:left; text-align:center; margin:5px 6px 0 0; font-weight:bold;}
+
+.container .pagebody .mainbody .listtitle .bottom .li_04{ width:90px; float:left; text-align:center;  margin:5px 6px 0 1px; font-weight:bold;}
+.container .pagebody .mainbody .listtitle .bottom .li_05{ width:120px; float:left; text-align:center; margin:5px 6px 0 0; font-weight:bold;}
+.container .pagebody .mainbody .listtitle .bottom .li_06{ width:40px; float:left; text-align:center; margin:5px 6px 0 0; font-weight:bold;}
+
+.container .pagebody .mainbody .listtitle .bottom .li_07{ width:50px; float:left; text-align:center; margin:5px 6px 0 0; font-weight:bold;}
+.container .pagebody .mainbody .listtitle .bottom .li_08{ width:180px; float:left; text-align:center; margin:5px 6px 0 0; font-weight:bold;}
+.container .pagebody .mainbody .listtitle .bottom .li_09{ width:80px; float:left; text-align:center; margin:5px 6px 0 0; font-weight:bold;}
+.container .pagebody .mainbody .listtitle .bottom .li_10{ width:150px; float:left; text-align:center; margin:5px 6px 0 0; font-weight:bold;}
+
+.container .pagebody .mainbody .listtitle .bottom .li_11{ width:500px; float:left; text-align:center; margin:5px 6px 0 0; font-weight:bold;}
+
+.container .pagebody .mainbody .listtitle .bottom .li_12{width:70px; float:left; text-align:center;  margin:5px 0 0 1px; font-weight:bold;}
+
+
+.container .pagebody .mainbody .listlist{ height:auto; width:770px; clear:both; margin:18px 0 0 0} 
+.container .pagebody .mainbody .listlist .listlisttop{ width:770px; height:22px; background:#E3E7E8; margin:0 0 1px 0;}
+.container .pagebody .mainbody .listlist .listlisttop li{ width:auto; min-width:100px; margin:1px 5px 0 5px; float:left}
+.container .pagebody .mainbody .listlist .listlistbottom{ width:770px; height:auto; min-height:45px; border-bottom:1px solid #3C5D73; clear:both;}
+.container .pagebody .mainbody .listlist .listlistbottom .lil_01{width:33px; float:left; text-align:center; margin:5px 5px 0 1px;}
+.container .pagebody .mainbody .listlist .listlistbottom .lil_02{width:230px; float:left; text-align:center; margin:4px 6px 0 0;}
+.container .pagebody .mainbody .listlist .listlistbottom .lil_03{ width:55px; float:left; text-align:center; margin:5px 6px 0 0;}
+
+.container .pagebody .mainbody .listlist .listlistbottom .lil_04{ width:91px; height:auto; float:left; text-align:center; overflow:hidden; margin:5px 6px 0 0;}
+.container .pagebody .mainbody .listlist .listlistbottom .lil_05{ width:120px; float:left; text-align:center; overflow:hidden; margin:5px 6px 0 0; }
+.container .pagebody .mainbody .listlist .listlistbottom .lil_06{ width:40px; float:left; text-align:center;  text-align:center; overflow:hidden; margin:5px 6px 0 0; }
+
+.container .pagebody .mainbody .listlist .listlistbottom .lil_07{ width:50px; height:20px; float:left; text-align:center;  text-align:center; overflow:hidden; margin:8px 6px 0 0; }
+.container .pagebody .mainbody .listlist .listlistbottom .lil_08{ width:180px; height:20px; float:left; text-align:center;  text-align:center; overflow:hidden; margin:5px 6px 0 0; }
+.container .pagebody .mainbody .listlist .listlistbottom .lil_09{ width:80px; height:20px; float:left; text-align:center;  text-align:center; overflow:hidden; margin:8px 6px 0 0; color:#FF0000 }
+.container .pagebody .mainbody .listlist .listlistbottom .lil_10{ width:150px; height:20px; float:left; text-align:center;  text-align:center; overflow:hidden; margin:8px 6px 0 0; }
+.container .pagebody .mainbody .listlist .listlistbottom .lil_11{ width:500px; padding:2px 0 0 0; float:left; text-align:center; margin:5px 6px 0 0; font-weight:bold;}
+.container .pagebody .mainbody .listlist .listlistbottom .lil_12{ width:70px; height:auto; float:left; text-align:center; overflow:hidden; margin:5px 0 0 0;}
+.container .pagebody .mainbody .listlist .listlistbottom .lil_13{ width:90px; height:auto; float:left; text-align:center; overflow:hidden; margin:5px 0 0 0;}
+.container .pagebody .mainbody .listlist .listlistpage{ width:770px; height:36px; text-align:right; margin:5px 0 0 0}
+.container .pagebody .mainbody .listlist .listlistpage li{ text-align:right; text-align:center;}
+
+
+
+.container .pagebody .mainbody .welcome{ width:778px; height:auto; margin:15px 0 0 15px; }
+.container .pagebody .mainbody .welcome .welcome_hua{ clear:both; padding:0 0 0 8px;}
+.container .pagebody .mainbody .welcome .welcome_hua li{ width:340px; font-size:14px; height:30px; float:left;}
+.container .pagebody .mainbody .welcome .border_box{ background:#FFFEE8; font-size:14px; border:1px solid #DADADA; clear:both;}
+.container .pagebody .mainbody .welcome .border_box ul{ width:765px; height:33px; margin:0 auto; border-bottom:1px dashed #999999;}
+.container .pagebody .mainbody .welcome .border_box ul li{ width:325px; float:left; padding:8px 0 0 5px; }
+
+.container .footer{ height:100px; clear:both; padding:5px 0 0 0; background:#FFFFFF}
+.container .footer .links{ text-align:center; height:60px; border-top:1px solid #bbbbbb; margin:10px 0 0 0; padding:10px 0 0 0}
+.container .footer .links li{ height:30px;}
+.container .footer .links li a{ color:#000000;}
+
+.select_input_01{ width:70px; height:25px;}
+.text_input_01{ width:60px; height:20px; }
+.text_input_02{ width:120px; height:20px; }
+.addadmin{ width:87px; height:23px; border:0; background:url(../images/addadmin.gif) no-repeat;}
+
+.button_01{ width:95px; height:25px; border:1px solid #919191; background:url(../images/border_bg.gif) repeat-x; }
+
+.input_button_01{ width:122px; height:24px; background:url(../images/button_bg_01.gif) no-repeat; border:0 }
+.input_button_02{ width:128px; height:35px; background:url(../images/login_button.gif) no-repeat; border:0 }
+.input_button_03{ width:128px; height:35px; background:url(../images/login_submit.gif) no-repeat; border:0 }
+
+.font_color_01{ color:#FF0000;}
+.font_color_02{ color:#5D5D5D;}
+
+.windows{ width:400px; height:200px; margin:10px 0 0 10px;}
+.windows .left{ width:60px; height:25px; float:left; padding:5px 0 0 0;}
+.windows .right{ padding:3px 0 0 0; width:210px; height:23px; float:left;}
+
+.windows2{ width:550px; height:auto; border:1px solid #CB7610; background:#FFF6E4; padding:10px ;margin:0 10px 10px 10px;}
+.windows2 .title{ font-size:14px; font-weight:bold; margin:0 0 5px 0}
+.windows2 .button_save{ width:100px; height:20px; text-align:center; margin:10px auto;}
+
+.mainbody2 .listlist{ height:auto; width:650px; height:58px;} 
+.mainbody2 .listtitle{ height:56px; }
+.mainbody2 .listlist .danzi{ margin:5px auto; padding:10px; border:1px solid #CB7610; background:#FFF6E4; width:620px; height:auto;} 
+
+.mainbody2 .listlist .danzi .jiben{ width:290px; height:30px; margin:5px; float:left;}
+.mainbody2 .listlist .danzi .biaoge{ width:620px; height:50px; margin:15px auto; clear:both;}
+
+.mainbody2 .listlist .danzi .jiben_city{ width:190px; margin:0 10px 0 0; height:30px; float:left;}
+.mainbody2 .listlist .danzi .jiben_wupin{ width:560px; height:auto; margin:0 10px 0 0; min-height:50px; clear:both;}
+

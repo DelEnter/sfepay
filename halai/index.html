@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>迁易通 Sfepay</title>
+<meta name="description" content="迁易通提供专业国际信用卡在线支付功能,解决国内商家对外贸易的收款问题" />
+<meta name="keywords" content="迁易通,国际信用卡支付,外贸支付,外贸收款" />
+<link rel="stylesheet" href="css/main.css" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" type="image/gif" href="animated_favicon1.gif" />
+<script type="text/javascript" src="css/jquery-1.4.2.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript">
+		var query = location.search,
+			rJQ = /jQuery=(\d\.\d(?:\.\d)?)/,
+			jQMatch = rJQ.exec(query),
+			jQVersion = jQMatch ? jQMatch[1] : '1.4.2',
+			useLive = !!(query.indexOf('live') + 1);
+	</script>  
+<script type="text/javascript" src="css/jquery.ie6hover.js"></script>
+<![endif]--><script type="text/javascript">
+
+ $(document).ready(function(){
+
+document.getElementById("merno").focus();
+
+});
+
+
+
+</script>
+<script type="text/javascript">
+	function checkHolderInfo(){
+		var vercode = document.getElementById("vercode").value;
+		var name = document.getElementById("username").value;
+		var password=document.getElementById("password").value;
+		userCheck.checkAll(name,password,vercode,"");
+	}
+	
+	function checkMerno(){
+		if(document.getElementById("merno").value==""){
+			alert("商户编号不能为空！");
+			document.getElementById("merno").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkUsername(){
+		if(document.getElementById("username").value==""){
+			alert("用户名不能为空！");
+			document.getElementById("username").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkPassword(){
+		if(document.getElementById("password").value==""){
+			alert("密码不能为空！");
+			document.getElementById("password").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkVercode(){
+		if(document.getElementById("vercode").value==""){
+			alert("验证码不能为空！");
+			document.getElementById("vercode").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkAll(){
+		if(checkMerno() && checkUsername() && checkPassword() && checkVercode() ){
+			return true;
+		}
+		return false;
+	}
+	
+	function refreshimg(){
+	    		var random = Math.random();
+	    		//IE7有缓存，为了保证验证不被缓存,加上随机内容的参数
+	    		document.getElementById("authImg").src="https://www.sfepay.com/authImg.do";
+	    	}
+	function submitInfo(terget,op){
+		var form2 = document.getElementById('form2');
+		if(op=='login'){
+			if(checkAll()){
+				document.form2.action=terget;
+				document.form2.submit();
+			
+			}else{
+				return false;
+			}
+		}
+		document.form2.action=terget;
+		document.form2.submit();
+	}
+
+	
+	function chageLanguage(language){
+		if(language=='English'){
+		 	document.URL='index_en.html'
+		}if(language=='Chinese'){
+			document.URL='index_cn.html'
+		}
+	}
+	
+	function resetPwd(){
+		window.open("resetPwd.jsp");
+	}
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23708527-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>
+<div id="sfe">   
+  <!--begin header -->
+     <div class="header">
+        <div id="hd-m">
+         <div id="logo">
+         <a href="http://www.sfepay.com" title="迁易通 SFEPAY" >
+         <img src="images/logo-sfepay.png" alt="迁易通 SFEPAY" /></a>
+         </div>
+         <div id="topm">
+         <img src="images/topm.png" alt="迁易通安全快捷方便" />
+         </div>
+         <div id="topjoin">
+           <ul>
+            <li class="topone">
+            <a href="https://www.sfepay.com/newReg.jsp" target="_blank" title="在线申请 迁易通支付" >在线申请</a>
+            </li>
+            <li class="toptwo">
+            <a href="#" title="SFEPAY English Site" >EN</a>
+            </li>
+           </ul>
+         </div>
+		</div>
+        <div id="nav">
+         <ul>
+      <li class="pnav1"><A title="首页 SFEPAY" href="index.html">首页</A> </li>
+        <li class="nav2"><A title="关于我们" href="about-us.html">关于我们</A> </li>
+        <li class="nav3"><A title="技术支持" href="download.html">技术支持</A> </li>
+        <li class="nav4"><A title="加入我们" href="join.html">加入我们</A> </li>
+        <li class="nav5"><A title="产品选择" href="products.html">产品选择</A> </li>
+        <li class="nav6"><A title="常见问题" href="faq.html">常见问题</A> </li>
+        <li class="nav7"><A title="联系我们" href="contact.html">联系我们</A> </li>
+      </ul>
+    </div>
+  </div>
+  <!--END header -->
+  <div class="page">
+  <!--begin left -->
+    
+    <div class="left">
+      <div class="llogin">
+        <form name="form2" id="form2" action="" method="post" onsubmit="return checkHolderInfo()">
+          <p>
+            <label for="num">商户号:</label>
+            <input type="text"  name="merno" id="merno"  size="18" class="inbord" autocomplete="off" />
+          </p>
+          <p>
+            <label for="user">用户名:</label>
+            <input type="text"  name="username" id="username"  size="18" class="inbord" autocomplete="off" />
+          </p>
+          <p id="mimal"> 密&nbsp;&nbsp;&nbsp;码:
+            <input name="password" id="password" type="password" size="18" class="inbord" autocomplete="off" />
+          </p>
+          <p>
+            <label for="code">验证码:</label>
+            <input type="text" name="vercode" id="vercode" size="9" class="lgom" autocomplete="off" />
+            						<a href="javascript:refreshimg();">
+             <img style="line-height:23px; margin-left:9px;" src="https://www.sfepay.com/authImg.do" id="authImg" alt="点击刷新" /></a>
+            </p>
+          <p>
+            <input type="button" name="sub" id="sub" value="登录" class="insub" onclick="submitInfo('https://www.sfepay.com/merchant/merLogin.action','login')" />
+          <a href="https://www.sfepay.com/newReg.jsp" target="_blank" id="butjoin"> <img src="images/join-but.jpg" style="line-height:24px; margin-left:37px;margin-top:5px;float:left;height:21px;width:53px;" /></a> </p>
+        </form>
+      </div>
+      <div class="le_help">
+        <ul>
+          <li> <a href="faq.html#faqc" >迁易通的优势有哪些?</a> </li>
+          <li> <a href="faq.html#faqd" >手续费怎么收取?</a> </li>
+          <li> <a href="faq.html#faqd" >支持部分退款吗?</a> </li>
+          <li> <a href="faq.html#faqd" >开通需要哪些资料?</a> </li>
+          <li> <a href="faq.html#faqd"  >一个账户可以接几个网站?</a> </li>
+          <li> <a href="faq.html#faqd"  >拒付怎么处理?</a> </li>
+          <li> <a href="faq.html#faqd"  >客服服务的时间是怎么样的?</a> </li>
+        </ul>
+      </div>
+      <div class="le_news">
+        <ul>
+          <li> <a href="news.html#one"  >人民银行发布支付体系报告</a> </li>
+          <li> <a href="news.html#two" >银联卡特约商户突破180万</a> </li>
+          <li> <a href="news.html#free"  >长城国际卡与八达通卡合作</a> </li>
+          <li> <a href="news.html#four"  >《非金融机构支付服务管理办法》</a> </li>
+        </ul>
+      </div>
+      <img src="images/commer.gif" /> <img src="images/vmcard.png" align="right" alt="visa master card" /> </div>
+    
+    <!--END left -->
+	<!--begin main -->
+    <div class="main">
+      <div class="banner"> <img src="images/btes.jpg" align="left" alt="迁易通外款支付" /> </div>
+      <div class="m_us">
+        <ul>
+          <li>
+            <h2>品牌文化</h2>
+            <img src="images/m_usnn.png" alt="清明上河图 SFEpay" align="left"/>
+            <p>&nbsp;&nbsp;&nbsp;<b><a href="http://baike.baidu.com/view/1372751.htm" target="_blank" title="迁易支付" rel="nofollow" >迁易</a></b>在古文中的意思是运销，贩卖的意思、也是古代社会对商人的称谓，迁易通则国富民安！迁易通的另外一层意思是"钱易通"！人类的商业历史也是一部货币演变的历史，每一次大的商业革命也必然伴随着货币形式的改变，我们的目标就是让收款即使在跨国生意中也不在成为障碍，让天下真正不在有难做的生意，天下不在有难收的货款！ </p>
+          </li>
+        </ul>
+      </div>
+      <div class="i_pro">
+        <div class="i_pone">
+          <div class="i_ptit">
+            <h2> VISA、MASTER（3D）收款通道 </h2>
+            <p> 支持Visa、MasterCard国际信用卡网上收单,率先推出在线3D验证服务。 </p>
+          </div>
+        </div>
+        <div class="i_ptwo">
+          <div class="i_ptit">
+            <h2> VISA、MASTER（非3D）收款通道 </h2>
+            <p> 国内独家国际信用卡非3D验证通道，安全的风险防范系统 </p>
+          </div>
+        </div>
+		<div class="i_pone">
+          <div class="i_ptit">
+            <h2>VIP 收款通道 </h2>
+            <p> 交易成功率高达90%、24小时定单、支持VISA/MASTERCARD、美金支付等四大特色。</p>
+          </div>
+        </div>
+		<div class="i_ptwo">
+          <div class="i_ptit">
+            <h2> 迁易宝 </h2>
+            <p> 目前是国内成功率最高的通道，成功率高达95%以上，可以实时显示支付结果。 </p>
+          </div>
+        </div>
+      </div>
+      <!-- bengin -->
+      <div id="m_proup">
+        <p>迁易通SFEPAY优势</p>
+      </div>
+      <div id="m_proupd">
+        <ul>
+          <img src="images/m_pimgsafe.png" alt="Safe安全稳定-SFEPAY">
+          <li>
+            <p class="pupt_a"> Safe安全稳定</p>
+            <p class="pupt_p"> 无冻结资金安全，支付流程实时监控，杜绝盗卡严控风险</p>
+          </li>
+        </ul>
+        <ul>
+          <img src="images/m_pimgp.png" alt="Perfect超值-SFEPAY">
+          <li>
+            <p class="pupt_a"> Perfect超值</p>
+            <p class="pupt_p"> 给您最高的收款成功率，提供您收款情况分析报告及最新产品信息</p>
+          </li>
+        </ul>
+        <ul>
+          <img src="images/m_pimgfast.png" alt="Fast迅速快捷">
+          <li>
+            <p class="pupt_a"> Fast迅速快捷</p>
+            <p class="pupt_p"> 资金结算快，开通速度快，客服速度快（商户一对一专职客服人员）</p>
+          </li>
+        </ul>
+        <ul>
+          <img src="images/m_pimga.png" alt="Anytime专职客服">
+          <li>
+            <p class="pupt_a"> Anytime专职客服</p>
+            <p class="pupt_p"> 承诺为商户提供最好的客服服务，商户配有专职客服，随时解决问题 </p>
+          </li>
+        </ul>
+        <ul style="border-bottom: none;">
+          <img src="images/m_pimgeasy.png" alt="Easy简单易懂-SFEPAY">
+          <li>
+            <p class="pupt_a"> Easy简单易懂</p>
+            <p class="pupt_p"> 收款简单,结算简单（只需一张银行卡）开通简单（只需一张身份证）</p>
+          </li>
+        </ul>
+        <ul style="border-bottom: none;">
+          <img src="images/m_pimgy.png" alt="Yes现在加入">
+          <li>
+            <p class="pupt_a"> Yes现在加入</p>
+            <p class="pupt_p"> 更有好礼相送，超值的优惠套餐等你选择"行销方案"</p>
+          </li>
+        </ul>
+      </div>
+      <div class="m_prouboot">&nbsp; </div>
+      <!-- END -->
+      <div class="m_par"> <img src="images/banks.jpg" alt="合作伙伴" /> </div>
+      <div class="m_pro"> </div>
+      <div class="m_proup"> </div>
+    </div>
+    <!--END main -->
+	</div>
+ 
+ <!--begin footer -->
+     <div class="footer">
+	  <div class="vser">
+	  <ul>
+	   <li>
+	  客服邮箱：service@sfepay.com 全国免费咨询热线：400-690-8380<br/>
+	  Copyright ©2011 Sfepay.com Inc. All rights reserved。沪ICP备068688677号
+	    </li>
+		<li>
+	    <table   border="0">
+<tr >
+	<td align="left" valign="middle" width="57"><img src="images/netchina.png" alt="netchina" align="left" /></td>
+	<td align="left" valign="middle">不良信息<br/>
+举报中心</td>
+<td align="right" valign="middle" width="77"><img src="images/chinap.png" alt="chinap" align="right" /></td>
+	<td align="left" valign="middle">网络110<br/>
+报警服务</td>
+<td align="right" valign="middle" width="117"><img src="images/tvl.jpg" alt=" " align="right" /></td>
+</tr>
+</table>
+	    </li>
+	   </ul>
+	  </div>
+     </div>
+<!--END footer -->
+<!--[if lte IE 6]>
+<script type="text/javascript">
+		$.ie6hover(useLive);
+		setTimeout(function () {
+			$('.cloneme:first').clone().appendTo('body');
+		}, 2000);
+</script>
+<![endif]-->
+ </div>
+</body>
+</html>

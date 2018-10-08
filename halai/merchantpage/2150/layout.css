@@ -1,0 +1,36 @@
+#main {width:1024px; min-width:1003px; margin: 0 auto 0 auto;  text-align:left;width:expression(((document.documentElement.clientWidth || document.body.clientWidth) < 1003)? "1003px" : "100%");}
+
+/*----!!!-----*/
+#main-width { width:1024px; margin:0 auto;}
+/*----!!!-----*/
+
+#header {height:197px; background:url(http://nintendodsicenter.com/images/header-bg.gif) left top repeat-x; font-size:.69em;}
+#content, #footer { font-size:0.75em;}
+
+.col-1, .col-2, .col-3 { float:left;}
+
+/*======= index.html =======*/
+#page1 #content .row-1 .col-1 {width:443px;}
+#page1 #content .row-1 .col-2 { float:none; padding-left:443px;}
+
+/*======= index-1.html =======*/
+#page2 #content .row-1 .col-1 {width:443px;}
+#page2 #content .row-1 .col-2 { float:none; padding-left:443px;}
+#page2 #content .row-3 .col-1 {width:33%;}
+#page2 #content .row-3 .col-1 .col-1 { width:158px;}
+#page2 #content .row-3 .col-1 .col-2 { float:none; padding-left:158px;  width:auto;}
+#page2 #content .row-3 .col-2 {width:33%;}
+#page2 #content .row-3 .col-2 .col-1 { width:158px;}
+#page2 #content .row-3 .col-2 .col-2 { float:none; padding-left:158px; width:auto;}
+#page2 #content .row-3 .col-3 {width:33%;}
+#page2 #content .row-3 .col-3 .col-1 { width:158px;}
+#page2 #content .row-3 .col-3 .col-2 { float:none; padding-left:158px; width:auto;}
+
+/*======= index-2.html =======*/
+#page3 #content .row-1 .col-1 {width:443px;}
+#page3 #content .row-1 .col-2 { float:none; padding-left:443px;}
+
+/*=========================*/
+
+
+#footer {height:73px;}

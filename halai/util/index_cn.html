@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>VISA/MASTER֧��-���ÿ��տ�-��ó�տ�-����տ�-����֧��ƽ̨-����֧��-SFEPAY</title>
+<link href="cn/css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript"  src="cn/images/flash.js"></script>
+<script language="JavaScript"  src="cn/images/tab.js"></script>
+<script language="JavaScript"  src="cn/images/alt.js"></script>
+<script language="JavaScript"  src="cn/images/menu.js"></script>
+<script language=JavaScript>
+var bNetscape4plus = (navigator.appName == "Netscape" && navigator.appVersion.substring(0,1) >= "4");
+var bExplorer4plus = (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.substring(0,1) >= "4");
+function CheckUIElements(){
+      var yMenuFrom, yMenuTo, yButtonFrom, yButtonTo, yOffset, timeoutNextCheck;
+
+      if ( bNetscape4plus ) {
+              yMenuFrom   = document["divMenu"].top;
+              yMenuTo     = top.pageYOffset + 295;
+      }
+      else if ( bExplorer4plus ) {
+              yMenuFrom   = parseInt (divMenu.style.top, 10);
+              yMenuTo     = document.body.scrollTop + 135; //��ҳ�涥���ľ���
+      }
+
+      timeoutNextCheck = 500;
+
+      if ( Math.abs (yButtonFrom - (yMenuTo + 152)) < 6 && yButtonTo < yButtonFrom ) {
+              setTimeout ("CheckUIElements()", timeoutNextCheck);
+              return;
+      }
+
+      if ( yButtonFrom != yButtonTo ) {
+              yOffset = Math.ceil( Math.abs( yButtonTo - yButtonFrom ) / 10 );
+              if ( yButtonTo < yButtonFrom )
+                      yOffset = -yOffset;
+
+              if ( bNetscape4plus )
+                      document["divLinkButton"].top += yOffset;
+              else if ( bExplorer4plus )
+                      divLinkButton.style.top = parseInt (divLinkButton.style.top, 10) + yOffset;
+
+              timeoutNextCheck = 10;
+      }
+      if ( yMenuFrom != yMenuTo ) {
+              yOffset = Math.ceil( Math.abs( yMenuTo - yMenuFrom ) / 20 );
+              if ( yMenuTo < yMenuFrom )
+                      yOffset = -yOffset;
+
+              if ( bNetscape4plus )
+                      document["divMenu"].top += yOffset;
+              else if ( bExplorer4plus )
+                      divMenu.style.top = parseInt (divMenu.style.top, 10) + yOffset;
+
+              timeoutNextCheck = 10;
+      }
+
+      setTimeout ("CheckUIElements()", timeoutNextCheck);
+}
+
+function OnLoad()
+{
+      var y;
+      if ( top.frames.length )
+      if ( bNetscape4plus ) {
+              document["divMenu"].top = top.pageYOffset + 135;
+              document["divMenu"].visibility = "visible";
+      }
+      else if ( bExplorer4plus ) {
+              divMenu.style.top = document.body.scrollTop + 235;
+              divMenu.style.visibility = "visible";
+      }
+      CheckUIElements();
+      return true;
+}
+OnLoad();
+</script>
+<script type="text/javascript">
+	function checkHolderInfo(){
+		var vercode = document.getElementById("vercode").value;
+		var name = document.getElementById("username").value;
+		var password=document.getElementById("password").value;
+		userCheck.checkAll(name,password,vercode,"");
+	}
+	
+	function checkMerno(){
+		if(document.getElementById("merno").value==""){
+			alert("�̻���Ų���Ϊ�գ�");
+			document.getElementById("merno").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkUsername(){
+		if(document.getElementById("username").value==""){
+			alert("�û�����Ϊ�գ�");
+			document.getElementById("username").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkPassword(){
+		if(document.getElementById("password").value==""){
+			alert("���벻��Ϊ�գ�");
+			document.getElementById("password").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkVercode(){
+		if(document.getElementById("vercode").value==""){
+			alert("��֤�벻��Ϊ�գ�");
+			document.getElementById("vercode").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkAll(){
+		if(checkMerno() && checkUsername() && checkPassword() && checkVercode() ){
+			return true;
+		}
+		return false;
+	}
+	
+	function refreshimg(){
+	    		var random = Math.random();
+	    		//IE7�л��棬Ϊ�˱�֤��֤��������,����������ݵĲ���
+	    		document.getElementById("authImg").src="authImg?r="+random;
+	    	}
+	function submitInfo(terget,op){
+		var form2 = document.getElementById('form2');
+		if(op=='login'){
+			if(checkAll()){
+				document.form2.action=terget;
+				document.form2.submit();
+			
+			}else{
+				return false;
+			}
+		}
+		document.form2.action=terget;
+		document.form2.submit();
+	}
+
+	
+	function chageLanguage(language){
+		if(language=='English'){
+		 	document.URL='index_en.html'
+		}if(language=='Chinese'){
+			document.URL='index_cn.html'
+		}
+	}
+	
+	function resetPwd(){
+		window.open("resetPwd.jsp");
+	}
+</script>
+<style type="text/css">
+<!--
+.STYLE1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<DIV id=img1 style="Z-INDEX: 100; LEFT: 2px; WIDTH: 59px; POSITION: absolute; TOP: 43px; HEIGHT: 61px;
+ visibility: visible;"><a href="http://www.viigoo.com/" target="_blank">
+ <img src="images/picccdddd.gif" border="0"></a>
+</DIV> 
+<script language="javascript" src="script/js.js"></script>
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="245" height="90" align="center" valign="middle"><img src="cn/images/logo.jpg" width="179" height="59" /></td>
+    <td width="366" align="right" valign="middle"><img src="cn/images/phone.jpg" width="229" height="59" /></td>
+    <td width="270" align="center" valign="middle"><img src="cn/images/kfrx.jpg" width="155" height="59" /></td>
+    <td width="122" align="right" valign="bottom"><table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="15" align="left" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30" align="center"><form id="form1" name="form1" method="post" action="">
+           <select name="select" size="1"
+						onchange="javascript:chageLanguage(this.value)">
+						<option>Language</option>
+						<option value="Chinese">
+							��������
+						</option>
+						<option value="English">
+							English
+						</option>
+					</select>
+        </form></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><table width="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="18" height="25" align="center" valign="middle">��</td>
+            <td width="47" align="left" valign="middle"><a href="https://www.sfepay.com/newReg.jsp" class="zi1">ע ��</a></td>
+            <td width="18" align="center" valign="middle">��</td>
+            <td width="46" align="left" valign="middle"><a href="http://www.sfepay.com/merchant" class="zi1">�� ¼</a></td>
+            <td width="23" align="left" valign="middle">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="28" valign="bottom" background="cn/images/menu.jpg"><table width="1003" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="180" align="center" valign="middle" class="zi2">���!��ӭ����e��ͨ��վ��</td>
+        <td width="10">&nbsp;</td>
+        <td height="23" align="center" valign="middle" class="zi2"><a href="index_cn.html" class="zi2">��&nbsp;&nbsp;&nbsp;ҳ</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="cn/product.html" class="zi2">��Ʒ����</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="cn/fxff.html" class="zi2">���շ���</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="cn/zyzx.html" class="zi2">��Դ����</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="cn/aboutus.html" class="zi2">��������</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="cn/lxwm.html" class="zi2">��ϵ����</a></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="1"></td>
+  </tr>
+</table>
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1003" height="280">
+      <param name="movie" value="cn/images/123.swf" />
+      <param name="quality" value="high" />
+      <embed src="cn/images/123.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1003" height="280"></embed>
+    </object></td>
+  </tr>
+</table>
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#E4E7EE">
+  <tr>
+    <td height="400" align="center" valign="top"><table width="1003" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="664" height="38">
+          <param name="movie" value="cn/images/menu.swf" />
+          <param name="quality" value="high" />
+          <embed src="cn/images/menu.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="664" height="38"></embed>
+        </object></td>
+        <td width="339" align="right" valign="top" background="cn/images/8.jpg"><table width="80%" border="0" align="right" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="20" height="27" align="left" valign="middle"><img src="cn/images/ss.jpg" width="14" height="13" /></td>
+            <td width="60" align="left" valign="middle" class="zi2">վ������:</td>
+            <td width="100" align="left" valign="middle"><label>
+              <input name="textfield" type="text" size="15" />
+            </label></td>
+            <td align="right" valign="middle"><img src="cn/images/ss2.jpg" width="33" height="17" /></td>
+          </tr>
+        </table></td>
+        <td><img src="cn/images/9.jpg" width="57" height="38" /></td>
+      </tr>
+    </table>	<div id="xnav1"></div><div id="xnav2"></div><div id="xnav3"></div><div id="xnav4"></div>
+	<div id="xnav5"></div><div id="xnav6"></div><div id="xnav7"></div>
+      <table width="1003" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="16"><img src="cn/images/left3.jpg" width="16" height="185" /></td>
+          <td align="center" valign="middle" bgcolor="#FFFFFF"><table width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="720" align="center" valign="top"><div id="con_xnav_1">
+                <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="360" align="left" valign="top"><table width="330" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td width="130" align="left" valign="top"><table width="130" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td width="52" align="left" valign="top"><img src="cn/images/rmb.jpg" width="46" height="29" /></td>
+                                <td align="left" valign="middle" class="zi3">�����֧��</td>
+                              </tr>
+                          </table></td>
+                          <td width="200" align="left" valign="middle">
+                          <font style="font-size:14px; font-weight:bold;  color:#FF0000; line-height:25px">1.רӪ�������п�����֧��</font><br />
+                          <font style="font-size:14px; font-weight:bold; color:#FF0000; line-height:25px">2.����ѵ���0.2%</font><br />
+                          <font style="font-size:14px; font-weight:bold; color:#FF0000; line-height:25px">3.T+0 ����</font><br />
+                          <!--
+                          <span class="zi7">��������ҽ�ǿ������ÿ�����ʵʱ֧�����ܡ�ECPSSĿǰ�ṩ���ڶ�����е���أ�֧�ֹ����������е�����ҿ������ÿ�����֧����</span>
+                          -->
+                          </td>
+                        </tr>
+                    </table>
+                      </td>
+                    <td width="1" height="155" bgcolor="#03285D"></td>
+                    <td width="360" align="center" valign="top"><table width="330" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td width="130" align="left" valign="top"><table width="130" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td width="52" align="left" valign="top"></td>
+                                <td align="left" valign="middle" class="zi3">��ʿ�֧��</td>
+                              </tr>
+                          </table></td>
+                          <td width="200" align="left" valign="middle"><span class="zi7">������ÿ�֧������ECPSS������ָһ��ר����������ȫ�����ÿ�֧�����տ�ӿڡ���������ӿڣ���Ϳ��Խ���ȫ���������ÿ��û�<span class="zi5">����ĵ��Ӹ��</span></span></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+              </div><div id="con_xnav_2" style="display:none">
+      <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="360" align="center" valign="top"><table width="330" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="130" align="left" valign="top"><table width="130" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="65" align="left" valign="top"><img src="cn/images/dhzf.jpg" width="58" height="34" /></td>
+                      <td align="left" valign="middle" class="zi3">�绰֧��</td>
+                    </tr>
+                </table></td>
+                <td width="200" align="left" valign="middle"><span class="zi7">�ֿ��˽��ֻ�����������˺Ž��а󶨣�ѡ���ֻ�֧��֮����յ����з��͵�ȷ��֧�����ţ���������ȷ��֧��֮�󣬼������֧����</span></td>
+              </tr>
+          </table></td>
+          <td width="1" height="155" bgcolor="#03285D"></td>
+          <td width="360" align="right" valign="top"><table width="330" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="130" align="left" valign="top"><table width="130" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="cn/images/szxzf.jpg" width="57" height="49" /></td>
+                      <td align="left" valign="middle" class="zi3">������֧��</td>
+                    </tr>
+                </table></td>
+                <td width="200" align="left" valign="middle"><span class="zi7">������֧����Ϊ����̼��ṩ��רҵ����Ч������֧��ƽ̨����ͨ������֧��������û�ֱ��ʹ�������г�ֵ���Ϳ�������֧��</span></td>
+              </tr>
+          </table></td>
+          </tr>
+      </table>
+    </div><div id="con_xnav_3" style="display:none">
+	<table width="700" border="0" align="right" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="left" valign="top" class="zi7"><strong>����ʹ����������ʱӦע���������</strong> <br />
+              <strong>��¼��ȷ������������վ</strong> <br />
+            ֱ���������������������վ��ַ������վҳ�棬��������ַ���������ղؼУ������´�ʹ�á���Ҫͨ��������վ���ӷ����� <br />
+            ����վ������ַ�ð������վ�������������оٱ��� </td>
+          </tr>
+      </table></div><div id="con_xnav_4" style="display:none">
+     <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center" valign="middle"><img src="cn/images/hzhb2.jpg" width="689" height="82" /></td>
+          </tr>
+      </table>
+    </div><div id="con_xnav_5" style="display:none">
+      <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="left" valign="top"><span class="zi7">&nbsp;&nbsp;&nbsp;&nbsp;�Ϻ��㸷��Ϣ�������޹�˾,Shanghai Ecpss Co. Limited(E-commerce Payment Service Solution) (��ƣ�ECPSS)����רע�ڹ�ʿ��յ�����ĵ���֧��ƽ̨�� ȫ��Ϊ��������ܹ�ʿ�֧�����̼��ṩ����һ�����յ����� <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;ECPSS��ǰ���п�֧��ר�ҡ�ǰ��ʿ���֯�߼�������Ա������֧�����������Ա�������ʿ����չ���ר�Һ�֧����ҵ��ȫ��֤ר�ҹ�ͬͶ���齨�������ڴ���ȫ���һ�Ĺ�ʿ�֧��ƽ̨�� </span></td>
+          </tr>
+      </table>
+    </div><div id="con_xnav_6" style="display:none">
+      <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td align="left" valign="top"><span class="zi7">&nbsp;&nbsp;&nbsp;&nbsp;��������˺͹�˾�ṩ���¡��ȫ�����ݡ�������ĵ���֧������ʵ����ҵЧ�����󻯡�</span></td>
+              </tr>
+          </table>
+    </div></td>
+              <td width="12"><table width="1" border="0" align="left" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="155" bgcolor="#01295D"></td>
+                  </tr>
+              </table></td>
+              <td width="235" align="center" valign="top">
+              <form name="form2" id="form2" action="" method="post" onsubmit="return checkHolderInfo()">
+              <table width="210" border="0" align="center" cellpadding="1" cellspacing="1">
+                  <tr>
+                    <td height="24" colspan="2" align="center" valign="middle" background="cn/images/top3.jpg"><span class="zi2">��Ա��½</span></td>
+                  </tr>
+                </table>
+                  <table width="210" border="0" cellpadding="0" cellspacing="1" class="kuang">
+                  <tr>
+                    <td width="58" height="23" align="right" valign="middle" bgcolor="#F7F7F7">�̻��ţ�</td>
+                    <td width="124" colspan="2" align="left" valign="middle" bgcolor="#F7F7F7">
+						<input name="merno" id="merno" type="text" size="17" />
+					</td>
+                  </tr>
+                  <tr>
+                    <td height="23" align="right" valign="middle" bgcolor="#F7F7F7">�û���</td>
+                    <td width="124" colspan="2" align="left" valign="middle" bgcolor="#F7F7F7">
+                    <input name="username" id="username" type="text" size="17" /></td>
+                  </tr>
+                  <tr>
+                    <td height="23" align="right" valign="middle" bgcolor="#F7F7F7">��&nbsp;&nbsp;�룺</td>
+                    <td colspan="2" align="left" valign="middle" bgcolor="#F7F7F7">
+                    <input name="password" id="password" type="password" size="8" />
+                      <a href="#" onclick="submitInfo('showReset.action','resetPwd')" >������룿</a></td>
+                  </tr>
+                  <tr>
+                    <td height="23" align="right" valign="middle" bgcolor="#F7F7F7">��֤�룺</td>
+                    <td align="left" valign="middle" bgcolor="#F7F7F7">
+                    <input name="vercode" id="vercode" type="text" size="8" /></td>
+                    <td align="left" valign="middle" bgcolor="#F7F7F7">
+						<a href="javascript:refreshimg();">
+                  <img border=0 src="authImg" id="authImg" alt="���ˢ��" /></a>
+					</td>
+                  </tr>
+                  <tr>
+                    <td height="27" colspan="3" align="center" valign="bottom" bgcolor="#F7F7F7"><label>
+                    <a href="#" onclick="submitInfo('http://security.ecpss.com/merchant/merLogin.action','login')"><img src="cn/images/dl.jpg" width="47" height="21" border="0"/></a>&nbsp;<a href="http://security.ecpss.com/newReg.jsp" target="_blank"><img src="cn/images/zcc.jpg" width="47" height="21" border="0" /></a><a href="wjmm.html"></a></label></td>
+                  </tr>
+                  <tr>
+                    <td height="27" colspan="3" align="center" valign="bottom" bgcolor="#F7F7F7"><label>
+                    <a href="http://security.ecpss.com/merchant"></td>
+                  </tr>
+                </table>
+                  </form>
+                  </td>
+            </tr>
+          </table>
+		  </td>
+          <td width="19" align="right" valign="top"><img src="cn/images/right3.jpg" width="19" height="185" /></td>
+        </tr>
+      </table>
+      <table width="1003" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><img src="cn/images/bottom3.jpg" width="1003" height="11" /></td>
+        </tr>
+      </table>
+      <table width="1003" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="10"></td>
+        </tr>
+      </table>
+      <table width="1003" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;</td>
+          <td width="330" align="center" valign="middle"><table width="320" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="27" valign="bottom" background="cn/images/top2.jpg"><table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="70" height="16" align="center" valign="top">���Ŷ�̬</td>
+                  <td align="right" valign="top"><a href="cn/news.html" target="_blank"><img src="cn/images/more.jpg" width="36" height="9" border="0" /></a></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><table width="320" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="4"><img src="cn/images/left2.jpg" width="4" height="110" /></td>
+                    <td valign="top" bgcolor="#FFFFFF"><table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                      <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="12" height="25" align="left" valign="middle"><img src="cn/images/biao3.jpg" width="3" height="3" /></td>
+                        <td align="left" valign="middle"><a href="cn/dsfzfk.html">����֧��������ϵ�����Ҵ�ƽ̨������</a></td>
+                        </tr>
+                      <tr>
+                        <td height="25" align="left" valign="middle"><img src="cn/images/biao3.jpg" width="3" height="3" /></td>
+                        <td align="left" valign="middle"><a href="cn/fgrsk.html">������ˢ������Ҫ�Ǹ�ЩСǮ</a></td>
+                        </tr>
+                      <tr>
+                        <td height="25" align="left" valign="middle"><img src="cn/images/biao3.jpg" width="3" height="3" /></td>
+                        <td align="left" valign="middle"><a href="cn/xfaq.html">��Ѱ�ȫ�����ǣ����п�����ѷŴ�</a></td>
+                        </tr>
+                    </table></td>
+                    <td width="4" align="right" valign="top"><img src="cn/images/right2.jpg" width="4" height="110" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><img src="cn/images/bottom2.jpg" width="320" height="6" /></td>
+            </tr>
+          </table></td>
+          <td width="330" align="center" valign="middle"><table width="320" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="27" align="center" valign="bottom" background="cn/images/top2.jpg"><table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="70" height="16" align="center" valign="top">���淢��</td>
+                  <td align="right" valign="top"><a href="cn/ggfb.html" target="_blank"><img src="cn/images/more.jpg" width="36" height="9" border="0" /></a></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><table width="320" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="4"><img src="cn/images/left2.jpg" width="4" height="110" /></td>
+                    <td align="center" valign="top" bgcolor="#FFFFFF"><table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                      <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+
+					 
+                        <tr>
+                          <td width="12" height="25" align="left" valign="middle"><img src="cn/images/biao3.jpg" width="3" height="3" /></td>
+                          <td align="left" valign="middle"><a href="cn/evip.html">����ֹͣEVIPͨ��8���Żݻ����</a> <font color="red"></font></td>
+                        </tr>
+                        <tr>
+                          <td height="25" align="left" valign="middle"><img src="cn/images/biao3.jpg" width="3" height="3" /></td>
+                          <td align="left" valign="middle"><a href="cn/xintongdao.html">Ecpss �Ƴ�ʵʱVIPͨ�� <font color="red"></font></a></td>
+                        </tr>
+                    
+                        
+                      </table></td>
+                    <td width="4" align="right" valign="top"><img src="cn/images/right2.jpg" width="4" height="110" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><img src="cn/images/bottom2.jpg" width="320" height="6" /></td>
+            </tr>
+          </table></td>
+          <td width="330" align="center" valign="middle"><table width="320" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="27" align="center" valign="bottom" background="cn/images/top2.jpg"><table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="70" height="16" align="center" valign="top">��������</td>
+                  <td align="right" valign="top"><a href="cn/cjwt.html" target="_blank"><img src="cn/images/more.jpg" width="36" height="9" border="0" /></a></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><table width="320" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="4"><img src="cn/images/left2.jpg" width="4" height="110" /></td>
+                    <td align="center" valign="top" bgcolor="#FFFFFF"><table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                      <table width="290" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td width="12" height="25" align="left" valign="middle"><img src="cn/images/biao3.jpg" width="3" height="3" /></td>
+                          <td align="left" valign="middle"><span class="zi5"><a href="cn/cjwt.html">ʲô��ECPSS����֧����</a> </span></td>
+                        </tr>
+                        <tr>
+                          <td height="25" align="left" valign="middle"><img src="cn/images/biao3.jpg" width="3" height="3" /></td>
+                          <td align="left" valign="middle"><span class="zi5"><a href="cn/cjwt.html">ECPSS����֧����α�֤�䰲ȫ�ԣ� </a></span></td>
+                        </tr>
+                        <tr>
+                          <td height="25" align="left" valign="middle"><img src="cn/images/biao3.jpg" width="3" height="3" /></td>
+                          <td align="left" valign="middle"><span class="zi5"><a href="cn/cjwt.html">�̻�����������֧��ƽ̨��</a></span></td>
+                        </tr>
+                      </table></td>
+                    <td width="4" align="right" valign="top"><img src="cn/images/right2.jpg" width="4" height="110" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><img src="cn/images/bottom2.jpg" width="320" height="6" /></td>
+            </tr>
+          </table></td>
+          <td>&nbsp;</td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="74" align="center" valign="middle" bgcolor="#00285C"><table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="30" align="center" valign="middle" class="zi2"><a href="cn/aboutus.html" class="zi2">��˾���</a> | <a href="cn/wszf.html" class="zi2">����֧��</a> | <a href="cn/mzsm.html" class="zi2">��������</a> | <a href="cn/yszc.html" class="zi2">��˽����</a> | <a href="cn/lxwm.html" class="zi2">��ϵ���� | | �̻�����Ͷ�ߺͽ���E-mail:<a href="mailto:complaints@ecpss.com"  style="color:#ffffff">complaints@ecpss.com</a></a></td>
+      </tr>
+      <tr>
+        <td height="25" align="center" valign="middle" class="zi6">Copyright(c)2010. All rights reserved. &quot;Ecpss&quot;.International Payments - Secure Online Payments - Send Payments Online - Internet Payment </script>
+</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

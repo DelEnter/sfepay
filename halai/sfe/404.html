@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>404 Error  sfepay</title>
+	<script type="text/javascript" src="css/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		#wrap { position:absolute;}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			function windowalign(){
+				var bodyheight = $(document).height(),
+					bodywidth = $(window).width(),
+					wrapwidth = $("#wrap").width(),
+					wrapheight = $("#wrap").height(); 
+					postop = (bodyheight-wrapheight)/2;
+					posleft = (bodywidth-wrapwidth)/2; 
+					$("#wrap").css({"left":posleft+"px","top":postop+"px"});
+			}
+			windowalign();
+			$(window).resize(function(){ 
+				windowalign();
+			});
+		})
+	</script>
+</head>
+<body>
+	<div id="wrap">404 Error Sorry ... <br>  <a href="http;//www.sfepay.com" title="sfepay home" >Back SFEPAY</a></div>
+</body>
+</html>

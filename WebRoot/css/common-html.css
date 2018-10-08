@@ -1,0 +1,58 @@
+.footer-view a {
+    display: inline-block;
+}
+.footer-view .authentication {
+    background: url("../images/auth.png") no-repeat scroll 0 -29px transparent;
+    height: 26px;
+    width: 37px;
+}
+.footer-view .authentication:hover {
+    background: url("../images/auth.png") no-repeat scroll 0 0 transparent;
+    height: 26px;
+    width: 37px;
+}
+.footer-view .authentication_visa {
+    background: url("../images/auth.png") no-repeat scroll -57px -29px transparent;
+    display: inline-block;
+    height: 26px;
+    width: 32px;
+}
+.footer-view .authentication_visa:hover {
+    background: url("../images/auth.png") no-repeat scroll -57px 1px transparent;
+    height: 26px;
+    width: 32px;
+}
+.footer-view .authentication_verisign {
+    background: url("../images/auth.png") no-repeat scroll -92px -29px transparent;
+    height: 26px;
+    width: 48px;
+}
+.footer-view .authentication_verisign:hover {
+    background: url("../images/auth.png") no-repeat scroll -92px 1px transparent;
+    height: 26px;
+    width: 48px;
+}
+.footer-view .authentication_china {
+    background: url("../images/auth.png") no-repeat scroll -162px -29px transparent;
+    height: 26px;
+    width: 68px;
+}
+.footer-view .authentication_china:hover {
+    background: url("../images/auth.png") no-repeat scroll -162px 0 transparent;
+    height: 26px;
+    width: 68px;
+}
+
+.btn-success{
+	padding: 8px 10px;
+	background: green;
+	color: white;
+	font-size: 14px;
+	width: 100%;
+	border: 0;
+	border-radius:4px;
+}
+.btn-success:HOVER {
+	cursor: pointer;
+  	background-color: #0FAA55;
+}

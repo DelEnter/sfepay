@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>公司介绍 - 迁易通支付</title>
+<meta name="description" content="迁易通提供专业国际信用卡在线支付功能,解决国内商家对外贸易的收款问题" />
+<meta name="keywords" content="迁易通,国际信用卡支付,外贸支付" />
+<link rel="stylesheet" href="css/main.css" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" type="image/gif" href="animated_favicon1.gif" />
+<script type="text/javascript" src="css/jquery-1.4.2.min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript">
+		var query = location.search,
+			rJQ = /jQuery=(\d\.\d(?:\.\d)?)/,
+			jQMatch = rJQ.exec(query),
+			jQVersion = jQMatch ? jQMatch[1] : '1.4.2',
+			useLive = !!(query.indexOf('live') + 1);
+	</script>  
+<script type="text/javascript" src="css/jquery.ie6hover.js"></script>
+<![endif]--><script type="text/javascript">
+
+ $(document).ready(function(){
+
+document.getElementById("merno").focus();
+
+});
+
+
+
+</script>
+<script type="text/javascript">
+	function checkHolderInfo(){
+		var vercode = document.getElementById("vercode").value;
+		var name = document.getElementById("username").value;
+		var password=document.getElementById("password").value;
+		userCheck.checkAll(name,password,vercode,"");
+	}
+	
+	function checkMerno(){
+		if(document.getElementById("merno").value==""){
+			alert("商户编号不能为空！");
+			document.getElementById("merno").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkUsername(){
+		if(document.getElementById("username").value==""){
+			alert("用户名不能为空！");
+			document.getElementById("username").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkPassword(){
+		if(document.getElementById("password").value==""){
+			alert("密码不能为空！");
+			document.getElementById("password").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkVercode(){
+		if(document.getElementById("vercode").value==""){
+			alert("验证码不能为空！");
+			document.getElementById("vercode").focus();
+			return false;
+		}
+		return true;
+	}
+	
+	function checkAll(){
+		if(checkMerno() && checkUsername() && checkPassword() && checkVercode() ){
+			return true;
+		}
+		return false;
+	}
+	
+	function refreshimg(){
+	    		var random = Math.random();
+	    		//IE7有缓存，为了保证验证不被缓存,加上随机内容的参数
+	    		document.getElementById("authImg").src="http://www.sfepay.com/authImg.do";
+	    	}
+	function submitInfo(terget,op){
+		var form2 = document.getElementById('form2');
+		if(op=='login'){
+			if(checkAll()){
+				document.form2.action=terget;
+				document.form2.submit();
+			
+			}else{
+				return false;
+			}
+		}
+		document.form2.action=terget;
+		document.form2.submit();
+	}
+
+	
+	function chageLanguage(language){
+		if(language=='English'){
+		 	document.URL='index_en.html'
+		}if(language=='Chinese'){
+			document.URL='index_cn.html'
+		}
+	}
+	
+	function resetPwd(){
+		window.open("resetPwd.jsp");
+	}
+</script>
+
+</head>
+
+<body>
+<div id="sfe"> 
+ <!--begin header -->
+     <div class="header">
+        <div id="hd-m">
+         <div id="logo">
+         <a href="http://www.sfepay.com" title="迁易通 SFEPAY" >
+         <img src="images/logo-sfepay.png" alt="迁易通 SFEPAY" /></a>
+         </div>
+         <div id="topm">
+         <img src="images/topm.png" alt="迁易通安全快捷方便" />
+         </div>
+         <div id="topjoin">
+           <ul>
+            <li class="topone">
+            <a href="https://www.sfepay.com/newReg.jsp" target="_blank" title="在线申请 迁易通支付" >在线申请</a>
+            </li>
+            <li class="toptwo">
+            <a href="#" title="SFEPAY English Site" >EN</a>
+            </li>
+           </ul>
+         </div>
+		</div>
+        <div id="nav">
+         <ul>
+      <li class="nav1"><A title="首页 SFEPAY" href="index.html">首页</A> </li>
+        <li class="pnav2"><A title="关于我们" href="about-us.html">关于我们</A> </li>
+        <li class="nav3"><A title="技术支持" href="download.html">技术支持</A> </li>
+        <li class="nav4"><A title="加入我们" href="join.html">加入我们</A> </li>
+        <li class="nav5"><A title="产品选择" href="products.html">产品选择</A> </li>
+        <li class="nav6"><A title="常见问题" href="faq.html">常见问题</A> </li>
+        <li class="nav7"><A title="联系我们" href="contact.html">联系我们</A> </li>
+      </ul>
+    </div>
+  </div>
+  <!--END header -->
+  
+  <DIV class=page>
+ <!--begin left -->
+    
+    <div class="left">
+      <div class="llogin">
+        <form name="form2" id="form2" action="" method="post" onsubmit="return checkHolderInfo()">
+          <p>
+            <label for="num">商户号:</label>
+            <input type="text"  name="merno" id="merno"  size="18" class="inbord" autocomplete="off" />
+          </p>
+          <p>
+            <label for="user">用户名:</label>
+            <input type="text"  name="username" id="username"  size="18" class="inbord" autocomplete="off" />
+          </p>
+          <p id="mimal"> 密&nbsp;&nbsp;&nbsp;码:
+            <input name="password" id="password" type="password" size="18" class="inbord" autocomplete="off" />
+          </p>
+          <p>
+            <label for="code">验证码:</label>
+            <input type="text" name="vercode" id="vercode" size="9" class="lgom" autocomplete="off" />
+            						<a href="javascript:refreshimg();">
+             <img style="line-height:23px; margin-left:9px;" src="https://www.sfepay.com/authImg.do" id="authImg" alt="点击刷新" /></a>
+            </p>
+          <p>
+            <input type="button" name="sub" id="sub" value="登录" class="insub" onclick="submitInfo('http://www.sfepay.com/merchant/merLogin.action','login')" />
+          <a href="https://www.sfepay.com/newReg.jsp" target="_blank" id="butjoin"> <img src="images/join-but.jpg" style="line-height:24px; margin-left:37px;margin-top:5px;float:left;height:21px;width:53px;" /></a> </p>
+        </form>
+      </div>
+      <div class="le_help">
+        <ul>
+          <li> <a href="faq.html#faqc" >迁易通的优势有哪些?</a> </li>
+          <li> <a href="faq.html#faqd" >手续费怎么收取?</a> </li>
+          <li> <a href="faq.html#faqd" >支持部分退款吗?</a> </li>
+          <li> <a href="faq.html#faqd" >开通需要哪些资料?</a> </li>
+          <li> <a href="faq.html#faqd"  >一个账户可以接几个网站?</a> </li>
+          <li> <a href="faq.html#faqd"  >拒付怎么处理?</a> </li>
+          <li> <a href="faq.html#faqd"  >客服服务的时间是怎么样的?</a> </li>
+        </ul>
+      </div>
+      <div class="le_news">
+        <ul>
+          <li> <a href="news.html#one"  >人民银行发布支付体系报告</a> </li>
+          <li> <a href="news.html#two" >银联卡特约商户突破180万</a> </li>
+          <li> <a href="news.html#free"  >长城国际卡与八达通卡合作</a> </li>
+          <li> <a href="news.html#four"  >《非金融机构支付服务管理办法》</a> </li>
+        </ul>
+      </div>
+      <img src="images/commer.gif" /> <img src="images/vmcard.png" align="right" alt="visa master card" /> </div>
+    
+    <!--END left -->
+  <!--begin aboutus -->
+    
+    <DIV class=main>
+      <DIV class=us_us>
+        <UL>
+          <LI>
+            <H2>公司介绍:</H2>
+            <P>&nbsp;&nbsp;&nbsp;上海迁易网络科技有限公司（以下简称：迁易通）是由上海市政府与中国人民银行、信息产业部、商务部、上海市外经贸委共同支持下最新成立的专注于跨国交易第三方支付平台。迁易通致力为跨国电子商务提供"安全（safe）、快速(fast)、简单(easy)的在线支付解决方案，迁易通拥有一流背景、一流资源和一流团队。目前与国内主流银行以及 
+              
+              VISA、MasterCard、JCB、AMEX等多个国际信用卡组织建立并保持着良好的合作伙伴关系,共同开发出最新一代的信用卡网络支付服务。迁易通兼容了目前主流的支付卡种，为商户提供成功率最高，最安全，最简便的优质支付服务。迁易通产品和服务的高度安全性以及严格的风险控制体系深受业内专家和众多企业及消费者的好评，迁易通采用了国际上最先进的应用服务器和数据库系统，支付信息的传输采用了128位的SSL加密算法，整套安全体系完成了PCI安全标准委员会PCI-SSC的PCI数据安全标准（PCI 
+              
+              DSS：Payment）迁易通致力成为成为中国最受信任的第三方支付公司。 面对今天全球一体化，跨国btoc 和 ctoc蓬勃发展的大好时机 
+              
+              ，为国人提供最安全，最快捷，最简单的支付服务！</P>
+          </LI>
+        </UL>
+        <IMG alt=迁易通合作伙伴 
+
+src="images/banksi2.gif"> </DIV>
+      <DIV class=us_txt><!--<ul class="us_lo"><li> <img src="images/us_p_b.png" alt="迁易通团队" /></li></ul> !-->
+        
+        <UL>
+          <LI>
+            <H2>企业目标</H2>
+            为中国人提供最好的跨国收款工具，让天下不在有难收的款. </LI>
+          <LI>
+            <H2>核心价值观</H2>
+            激情，承诺，负责任，信任，共赢，可能性. </LI>
+          <LI>
+            <H2>企业精神</H2>
+            不断进取，与时俱进！ </LI>
+        </UL>
+      </DIV>
+      <DIV class=m_us>
+        <UL>
+          <LI>
+            <H2>品牌文化</H2>
+            <IMG alt="清明上河图 SFEpay" align=left 
+
+  src="images/m_ustt.png">
+            <P>&nbsp;&nbsp;&nbsp;<B><A title=迁易支付 
+
+  href="http://baike.baidu.com/view/1372751.htm" rel=nofollow 
+
+  target=_blank>迁易</A></B>在古文中的意思是运销，贩卖的意思、也是古代社会对商人的称谓，迁易通则国富民安！迁易通的另外一层意思是"钱易通"！人类的商业历史也是一部货币演变的历史，每一次大的商业革命也必然伴随着货币形式的改变，我们的目标就是让收款即使在跨国生意中也不在成为障碍，让天下真正不在有难做的生意，天下不在有难收的货款！ </P>
+          </LI>
+        </UL>
+      </DIV>
+    </DIV>
+    <!--END aboutus --></DIV>
+<!--begin footer -->
+     <div class="footer">
+	  <div class="vser">
+	  <ul>
+	   <li>
+	  客服邮箱：service@sfepay.com 全国免费咨询热线：400-690-8380<br/>
+	  Copyright ©2011 Sfepay.com Inc. All rights reserved。沪ICP备068688677号
+	    </li>
+		<li>
+	    <table   border="0">
+<tr >
+	<td align="left" valign="middle" width="57"><img src="images/netchina.png" alt="netchina" align="left" /></td>
+	<td align="left" valign="middle">不良信息<br/>
+举报中心</td>
+<td align="right" valign="middle" width="77"><img src="images/chinap.png" alt="chinap" align="right" /></td>
+	<td align="left" valign="middle">网络110<br/>
+报警服务</td>
+<td align="right" valign="middle" width="117"><img src="images/tvl.jpg" alt=" " align="right" /></td>
+</tr>
+</table>
+	    </li>
+	   </ul>
+	  </div>
+     </div>
+<!--END footer -->
+<!--[if lte IE 6]>
+<script type="text/javascript">
+		$.ie6hover(useLive);
+		setTimeout(function () {
+			$('.cloneme:first').clone().appendTo('body');
+		}, 2000);
+</script>
+<![endif]--></DIV>
+</BODY>
+</HTML>

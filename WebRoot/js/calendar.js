@@ -1,0 +1,3 @@
+﻿var _CAL=null;var _input=null;var _trig=null;var _format=null;var _week=false;var _time=false;var _lang="cn";function loadcalendar(input,trig,format,week,time,language){_input=input;_trig=trig;_format=format;_week=week;_time=time;_lang=language;_CAL=Calendar.setup({weekNumbers:_week,selectionType:Calendar.SEL_MULTIPLE,inputField:_input,dateFormat:_format,trigger:_trig,showTime:_time,onSelect:function(){this.hide();}})
+_CAL.setLanguage(_lang);}
+function clearRangeStart(input){document.getElementById(input).value="";_CAL.args.min=null;_CAL.redraw();};function onWeekSelected(y,week,input){var date=document.getElementById(input);date.value=y+"年第"+(week>9?week:"0"+week)+"周";_CAL.hide();};

@@ -1,0 +1,879 @@
+@charset "gb2312";
+/* CSS Document */
+*{margin:0;padding:0}
+img,ul,li{list-style:none;border:none}
+body {
+    font-size: 12px;font-family:"Î¢ÈíÑÅºÚ","ËÎÌå",Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s linear 0s;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+strong {
+    font-weight: bold;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+}
+.w-980 {
+    margin: 0 auto;
+    width: 980px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+.fl {
+    display: inline;
+    float: left;
+}
+.fr {
+    display: inline;
+    float: right;
+}
+.pr {
+    position: relative;
+}
+.pa {
+    position: absolute;
+}
+.hidden {
+    display: none;
+}
+.header{background-color: #fff;
+    border-bottom: 1px solid #cbcdcc;
+    box-shadow: 0 1px 3px #cbcdcc;margin:5px 0}
+	.cms-home .header{border:none;border-shadow:none;margin:0 }
+.top-bar {
+    background-color: #25292d;
+    border-bottom: 2px solid #e95c00;
+    color: #eee;
+    font-size: 12px;
+    height: 30px;
+    min-width: 980px;
+    width: 100%;
+}
+.top-bar {
+    position: relative;
+    z-index: 500;
+}
+.top-bar a {
+    color: #eee;
+}
+.nav-enter{}
+.top-menu {
+}
+.top-menu li {
+    display: inline;
+    float: left;
+    line-height: 30px;
+}
+
+.nav .logo {
+    display: inline;
+    float: left;
+}
+.nav {
+    margin-top: 10px;
+}
+.nav-enter li {
+    padding-top: 20px;position:relative
+}
+.ent {
+    display: inline-block;
+    margin: 0 20px 0 0;
+}
+.nav-enter li a{font:normal 18px "Î¢ÈíÑÅºÚ","ËÎÌå",Arial, Helvetica, sans-serif;color:#000;border-bottom:2px solid #fff;padding-bottom:5px;text-align:center}
+.nav-yifen .new-pro {
+    background: url("../../images/new-icon.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 15px;
+    position: absolute;
+    right: 24px;
+    top: 5px;
+    width: 30px;
+}
+.nav-enter li.last a{margin:0}
+.nav-enter li a:hover{color:#E00602;border-bottom:2px solid #E00602}
+
+.login-area {
+    height: 0;
+    z-index: 100;
+}
+
+.login-box {
+    background-color: rgba(51, 51, 51, 0.6);
+    padding: 20px 0 10px;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    width: 280px;
+    z-index: 101;
+}
+
+.login-box h2 {
+    color: #fff;
+    font-weight: bold;
+    padding-left: 30px;margin-bottom:30px
+}
+.tang-pass-login .pass-form-item-userName {
+    background: url("../images/login-box-icon.jpg") no-repeat scroll 0 0 transparent;
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 34px;
+}
+
+.login-tab {
+    clear: both;
+    height: 35px;
+    margin-left: 16px;
+    width: 240px;
+}
+.login-tab .tab-item {
+    cursor: pointer;
+    display: inline;
+    float: left;
+    height: 35px;
+    list-style: outside none none;
+    position: relative;
+    width: 80px;
+}
+.login-tab .tab-item a {
+    color: #b8b7b7;
+    display: block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    outline: medium none;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+.login-tab .tab-selected a {
+    color: #fff;
+    font-weight: bold;
+}
+.tang-pass-login {
+    width: 100%;
+}
+.tang-pass-login form {
+    margin-left: 30px;
+}
+.tang-pass-login .pass-generalErrorWrapper {
+    margin: 0;
+}
+.tang-pass-login dl, .tang-pass-login dt, .tang-pass-login dd, .tang-pass-login ul, .tang-pass-login ol, .tang-pass-login li, .tang-pass-login input {
+    margin: 0;
+    padding: 0;
+}
+.tang-pass-login .clearfix:after, .tang-pass-login .pass-form-item:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+.tang-pass-login .clearfix, .tang-pass-login .pass-form-item {
+}
+.tang-pass-login {
+    font: 12px/1.5 tahoma,arial,Hiragino Sans GB,ËÎÌå;
+    position: relative;
+}
+.tang-pass-login .pass-form-item {
+    display: block;
+    margin-top: 20px;
+    position: relative;
+}
+.tang-pass-login .pass-label {
+    color: #fff;
+    display: none;
+    float: left;
+    font-family: "ËÎÌå";
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding-right: 5px;
+    text-align: right;
+    width: 45px;
+}
+.tang-pass-login .pass-text-input {
+    background-color: #fff;
+    border-color: #ccc #ddd #ddd #ccc;
+    border-left: 1px solid #ccc;
+    border-style: solid;
+    border-width: 1px;
+    color: #333;
+    display: inline;
+    float: left;
+    font-family: "ËÎÌå";
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 5px;
+    transition-duration: 0.5s;
+    transition-property: all;
+    width: 173px;
+}
+.tang-pass-login .pass-text-input a {
+    color: #d70000;
+    display: block;
+    font-size: 12px;
+    line-height: 32px;
+    text-align: center;
+}
+.tang-pass-login .pass-text-input-hover {
+    border-color: #ababab #ccc #ccc #ababab;
+}
+.tang-pass-login .pass-text-input-focus {
+    border-color: #377bcb;
+}
+.tang-pass-login .pass-generalError {
+    color: #ff7326;
+    display: block;
+    font-size: 12px;
+    height: 30px;
+}
+.tang-pass-login .pass-generalError-display {
+    background-color: #fffee4;
+    height: auto;
+    line-height: 18px;
+    margin: 6px 0 10px;
+    padding: 4px 10px;
+    width: 198px;
+}
+.tang-pass-login input:focus {
+    outline: 0 none;
+}
+.tang-pass-login .pass-form-item-userName {
+    background: url("https://www.baifubao.com/resource/global/css/../images/login-box-icon.jpg") no-repeat scroll 0 0 transparent;
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 34px;
+}
+.tang-pass-login .pass-text-input-verifyCode {
+    color: #a9a9a9;
+    display: inline;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 8px;
+    width: 64px;
+}
+.tang-pass-login .pass-verifyCode {
+    border: 1px solid #ddd;
+    display: inline;
+    float: left;
+    height: 32px;
+    margin-left: 5px;
+    width: 64px;
+}
+.tang-pass-login .pass-change-verifyCode {
+    color: #bbb;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    font-size: 12px;
+    line-height: 26px;
+    padding-left: 5px;
+    text-decoration: underline;
+}
+.tang-pass-login .pass-form-item-memberPass {
+    color: #666;
+    display: none;
+    font-size: 12px;
+    height: 18px;
+    margin-top: 7px;
+    padding-left: 50px;
+    position: relative;
+}
+.tang-pass-login .pass-form-item-memberPass input {
+    vertical-align: middle;
+}
+.tang-pass-login .pass-form-item-memberPass label {
+    padding-left: 5px;
+}
+.tang-pass-login .pass-form-item-submit {
+    margin-bottom: 15px;
+    margin-left: 0;
+}
+.tang-pass-login .pass-form-item-submit {
+    height: 34px;
+    line-height: 34px;
+}
+.tang-pass-login .pass-form-item-submit input {
+    cursor: pointer;
+    display: inline;
+    float: left;
+    font-size: 14px;
+}
+.tang-pass-login .pass-form-item-submit .pass-button-submit {
+    font-size: 18px;
+    letter-spacing: 10px;
+}
+.tang-pass-login .pass-form-item-submit a.pass-fgtpwd {
+    color: #00c;
+    display: none;
+    float: left;
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 20px;
+    text-decoration: underline;
+}
+.tang-pass-login .pass-button-submit {
+    background: url("https://www.baifubao.com/resource/global/css/../images/button.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #fff;
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    height: 40px;
+    letter-spacing: 3px;
+    width: 220px;
+}
+.tang-pass-login .pass-button-submit:hover {
+    background-position: 0 -40px;
+}
+.tang-pass-login .pass-button-submit:active {
+    background-position: 0 -80px;
+}
+.tang-pass-login .pass-item-error, .tang-pass-login .pass-item-tip {
+    display: inline;
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    padding-left: 10px;
+}
+.tang-pass-login .pass-item-error {
+    color: #da1111;
+}
+.tang-pass-login .pass-item-tip {
+    color: #a4a4a4;
+}
+.tang-pass-login .sc-tip {
+    color: #d70000;
+    margin-top: 20px;
+}
+.login-box-bottom {
+    margin-left: 30px;
+    margin-top: 20px !important;
+}
+.login-box-bottom a {
+    color: #bbb;
+    font-size: 12px;
+}
+.login-box-bottom a.register {
+    background: none repeat scroll 0 0 #3c95b2;
+    color: #fff;
+    display: inline-block;
+    height: 22px;
+    margin-right: 5px;
+    padding-top: 8px;
+    text-align: center;
+    width: 100px;
+}
+.register:hover {
+    background: none repeat scroll 0 0 #2cb0dc;
+    text-decoration: none;
+}
+.register:active {
+    background: none repeat scroll 0 0 #117596;
+}
+.login-nav-separate {
+    display: inline;
+    float: left;
+    height: 35px;
+    list-style: outside none none;
+    margin-right: 12px;
+    position: relative;
+    width: 10px;
+}
+.login-nav-separate span {
+    color: #b8b7b7;
+    display: block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.login-box .tang-pass-login .pass-form-item-password {
+    background: url("../images/login-box-icon.jpg") no-repeat scroll 0 -34px transparent;
+    margin-top: 16px;
+    padding-left: 34px;
+}
+.login-box .tang-pass-login .pass-form-item-password label {
+    display: none;
+    text-align: left;
+}
+.tang-pass-login a, .tang-pass-login label, .tang-pass-login p, .tang-pass-login li {
+    font-size: 12px;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.tang-pass-login .pass-form-item.pass-form-item-userName {
+    z-index: 21;
+}
+.tang-pass-login .pass-form-item {
+    clear: both;
+    position: relative;
+}
+.tang-pass-login .pass-form-item .pass-placeholder {
+    color: #a9a9a9;
+    cursor: text;
+    display: block;
+    font-size: 12px;
+    height: 28px;
+    left: 36px;
+    line-height: 28px;
+    padding-left: 13px;
+    position: absolute;
+    top: 1px;
+    width: 140px;
+    z-index: 1999;
+}
+.tang-pass-login .pass-form-item .pass-placeholder {
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+}
+.tang-pass-login .pass-form-item .pass-placeholder-password {
+    width: 30px;
+}
+.tang-pass-login .pass-form-item .pass-placeholder-verifyCode {
+    left: -9999px;
+}
+.tang-pass-login .pass-form-item .pass-placeholder-password {
+    color: #555;
+    left: -12px;
+    top: -37px;
+}
+.tang-pass-login .pass-form-item .pass-placeholder-password {
+}
+.wrapper{padding:30px 0;display:block;overflow:hidden;   background: url("../images/wrapper-bottom.jpg") repeat-x scroll left bottom #fefefe;
+    min-width: 980px;
+    width: 100%;}
+.banner{background:url(../images/wobaifu-2500.jpg) no-repeat scroll center center transparent;height:420px}
+ul.pay_method{width:310px;margin:0 10px;float:left;border-left:1px dotted #ccc;border-right:1px dotted #ccc;text-align:center}
+ul.pay_method.last{margin-right:0;border:none}
+ul.pay_method.first{margin-left:0;border:none}
+.pay_method h2{display:block;font:bold 24px/35px "Î¢ÈíÑÅºÚ","ËÎÌå",Arial, Helvetica, sans-serif;color:#656565}
+ul.pay_method.first h2{background:url(../images/life-enter1.png) no-repeat 100px 0 transparent;padding-left:40px;padding-bottom:10px}
+ul.pay_method.last h2{background:url(../images/life-enter3.png) no-repeat 100px 0 transparent;padding-left:40px;padding-bottom:10px}
+ul.pay_method h2{background:url(../images/life-enter2.png) no-repeat 100px 0 transparent;padding-left:40px;padding-bottom:10px}
+ul.pay_method li{font:normal 14px/25px "Î¢ÈíÑÅºÚ","ËÎÌå";color:#656565;}
+.footer{background:url("../images/footer-bg.png") repeat scroll 0 0 transparent;padding-bottom:30px;clear:both}
+.footer-message {
+    text-align: center;
+}
+.footer-message, .footer-message a {
+    color: #a0a0a0;
+    font-size: 12px;
+}
+.footer-message ul {
+    display: inline-block;
+}
+.footer-message li {
+    display: inline;
+    float: left;
+    line-height: 36px;
+}
+.footer-view {
+    margin-top: 18px;
+}
+.footer-view a {
+    display: inline-block;
+}
+.footer-view .authentication {
+    background: url("../images/auth.png") no-repeat scroll 0 -29px transparent;
+    height: 26px;
+    width: 37px;
+}
+.footer-view .authentication:hover {
+    background: url("../images/auth.png") no-repeat scroll 0 0 transparent;
+    height: 26px;
+    width: 37px;
+}
+.footer-view .authentication_visa {
+    background: url("../images/auth.png") no-repeat scroll -57px -29px transparent;
+    display: inline-block;
+    height: 26px;
+    width: 32px;
+}
+.footer-view .authentication_visa:hover {
+    background: url("../images/auth.png") no-repeat scroll -57px 1px transparent;
+    height: 26px;
+    width: 32px;
+}
+.footer-view .authentication_verisign {
+    background: url("../images/auth.png") no-repeat scroll -92px -29px transparent;
+    height: 26px;
+    width: 48px;
+}
+.footer-view .authentication_verisign:hover {
+    background: url("../images/auth.png") no-repeat scroll -92px 1px transparent;
+    height: 26px;
+    width: 48px;
+}
+.footer-view .authentication_china {
+    background: url("../images/auth.png") no-repeat scroll -162px -29px transparent;
+    height: 26px;
+    width: 68px;
+}
+.footer-view .authentication_china:hover {
+    background: url("../images/auth.png") no-repeat scroll -162px 0 transparent;
+    height: 26px;
+    width: 68px;
+}
+.other-entry {
+    color: #a9adb0;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #a9adb0;
+    font-size: 12px;
+    height: 15px;
+    margin-top: 3px;
+    padding: 20px 0 20px 15px;
+    width: 271px;
+}
+
+.other-entry a {
+    color: #ccc;
+    display: block;
+    float: left;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+.other-entry span {
+    display: block;
+    float: left;
+}
+.mt10 {
+    margin-top: 10px!important;
+}
+.mt10 .reg-entry {
+    color: #42c252;
+    font-size: 14px;
+}
+
+.mt10 .reg-entry {
+    color: #42c252;
+    font-size: 14px;
+}
+.logbx {
+    position: relative;
+}
+.login-main, .login-code, .success-login {
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    transition: opacity 0.5s linear 0s;
+    visibility: visible;
+    z-index: 10;
+}
+.success-login {
+    position: absolute;
+}
+.login-wrapper {
+    background-color: rgba(250, 250, 250, 0.5);
+    padding: 24px 24px 15px;
+    width: 238px;
+}
+.login-code {
+    background-color: rgba(250, 250, 250, 0.5);
+    height: 328px;
+    padding: 24px 24px 15px;
+    position: absolute;
+    width: 238px;
+}
+.login-code .help {
+    left: 60px;
+    opacity: 0;
+    position: absolute;
+    top: 48px;
+    transition: opacity 0.3s linear 0s;
+    visibility: hidden;
+}
+.login-code .help img {
+    opacity: 1;
+}
+.login-code .help-toggle:hover .help {
+    opacity: 1;
+    visibility: visible;
+}
+.login-main-hide, .login-code-hide {
+    opacity: 0;
+    transition: opacity 0.5s linear 0s;
+    visibility: hidden;
+}
+.login-code-hide, .login-main-hide {
+    position: absolute;
+}
+.login-code .wxsm {
+    color: #42c252;
+    font-size: 14px;
+}
+.code-help {
+    color: #fff;
+    font-size: 12px;
+}
+.code-help a {
+    color: #fff;
+    font-size: 12px;
+}
+.login-tag {
+    color: #fff;
+    font-size: 18px;
+}
+.login-wrapper input[type="text"], .login-wrapper input[type="password"] {
+    border: medium none;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 93.4%;font-size:14px;
+}
+.login-wrapper input {
+    color: #7d7d7d;
+}
+.login-wrapper input[type="submit"], .login-wrapper .login-btn {
+    background-color: #FF5D00;
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    line-height: 34px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;font-size:14px;
+}
+.login-btn {
+    background-color: #42c252;
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    line-height: 34px;
+    margin-top: 10px;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+.login-wrapper .safe-login {
+    color: #fff;
+}
+.header{}
+.mt20 {
+    margin-top: 10px;
+}
+.login-wrapper .forget {
+    color: #a9adb0;
+}
+.login-wrapper .reg-entry {
+    color: #FF5D00;
+    font-size: 14px;
+}
+.other-entry {
+    background-color: rgba(250, 250, 250, 0.5);
+    color: #fff;
+    font-size: 12px;
+    height: 15px;
+    margin-top: 3px;
+    padding: 20px 0 20px 15px;
+    width: 271px;
+}
+.other-entry a {
+    color: #fff;
+    display: block;
+    float: left;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+.other-entry span {
+    display: block;
+    float: left;
+}
+
+.mb50 {
+    margin-bottom: 50px;
+}
+.container{width:980px;margin:0 auto}
+
+.mb50 {
+    margin-bottom: 50px;
+}
+.container{width:980px;margin:0 auto;  }
+/*.main_t{  background-color: #ececec;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 11px;}	*/
+.c_999 {
+    color: #999;
+}
+.path {
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}	
+.service-center-left {
+    float: left;
+    width: 212px;
+}
+
+
+.border-gray {
+    border: 1px solid #eaeaea;
+    box-shadow: 1px 1px 3px #eaeaea;
+}
+
+
+.service-center-menu label em {
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #eaeaea;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+
+.service-center-menu .menu {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 10px 0;
+}
+
+
+.service-center-menu .menu {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 10px 0;
+}
+
+.service-center-menu .menu li a {
+    background: url("../images/service-menu-icon.png") no-repeat scroll 10px -25px transparent;
+    color: #FF5D00;
+    display: block;
+    line-height: 25px;
+    padding-left: 25px;
+}
+.serviceHelp, .weixin {
+    border: 1px solid #eaeaea;
+    box-shadow: 1px 1px 3px #eaeaea;
+    width: 210px;
+}
+.serviceHelp p, .weixin p {
+    line-height: 20px;
+}
+.serviceHelp h3 {
+    background-color: #f3f3f3;
+    font-size: 20px;
+    height: 41px;
+    line-height: 41px;
+    padding-left: 8px;
+}
+
+.m10 {
+    margin: 10px;
+}
+
+.serviceHelp p, .weixin p {
+    line-height: 20px;color:#666
+}
+.report-icon {
+    background: url("../images/report-icon.png") no-repeat scroll 0 15px transparent;
+    border-top: 1px solid #eaeaea;
+    height: 74px;
+    margin-top: 15px;
+    padding-left: 70px;
+    padding-top: 10px;
+}
+
+.report-btn {
+    background-color: #FF9E36;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    line-height: 34px;
+    text-align: center;
+    width: 100px;
+}
+
+
+.service-center-right {
+    float: right;
+    width:750px;
+}
+
+.back-title {
+    background-color: #f3f3f3;
+    padding: 10px 10px 0;
+}
+.title-green {
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.title-green span {
+    border-left: 9px solid #ff5d00;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.pad20 {
+    padding: 20px;
+}
+.problem-list li {
+    border-bottom: 1px dashed #dbdbdb;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+.main_t{margin-bottom:20px;overflow:hidden}
+.problem-list li .title {
+    background: url("../images/title-icon.jpg") no-repeat scroll 0 center transparent;
+    display: block;
+    font-size: 16px;
+    padding-left: 20px;
+}
+#page_navigation a {
+    border: 0 solid gray;
+    color: gray;
+    margin: 2px;
+    padding: 3px;
+    text-decoration: none;
+}
+.active_page {
+    background: none repeat scroll 0 0 orange;
+    color: white !important;
+}

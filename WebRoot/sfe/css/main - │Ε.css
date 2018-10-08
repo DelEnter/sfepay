@@ -1,0 +1,121 @@
+* {padding:0px;
+margin:0px;}
+body { behavior: url("css/csshover3.htc");}
+body {font-family:Arial,Tahoma,Georgia,SimSun;
+font-size:14px;color:#333333;
+background:#FFFFFF url("img/sfebodyi1.png") repeat-y top center;
+background-attachment:fixed;}
+h2 {font-size:15px;}
+h3 {font-size:15px;}
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+ li {list-style: none;}
+img{list-style: none;border:0;}
+
+.header,.page,.footer,#nav{margin:0 auto;width:980px;overflow: hidden;}
+
+.header{background:url("img/topback.png") no-repeat;}
+#logo{padding:5px 0 5px 30px;float:left;}
+#topm{float:left;padding:21px 0px 0px 90px;}
+#topjoin{float:right;padding:37px 20px 0 70px;}
+#topjoin li{float:left;}
+.topone {background:url("img/topmj.png") no-repeat;padding-left:20px;color:#FD5200;}
+.topone a:link{color:#FD5200;}
+.topone a:visited{color:#FD5200;}
+.toptwo {
+background:url("img/toptwo.png") no-repeat top right;
+padding-left:20px;
+margin-top:-4px;
+height:23px;
+width:47px;}
+.toptwo a{display:block;
+ text-indent: -9999px;width:100%;height:100%;}
+
+#nav {float:left;}
+#nav li{width:140px;float:left;text-align: center;height:33px;line-height:33px;}
+#nav li a{font-family:Microsoft YaHei;color:#ffffff;font-size:15px;width:100%;height:100%;}
+.nav1,.nav2,.nav3,.nav7{background:url("img/nav-blue-offi1.png") no-repeat;}
+
+.nav4,.nav5{background:url("img/nav-gree-off.png") no-repeat;}
+.nav6{background:url("img/nav-org-off.png") no-repeat;}
+
+#nav li.nav1:hover,#nav li.nav2:hover,#nav li.nav3:hover,#nav li.nav7:hover{background:url("img/nav-blue-on.png") no-repeat;}
+#nav li.nav4:hover,#nav li.nav5:hover{background:url("img/nav-gree-on.png") no-repeat;}
+#nav li.nav6:hover{background:url("img/nav-org-on.png") no-repeat;}
+
+.left{float:left;width:239px;overflow:hidden;}
+
+/** begin login **/
+.llogin{width:259px;height:252px;overflow:hidden;float:left;background:url("img/login-backi1-2.png") no-repeat;margin-top:13px;margin-bottom:13px;color:#4C6E94;}
+.llogin form p {padding:5px;}
+.inbord,.lgom {border:1px solid #888585;width:155px;line-height: 23px;background:url("img/inborde.png") no-repeat;height:23px;}
+.lgom{width:68px;}
+.llogin input { font-size:15px;}
+.llogin form{padding:35px 5px 2px 9px;}
+#mimal{font-size:15px;}
+.insub {background:url("img/but-login.png") no-repeat;
+text-indent: -9999px;width:68px;height:24px;
+cursor: pointer;border:0;margin-top:15px;float:left;margin-left:33px;}
+.insub:hover{background:url("img/but-login-on.png") no-repeat;}
+
+.le_help{border:1px solid #DDDDDD;
+float:left;
+width:237px;
+height:230px;
+background:url("img/le-helpn1-2.png") no-repeat top;
+padding-top:24px;}
+.le_help ul{padding:10px 0px;}
+.le_help li{float:left;
+width:176px;overflow: hidden;
+font-size:14px;
+height:27px;
+line-height: 27px;
+padding:0px 2px 0px 56px;
+background:url("img/le-heli.png") no-repeat 29px center;
+}
+.le_help li a{text-decoration: underline;color:#6f6f70;font-size:13px;}
+.le_help li a:visited{text-decoration: underline;color:#6f6f70;font-size:13px;}
+.le_help li a:hover{text-decoration: none;color:#000000;}
+
+.main{padding:13px 0px 5px 265px;}
+
+.banner{float:left;}
+.m_us li{float:left;width:663px;padding:20px;font-size:13px;color:#676767;}
+.m_us p{text-indent:24px;line-height:27px;padding-top:9px;}
+.m_us li h2{margin-left:-20px;padding:3px 0px;color:#002598;}
+.m_us li img{border:1px solid #F3F3F3;padding:3px;}
+
+.m_pro,.m_proup{float:left;}
+.m_pro {width:300px;}
+.m_pro h2{padding:3px 0px;color:#2f8b2f}
+.m_pro li{padding:5px 5px 25px 21px;font-size:13px;color:#333333;}
+.m_pro li img{padding:0px 5px;}
+
+.m_proup{width:400px;}
+.m_proup h2{padding:3px 0px;color:#2f8b2f}
+.m_proup ul{padding:0 5px;}
+.m_proup li{padding:5px 5px 19px 21px;font-size:13px;color:#333333;
+background:url("img/eg_arrow.gif") no-repeat left 9px;
+}
+.safeli,.fastli,.easyli{font-weight:bold;}
+.safeli{color:#002598;}
+.fastli{color:#2f8b2f;}
+.easyli{color:#FF6207;}
+
+.footer{height:79px;background:url("img/footline.png") no-repeat top;
+margin-top:13px;
+padding-top:5px;
+text-align:center;}
+.vser{background:url("img/footright.png") no-repeat right center;height:57px;}

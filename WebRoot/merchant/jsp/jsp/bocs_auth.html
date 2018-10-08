@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>BOCS Gateway Client Example</title>
+    <meta http-equiv="Content-Type" content="text/html, charset=UTF-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+<style type='text/css'>
+        <!--
+        H1       { font-family:Arial,sans-serif; font-size:20pt; color:#08185A; font-weight:600; margin-bottom:0.1em}
+        H2       { font-family:Arial,sans-serif; font-size:14pt; color:#08185A; font-weight:100; margin-top:0.1em}
+        H2.co    { font-family:Arial,sans-serif; font-size:24pt; color:#08185A; margin-top:0.1em; margin-bottom:0.1em; font-weight:100}
+        H3.co    { font-family:Arial,sans-serif; font-size:16pt; color:#FFFFFF; margin-top:0.1em; margin-bottom:0.1em; font-weight:100}
+        BODY     { font-family:Verdana,Arial,sans-serif; font-size:10pt; color:#08185A background-color:#FFFFFF }
+        TR       { height:25px; }
+        TR.shade { height:25px; background-color:#E1E1E1 }
+        TR.title { height:25px; background-color:#C1C1C1 }
+        TD       { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#08185A }
+        P        { font-family:Verdana,Arial,sans-serif; font-size:10pt; color:#FFFFFF }
+        P.blue   { font-family:Verdana,Arial,sans-serif; font-size:7pt;  color:#08185A }
+        P.red    { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#FF0066 }
+        P.green  { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#00AA00 }
+        DIV.bl   { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#C1C1C1 }
+        LI       { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#FF0066 }
+        INPUT    { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#08185A; background-color:#E1E1E1; font-weight:bold }
+        SELECT   { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#08185A; background-color:#E1E1E1; font-weight:bold; width:300 }
+        TEXTAREA { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#08185A; background-color:#E1E1E1; font-weight:normal; scrollbar-arrow-color:#08185A; scrollbar-base-color:#E1E1E1 }
+        A:link   { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#08185A }
+        A:visited{ font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#08185A }
+        A:hover  { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#FF0000 }
+        A:active { font-family:Verdana,Arial,sans-serif; font-size:8pt;  color:#FF0000 }
+        -->
+    </style>
+
+</head>
+<body>
+
+
+<table width='100%' border='2' cellpadding='2' bgcolor='#C1C1C1'>
+    <tr>
+        <td bgcolor='#E1E1E1' width='90%'><h2 class='co'>&nbsp;BOCS Gateway Client Example</h2></td>
+        <td bgcolor='#C1C1C1' align='center'><h3 class='co'>BOCGS</h3></td>
+    </tr>
+</table>
+
+
+<center>
+<h1>JSP MOTO Auth Transaction</h1></center>
+<center>
+<h2>&nbsp;</h2></center>
+<center></center>
+
+
+
+<form action="http://localhost:8080/jsp/bocs_auth_do.jsp" method="post" accept-charset="UTF-8">
+
+<table width="80%" align="center" border="0" cellpadding='0' cellspacing='0'>
+
+    <tr class="shade">
+        <td align="right"><strong><em>BOCS Gateway Client URL:&nbsp;</em></strong></td>
+        <td><input name="GatewayClientURL" size="65" value="https://32.12.21.41/GatewayT/bigs" maxlength="250"/></td>
+    </tr>
+    <tr>
+        <td colspan="2">&nbsp;<hr width="75%">&nbsp;</td>
+    </tr>
+    <tr class="title">
+        <td colspan="2" height="25"><p><strong>&nbsp;Basic</strong></p></td>
+    </tr>
+    <tr>
+        <td align="right"><strong><em>Transaction Model: </em></strong></td>
+        <td><input name="Trans_Model" value="M" size="20" maxlength="1"/></td>
+    </tr>
+    <tr class="shade">
+        <td align="right"><strong><em>Transaction Type: </em></strong></td>
+        <td><input name="Trans_Type" value="auth" size="20" maxlength="4"/></td>
+    </tr>
+    <tr>
+        <td align="right"><strong><em>Merchant AccessCode: </em></strong></td>
+        <td><input name="Author_Str" value="hab471t0" size="20" maxlength="8"/></td>
+    </tr>
+    <tr class="shade">
+        <td align="right"><strong><em>MerchantID: </em></strong></td>
+        <td><input name="Merchant_Id" value="021207999000000" size="20" maxlength="15"/></td>
+    </tr>
+    <tr>
+        <td align="right"><strong><em>TerminalId: </em></strong></td>
+        <td><input name="Terminal_Id" value="00000000" size="20" maxlength="8"/></td>
+    </tr>
+    <tr class="shade">
+        <td align="right"><strong><em>Invoice No: </em></strong></td>
+        <td><input name="Invoice_No" value="" size="20" maxlength="6"/></td>
+    </tr>
+    <tr>
+        <td align="right"><strong><em>Currency Code: </em></strong></td>
+        <td><input name="Currency_Code_T" value="156" maxlength="3"/></td>
+    </tr>
+    <tr class="shade">
+        <td align="right"><strong><em>Purchase Amount: </em></strong></td>
+        <td><input name="Amount_Loc" value="" maxlength="12"/></td>
+    </tr>
+    <tr>
+        <td align="right"><strong><em>Order No: </em></strong></td>
+        <td><input name="Order_No" value="" maxlength="50"/></td>
+    </tr>
+    <tr class="shade">
+        <td align="right"><strong><em>Custom No: </em></strong></td>
+        <td><input name="Custom" value="" size="20" maxlength="64"/></td>
+    </tr>
+    <tr>
+        <td align="right"><strong><em>Receipt ReturnURL: </em></strong></td>
+        <td><input name="bocs_ReturnURL" size="65" value="http://localhost:8080/jsp/bocs_auth_dr.jsp" maxlength="250"/></td>
+    </tr>
+    
+
+    <tr class="shade">    <td colspan="2">&nbsp;</td></tr>
+
+    <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" name="SubButL" value="Auth" /></td>
+    </tr>
+
+   <tr><td colspan="2">&nbsp;<hr width="75%">&nbsp;</td></tr>
+   <tr class="title">
+        <td colspan="2"><p><strong>&nbsp;Card Detail</strong></p></td>
+    </tr>
+    <tr>
+        <td align="right"><strong><em>Card Number: </em></strong></td>
+        <td><input type="text" name="Card_No" maxlength="19" value="4283428305041009"></td>
+    </tr>
+    <tr bgcolor="#E1E1E1">
+        <td align="right"><strong><em>Card Expiry (YYMM): </em></strong></td>
+        <td><input type="text" name="Exp_Date" maxlength="4" value=""></td>
+    </tr>
+    <tr>
+        <td align="right"><strong><em>Optional Card Security Code: <br/>(i.e. cvv2, csc, cid)  </em></strong></td>
+        <td><input type="text" name="CSC" size="5" maxlength="4" value=""></td>
+    </tr>
+
+    <tr><td colspan="2">&nbsp;<hr width="75%">&nbsp;</td></tr>
+
+    <tr>
+        <td width="40%">&nbsp;</td>
+        <td width="60%">&nbsp;</td>
+    </tr>
+
+</table>
+
+</form>
+</body>
+<head>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+</head>
+</html>

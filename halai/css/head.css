@@ -1,0 +1,690 @@
+.label-align{
+	color: black;
+	text-align: right;
+	
+}
+.font-align{
+	text-align: center;
+}
+.enter-title{
+	text-align: center;
+	color: blue;
+	line-height: 30px;
+	font-size: 22px;
+}
+.font-title{
+	text-align: center;
+	background-color: #008080; 
+	color: #FFFFFF;
+	line-height: 30px;
+	font-size: 22px;
+}
+.font-size{
+	font-size: 18px;
+}
+
+
+A {
+	FONT-SIZE: 12px; COLOR: #0000ff; TEXT-DECORATION: none
+}
+BODY {
+	FONT-SIZE: 1em; MARGIN: 0.1em; COLOR: #336699; LINE-HEIGHT: 2em; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+H2 {
+	COLOR: #cccccc
+}
+H3 {
+	FONT-SIZE: 1.15em; COLOR: #dcdcdc; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #006666
+}
+H4 {
+	COLOR: #000000
+}
+TABLE {
+	COLOR: #ffffff
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TH {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 1em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+UL {
+	LIST-STYLE-POSITION: outside; FONT-FAMILY: Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: square; a: "#"><font color="#FF0000">xxx</font></a><sup>sm</sup> function browserRedirect()
+{
+  var ns4 = document.layers;
+  var ns6 = document.getElementById && !document.all;
+  var ie4 = document.all;
+
+  if(ns4) URLStr = "1.html";
+  else if(ns6) URLStr = "2.html";
+  else if(ie4) URLStr = "3.html";
+  else URLStr = "4.html";
+  location = URLStr;
+}
+function printPage() { print(document); }
+function DDtoDay(inputDate)
+{
+  var dateString = new Array('','st','nd','rd','th','th','th','th','th','th','th','th','th','th','th','th','th','th','th','th','th','st','nd','rd','th','th','th','th','th','th','th','st');
+  returnDate = '';
+  tempDate = parseInt(inputDate);
+  if (tempDate >= 1 && tempDate <= 31)
+  {
+	  returnDate = inputDate + dateString[tempDate];
+	}
+	return returnDate;
+}<a href="#" onMouseOver="window.status='';return true">xxxx</a> // * Dependencies *
+// this function requires the following snippet:
+// JavaScript/readable_MM_functions/findObj
+function setColor(objName, fg, bg)
+{
+  obj = findObj(objName);
+  if (obj.style)
+  {
+    obj.style.color = fg;
+    obj.style.backgroundColor = bg;
+  }
+}
+
+	font-size: 1em
+}
+.BulletBackgroundColor {
+	BORDER-RIGHT: 1px; BORDER-TOP: #663333 1px; FONT-WEIGHT: normal; FONT-SIZE: 9px; VISIBILITY: inherit; BORDER-LEFT: 1px; COLOR: #ffffff; LINE-HEIGHT: normal; BORDER-BOTTOM: 1px; FONT-STYLE: normal; FONT-FAMILY: "????"; LIST-STYLE-TYPE: disc; BACKGROUND-COLOR: #ffffff
+}
+.DataColor {
+	COLOR: #dedeca
+}
+.footer {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.16em; COLOR: #333333; LINE-HEIGHT: 1.83em; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cccccc
+}
+.FormBackgroundColor {
+	COLOR: #cccccc
+}
+.ImageTitleColor {
+	COLOR: #cccccc
+}
+.LabelColor {
+	COLOR: #cccccc
+}
+.ListColorEven {
+	COLOR: #cccccc
+}
+.ListFooterColor {
+	COLOR: #333333
+}
+.ListHeaderColor {
+	COLOR: #333333
+}
+.ListColorOdd {
+	COLOR: #dedeca
+}
+.ListTitleColor {
+	COLOR: #cccccc
+}
+.NavigationBackgroundColor {
+	COLOR: #666666
+}
+.NavigationColor {
+	COLOR: #cccccc
+}
+.NewsDataColor {
+	COLOR: #dedeca
+}
+.StoryTitle {
+	FONT-WEIGHT: bold; COLOR: #000000
+}
+.StoryContentColor {
+	COLOR: #000000
+}
+.TitleColor {
+	COLOR: #000000
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #0099ff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+TR.ListHeaderColor TH {
+	TEXT-ALIGN: left
+}
+.small {
+	FONT-SIZE: 85%
+}
+.lightCCCCCC {
+	BACKGROUND-COLOR: #cccccc
+}
+
+
+A {
+	FONT-SIZE: 12px; COLOR: #0000ff; TEXT-DECORATION: none
+}
+BODY {
+	FONT-SIZE: 1em; MARGIN: 0.1em; COLOR: #336699; LINE-HEIGHT: 2em; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+H2 {
+	COLOR: #cccccc
+}
+H3 {
+	FONT-SIZE: 1.15em; COLOR: #dcdcdc; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #006666
+}
+H4 {
+	COLOR: #000000
+}
+TABLE {
+	COLOR: #ffffff
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TH {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 1em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+UL {
+	LIST-STYLE-POSITION: outside; FONT-FAMILY: Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: square; a: "#"><font color="#FF0000">xxx</font></a><sup>sm</sup> function browserRedirect()
+{
+  var ns4 = document.layers;
+  var ns6 = document.getElementById && !document.all;
+  var ie4 = document.all;
+
+  if(ns4) URLStr = "1.html";
+  else if(ns6) URLStr = "2.html";
+  else if(ie4) URLStr = "3.html";
+  else URLStr = "4.html";
+  location = URLStr;
+}
+function printPage() { print(document); }
+function DDtoDay(inputDate)
+{
+  var dateString = new Array('','st','nd','rd','th','th','th','th','th','th','th','th','th','th','th','th','th','th','th','th','th','st','nd','rd','th','th','th','th','th','th','th','st');
+  returnDate = '';
+  tempDate = parseInt(inputDate);
+  if (tempDate >= 1 && tempDate <= 31)
+  {
+	  returnDate = inputDate + dateString[tempDate];
+	}
+	return returnDate;
+}<a href="#" onMouseOver="window.status='';return true">xxxx</a> // * Dependencies *
+// this function requires the following snippet:
+// JavaScript/readable_MM_functions/findObj
+function setColor(objName, fg, bg)
+{
+  obj = findObj(objName);
+  if (obj.style)
+  {
+    obj.style.color = fg;
+    obj.style.backgroundColor = bg;
+  }
+}
+
+	font-size: 1em
+}
+.BulletBackgroundColor {
+	BORDER-RIGHT: 1px; BORDER-TOP: #663333 1px; FONT-WEIGHT: normal; FONT-SIZE: 9px; VISIBILITY: inherit; BORDER-LEFT: 1px; COLOR: #ffffff; LINE-HEIGHT: normal; BORDER-BOTTOM: 1px; FONT-STYLE: normal; FONT-FAMILY: "????"; LIST-STYLE-TYPE: disc; BACKGROUND-COLOR: #ffffff
+}
+.DataColor {
+	COLOR: #dedeca
+}
+.footer {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.16em; COLOR: #333333; LINE-HEIGHT: 1.83em; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cccccc
+}
+.FormBackgroundColor {
+	COLOR: #cccccc
+}
+.ImageTitleColor {
+	COLOR: #cccccc
+}
+.LabelColor {
+	COLOR: #cccccc
+}
+.ListColorEven {
+	COLOR: #cccccc
+}
+.ListFooterColor {
+	COLOR: #333333
+}
+.ListHeaderColor {
+	COLOR: #333333
+}
+.ListColorOdd {
+	COLOR: #dedeca
+}
+.ListTitleColor {
+	COLOR: #cccccc
+}
+.NavigationBackgroundColor {
+	COLOR: #666666
+}
+.NavigationColor {
+	COLOR: #cccccc
+}
+.NewsDataColor {
+	COLOR: #dedeca
+}
+.StoryTitle {
+	FONT-WEIGHT: bold; COLOR: #000000
+}
+.StoryContentColor {
+	COLOR: #000000
+}
+.TitleColor {
+	COLOR: #000000
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #0099ff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+TR.ListHeaderColor TH {
+	TEXT-ALIGN: left
+}
+.small {
+	FONT-SIZE: 85%
+}
+.lightCCCCCC {
+	BACKGROUND-COLOR: #cccccc
+}
+
+
+TD {
+	FONT-SIZE: 12px; COLOR: #000; LINE-HEIGHT: 15pt; FONT-FAMILY: 
+}
+TH {
+	FONT-SIZE: 12px
+}
+CAPTION {
+	FONT-SIZE: 12px
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #e5e5e5; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #dee3e7; SCROLLBAR-3DLIGHT-COLOR: #d1d7dc; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #efefef; SCROLLBAR-DARKSHADOW-COLOR: #98aab1; BACKGROUND-COLOR: #ffffff
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #0000ff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #0000ff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #0099ff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+A:active {
+	FONT-SIZE: 12px; COLOR: #0000ff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.A1:link {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+.A1:visited {
+	TEXT-TRANSFORM: capitalize; COLOR: #666666; TEXT-DECORATION: none
+}
+.A1:active {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+.A1:hover {
+	COLOR: #ed1e24; TEXT-DECORATION: underline blink
+}
+.AP1:link {
+	COLOR: #000000; TEXT-DECORATION: underline blink
+}
+.AP1:visited {
+	TEXT-TRANSFORM: capitalize; COLOR: #000000; TEXT-DECORATION: underline blink
+}
+.AP1:hover {
+	COLOR: #ed1e24; TEXT-DECORATION: none
+}
+.A2:link {
+	COLOR: #ed1e24; TEXT-DECORATION: none
+}
+.A2:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.A2:hover {
+	COLOR: #ed1e24; TEXT-DECORATION: underline blink
+}
+.td1 {
+	BACKGROUND-POSITION: right 50%; BACKGROUND-ATTACHMENT: scroll; BACKGROUND-REPEAT: no-repeat
+}
+.td2 {
+	FONT-SIZE: 9pt; COLOR: #000000; LINE-HEIGHT: 180%; FONT-FAMILY: "  "
+}
+.td3 {
+	FONT-SIZE: 9pt; COLOR: #5b719e; FONT-FAMILY: "  "
+}
+.td4 {
+	FONT-SIZE: 9pt; COLOR: #14398f; FONT-FAMILY: "  "
+}
+.td5 {
+	FONT-SIZE: 9pt; COLOR: #4d4d4d; FONT-FAMILY: "  ", "Arial", "Helvetica", "sans-serif"
+}
+.td6 {
+	FONT-SIZE: 9pt; COLOR: #22006f; FONT-FAMILY: "  ", "Arial", "Helvetica", "sans-serif"
+}
+.td7 {
+	FONT-SIZE: 9pt; COLOR: #636363; LINE-HEIGHT: 120%; FONT-FAMILY: "  "
+}
+.td8 {
+	FONT-SIZE: 9pt; COLOR: #0a3f4a; LINE-HEIGHT: 150%; FONT-FAMILY: "  "
+}
+.td9 {
+	FONT-SIZE: 9pt; COLOR: #45226c; LINE-HEIGHT: 150%; FONT-FAMILY: "  "
+}
+.td10 {
+	FONT-SIZE: 9pt; COLOR: #a57aad; LINE-HEIGHT: 150%; FONT-FAMILY: "  "
+}
+TD {
+	FONT-SIZE: 9pt; FONT-FAMILY: "  "
+}
+.td11 {
+	COLOR: #666666; FONT-FAMILY: "  "
+}
+.td12 {
+	COLOR: #336699; FONT-FAMILY: "  "
+}
+.td13 {
+	FONT-SIZE: 9pt; COLOR: #ff0000; LINE-HEIGHT: 18px; FONT-FAMILY: "  "
+}
+.A3:link {
+	COLOR: #14b9eb; TEXT-DECORATION: none
+}
+.A3:visited {
+	COLOR: #5b719e; TEXT-DECORATION: none
+}
+.A3:active {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.A3:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.A4:link {
+	COLOR: #0a3f4a; TEXT-DECORATION: none
+}
+.A4:visited {
+	COLOR: #0a3f4a; TEXT-DECORATION: none
+}
+.A4:active {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.A4:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.A00:link {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.A00:visited {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.A00:active {
+	COLOR: #ff6600; TEXT-DECORATION: underline
+}
+.A00:hover {
+	COLOR: #ff6600; TEXT-DECORATION: underline
+}
+INPUT {
+	FONT-SIZE: 12px; FONT-FAMILY: 
+}
+SELECT {
+	FONT-SIZE: 12px; FONT-FAMILY: "  "
+}
+.A11:link {
+	COLOR: #0a3700; TEXT-DECORATION: none
+}
+.A11:visited {
+	COLOR: #0a3700; TEXT-DECORATION: none
+}
+.A11:active {
+	FONT-WEIGHT: bold; COLOR: #009507; TEXT-DECORATION: none
+}
+.A11:hover {
+	FONT-WEIGHT: bold; COLOR: #009507; TEXT-DECORATION: none
+}
+.A12:link {
+	COLOR: #2d2d2d; TEXT-DECORATION: none
+}
+.A12:visited {
+	COLOR: #2d2d2d; TEXT-DECORATION: none
+}
+.A12:active {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+.A12:hover {
+	COLOR: #009507; TEXT-DECORATION: none
+}
+.A13:link {
+	COLOR: #374b71; TEXT-DECORATION: none
+}
+.A13:visited {
+	COLOR: #374b71; TEXT-DECORATION: none
+}
+.A13:active {
+	COLOR: #ff5400; TEXT-DECORATION: none
+}
+.A13:hover {
+	COLOR: #ff5400; TEXT-DECORATION: none
+}
+.A14:link {
+	COLOR: #2d2d2d; TEXT-DECORATION: none
+}
+.A14:visited {
+	COLOR: #2d2d2d; TEXT-DECORATION: none
+}
+.A14:active {
+	COLOR: #ff7200; TEXT-DECORATION: none
+}
+.A14:hover {
+	COLOR: #ff7200; TEXT-DECORATION: none
+}
+.A5:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.A5:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.A5:active {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.A5:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.A6:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.A6:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.A6:active {
+	COLOR: #24caca; TEXT-DECORATION: none
+}
+.A6:hover {
+	COLOR: #24caca; TEXT-DECORATION: none
+}
+.Border1 {
+	BORDER-RIGHT: #d5d5d5 1px solid; BORDER-TOP: #d5d5d5 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #d5d5d5 1px solid; BORDER-BOTTOM: #d5d5d5 1px solid; FONT-FAMILY: "  "; BACKGROUND-COLOR: #ffffff
+}
+.Border {
+	BORDER-RIGHT: #d5d5d5 1px dashed; BORDER-TOP: #d5d5d5 1px dashed; FONT-SIZE: 9pt; BORDER-LEFT: #d5d5d5 1px dashed; BORDER-BOTTOM: #d5d5d5 1px dashed; FONT-FAMILY: "  "; BACKGROUND-COLOR: #ffffff
+}
+.BorderNone {
+	FONT-SIZE: 9pt; BORDER-TOP-STYLE: none; FONT-FAMILY: "  "; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM-STYLE: none
+}
+.myinput {
+	BORDER-RIGHT: #737373 1px solid; BORDER-TOP: #737373 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #737373 1px solid; COLOR: #737373; BORDER-BOTTOM: #737373 1px solid; FONT-FAMILY: "  "; BACKGROUND-COLOR: #ffffff
+}
+.button {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 9px; BORDER-LEFT: #000000 1px solid; COLOR: #000000; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: "  "; BACKGROUND-COLOR: #dddbdd
+}
+.h3 {
+	FONT-SIZE: 12px; COLOR: #000000
+}
+A.agu:link {
+	COLOR: #07015b; TEXT-DECORATION: none
+}
+A.agu:visited {
+	COLOR: #07015b; TEXT-DECORATION: none
+}
+A.agu:active {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A.agu:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.tab-on {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 120px; CURSOR: hand; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px; BACKGROUND-COLOR: #ffffff
+}
+.tab-off {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 120px; CURSOR: hand; COLOR: #666666; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #f6f6f6
+}
+.tab-none {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px solid
+}
+.tab-content {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px; VERTICAL-ALIGN: top; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.td_heading {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 3px; BORDER-TOP: #cccccc 1px; PADDING-LEFT: 10px; PADDING-BOTTOM: 3px; BORDER-LEFT: #cccccc 1px; COLOR: #999999; PADDING-TOP: 3px; BORDER-BOTTOM: #cccccc 1px dashed
+}
+.td_title {
+	BORDER-RIGHT: #e0e0e0 1px solid; BORDER-TOP: #e0e0e0 1px solid; BORDER-LEFT: #e0e0e0 1px solid; COLOR: #666666; BORDER-BOTTOM: #e0e0e0 1px solid; BACKGROUND-COLOR: #f6f6f6
+}
+.td_text {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.attrName {
+	FONT-SIZE: 9pt; COLOR: #ff0033
+}
+.txtclass {
+	BACKGROUND-COLOR: #efefef
+}
+.NewBtn2 {
+	BORDER-RIGHT: #104a7b 1px solid; BORDER-TOP: #afc4d5 1px solid; FONT-SIZE: 9pt; BACKGROUND: #d6e7ef; BORDER-LEFT: #afc4d5 1px solid; CURSOR: hand; COLOR: #000066; BORDER-BOTTOM: #104a7b 1px solid; FONT-FAMILY: ,MS SONG,SimSun,tahoma,sans-serif; HEIGHT: 19px; TEXT-DECORATION: none
+}
+.NewBtn3 {
+	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 9pt; BACKGROUND: #f7f7f7; BORDER-LEFT: #666666 1px solid; CURSOR: hand; COLOR: #666666; BORDER-BOTTOM: #666666 1px solid; FONT-FAMILY: ,MS SONG,SimSun,tahoma,sans-serif; HEIGHT: 20px; TEXT-DECORATION: none
+}
+.NewBtn1 {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../images/btn_bg.gif); BORDER-LEFT: medium none; WIDTH: 80px; PADDING-TOP: 0px; BORDER-BOTTOM: medium none; HEIGHT: 20px
+}
+.NewBtn1_o {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../images/btn_bg_o.gif); BORDER-LEFT: medium none; WIDTH: 80px; PADDING-TOP: 0px; BORDER-BOTTOM: medium none; HEIGHT: 20px
+}
+.NewBtn4 {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../images/btn_bg2.gif); BORDER-LEFT: medium none; WIDTH: 23px; PADDING-TOP: 0px; BORDER-BOTTOM: medium none; HEIGHT: 20px
+}
+.NewBtn4_o {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../images/btn_bg2_o.gif); BORDER-LEFT: medium none; WIDTH: 23px; PADDING-TOP: 0px; BORDER-BOTTOM: medium none; HEIGHT: 20px
+}
+.NewBtn {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../images/btn_bg1.gif); BORDER-LEFT: medium none; WIDTH: 60px; PADDING-TOP: 0px; BORDER-BOTTOM: medium none; HEIGHT: 20px
+}
+.NewBtn_o {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../images/btn_bg1_o.gif); BORDER-LEFT: medium none; WIDTH: 60px; PADDING-TOP: 0px; BORDER-BOTTOM: medium none; HEIGHT: 20px
+}
+.color_pop1 {
+	COLOR: #5c1f00
+}
+.boder_colorbtm {
+	BORDER-RIGHT: #7f9db9 1px solid; BORDER-TOP: #7f9db9 1px solid; BORDER-LEFT: #7f9db9 1px solid; BORDER-BOTTOM: #7f9db9 1px solid
+}
+.boder_color2 {
+	BORDER-RIGHT: #828284 1px solid; BORDER-TOP: #828284 1px solid; BORDER-LEFT: #828284 1px solid; BORDER-BOTTOM: #828284 1px solid
+}
+.boder_color3 {
+	BORDER-RIGHT: #669933 1px solid; BORDER-TOP: #669933 1px solid; BORDER-LEFT: #669933 1px solid; BORDER-BOTTOM: #669933 1px solid
+}
+.boder_color4 {
+	BORDER-RIGHT: #ff6600 1px solid; BORDER-TOP: #ff6600 1px solid; BORDER-LEFT: #ff6600 1px solid; BORDER-BOTTOM: #ff6600 1px solid
+}
+.color_1 {
+	COLOR: #0092b5
+}
+.color_2 {
+	COLOR: #6aa300
+}
+.color_3 {
+	COLOR: #ff5518
+}
+.txthigh {
+	LINE-HEIGHT: 18px
+}
+.entxt {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+.color2 {
+	COLOR: #333333
+}
+.color3 {
+	COLOR: #c60000
+}
+.color4 {
+	COLOR: #e72063
+}
+.color5 {
+	COLOR: #ff9a18
+}
+.color6 {
+	COLOR: #00a2bd
+}
+.color7 {
+	COLOR: #5a6510
+}
+.color8 {
+	COLOR: #addf31
+}
+.color9 {
+	COLOR: #958d82
+}
+.s2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #cc6600
+}
+.s2:link {
+	COLOR: #cc6600; TEXT-DECORATION: none
+}
+.s2:visited {
+	COLOR: #cc6600; TEXT-DECORATION: none
+}
+.s2:active {
+	COLOR: #993366; TEXT-DECORATION: underline
+}
+.s2:hover {
+	COLOR: #993366; TEXT-DECORATION: underline
+}
+.linkbaobao {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; BACKGROUND: #ebf6ff; PADDING-BOTTOM: 10px; PADDING-TOP: 8px
+}
+.linkbaobao IMG {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+#linkcaptop {
+	PADDING-LEFT: 15px; BACKGROUND: url(../images/RTbg.gif) repeat-x; MARGIN: 1px 1px 0px 0px; PADDING-TOP: 3px; HEIGHT: 22px
+}
+.imgclass {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+.nav A {
+	FONT-WEIGHT: bold; COLOR: #fa5a06; TEXT-DECORATION: none
+}
+.nav A:link {
+	COLOR: #fa5a06; TEXT-DECORATION: none
+}
+.nav A:visited {
+	COLOR: #fa5a06; TEXT-DECORATION: none
+}
+.nav A:hover {
+	COLOR: #fe8200; TEXT-DECORATION: underline
+}
+.new_sty01 {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; FILTER: DropShadow(Color=#13394A, OffX=1, OffY=1, Positive=1); COLOR: #ffffff; FONT-STYLE: normal
+}
+.ayulk:link {
+	COLOR: #ffffff
+}
+.ayulk:visited {
+	COLOR: #ffffff
+}
+.ayulk:hover {
+	COLOR: #cccccc
+}
+.ayulk:active {
+	COLOR: #ffffff
+}
+.input {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #999999 1px solid; COLOR: #666666; BORDER-BOTTOM: #999999 1px solid; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}

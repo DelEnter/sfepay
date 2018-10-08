@@ -1,0 +1,3 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
+MerNo=<s:property value="MerNo"/>&dateTime=<s:property value="dateTime"/>&BillNo=<s:property value="merchantOrderNo"/>&Currency=<s:property value="tradeMoneyType"/>&Amount=<s:property value="ordercount"/>&Succeed=<s:property value="responseCode"/>&Result=<s:property value="message"/>&MD5info=<s:property value="md5Value"/>
