@@ -555,7 +555,8 @@ public class ListtradeAction extends BaseAction {
 					}
 				}
 		 	}else if(resultCode.equals("12")){	
-		 		if(!"1".equals(buffer.charAt(0)+"")){
+		 		String code = String.valueOf(buffer.charAt(0));
+		 		if(!"1".equals(code)){
 			 		buffer.replace(0, 1, "2");
 			 		trade.setRemark("Waiting processing*MS!");
 			 		this.responseCode=19;
