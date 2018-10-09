@@ -2,10 +2,12 @@ package com.ecpss.action.express;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.DelayQueue;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -509,6 +511,8 @@ public class ListtradeAction extends BaseAction {
 		String cvv = AES.getCarNo(card.getCvv2());*/
 							
 		StringBuffer buffer = new StringBuffer(trade.getTradeState());
+		Thread.sleep(2*1000);		
+
 		 	if(resultCode.equals("10")){				 		
 		 		buffer.replace(0, 1, "1");	
 		 		trade.setRemark("Payment Success!");

@@ -55,7 +55,7 @@
 		</action> 	
 		
 		<!-- masapay异步通知处理 -->
-		<action name="masapay" class="com.ecpss.action.pay.SfePayAction" method="masapay">
+		<action name="masapay" class="com.ecpss.action.express.ListtradeAction" method="masapay">
 		</action> 
 		<!-- onekpay异步通知处理 -->
 		<action name="onekpay" class="com.ecpss.action.express.ListtradeAction" method="onekpay">
