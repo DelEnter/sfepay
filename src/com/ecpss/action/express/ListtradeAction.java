@@ -554,11 +554,13 @@ public class ListtradeAction extends BaseAction {
 						ts.start();
 					}
 				}
-		 	}else if(resultCode.equals("12")){
-		 		buffer.replace(0, 1, "2");
-		 		trade.setRemark("Waiting processing*MS!");
-		 		this.responseCode=19;
-		 		this.message = "Waiting processing*MS!";		 		
+		 	}else if(resultCode.equals("12")){	
+		 		if(!"1".equals(buffer.charAt(0)+"")){
+			 		buffer.replace(0, 1, "2");
+			 		trade.setRemark("Waiting processing*MS!");
+			 		this.responseCode=19;
+			 		this.message = "Waiting processing*MS!";	
+		 		}
 		 	}else if(resultCode.equals("11")){
 		 		buffer.replace(0, 1, "0");
 		 		trade.setRemark(errMsg);
