@@ -48,7 +48,17 @@ public class ShopWebSiteAction extends BaseAction {
 	private InternationalWebchannels webChannels;
 	private Long isWebSiteId;
 	private Long webSiteId;
+	private int ival;
+	public int getIval() {
+		return ival;
+	}
+
+	public void setIval(int ival) {
+		this.ival = ival;
+	}
+
 	private File batchWebFile;
+	
 	private static int num=1;
 
 	/**
@@ -99,8 +109,8 @@ public class ShopWebSiteAction extends BaseAction {
 		if(web!=null&&num==1){
 		InternationalIsAuditWeb isAuditWeb=new InternationalIsAuditWeb();
 		isAuditWeb.setMerchanid(web.getMerchanid());
-		isAuditWeb.setTradeWebsite(webChannels.getTradeWebsite().trim());
-		isAuditWeb.setWebsite(webChannels.getWebsite().trim());
+		isAuditWeb.setTradeWebsite(webChannels.getTradeWebsite().trim());//交易网址
+		isAuditWeb.setWebsite(webChannels.getWebsite().trim());//返回网址
 		isAuditWeb.setCreatetime(new Date());
 		isAuditWeb.setIsAudit("0");
 		this.commonService.save(isAuditWeb);
@@ -123,18 +133,43 @@ public class ShopWebSiteAction extends BaseAction {
 		isWebSite=this.commonService.list("from InternationalIsAuditWeb a where a.isAudit!='1' and a.merchanid='"+ this.getMerchantBean().getMerchantId()+"' order by a.createtime desc,a.isAudit asc");
 		return SUCCESS;
 	}
-	//去添加
+	//去添加webSite
 	public String toMerchantAddWebSite(){
 		num=1;
 		return SUCCESS;
 	}
 	//添加
 	public String merchantAddWebSite(){
-		String webSite=this.internationalIsAuditWeb.getWebsite().trim();
-		String tradeWebsite=this.internationalIsAuditWeb.getTradeWebsite().trim();
+//		String webSite=this.internationalIsAuditWeb.getWebsite().trim();
+//		String tradeWebsite=this.internationalIsAuditWeb.getTradeWebsite().trim();
+		String tradeWebsite=this.internationalIsAuditWeb.getTradeWebsite().trim();//交易网址
+		int i=this.ival;
+		String webSite="";
+		//拼接返回网址
+		switch(i){
+		case 1:webSite="http://"+tradeWebsite+"/index.php?main_page=checkout_payresult";//zencart系统
+			break;
+		case 2:webSite="http://"+tradeWebsite+"/respond.php?code=sfepay";// ecshop系统
+			break;
+		case 3:webSite="http://"+tradeWebsite+"/sfepay/payment/return/";// magento系统
+			break;
+		case 4:webSite="http://"+tradeWebsite+"/modules/sfepay/validation.php";//Prestashop系统
+			break;
+		case 5:webSite="http://"+tradeWebsite+"/index.php?route=payment/sfepay/callback";// Opencart系统
+			break;
+		case 6:webSite="http://"+tradeWebsite+"/checkout_sfepayresult.php";//oscommerce系统
+			break;
+		case 7:webSite="http://"+tradeWebsite+"/receive.asp";// asp语言网站
+			break;
+		case 8:webSite="http://"+tradeWebsite+"/PayResult.aspx";//.net语言网站
+			break;
+		case 9:webSite="http://"+tradeWebsite+"/PayResult.php";// php语言网站
+			break;
+		}
+		
 		if(StringUtils.isNotBlank(webSite)&&StringUtils.isNotBlank(tradeWebsite)&&num==1){
-			this.internationalIsAuditWeb.setTradeWebsite(tradeWebsite);
-			this.internationalIsAuditWeb.setWebsite(webSite);
+			this.internationalIsAuditWeb.setTradeWebsite(tradeWebsite);//交易网址
+			this.internationalIsAuditWeb.setWebsite(webSite);//返回网址
 			this.internationalIsAuditWeb.setMerchanid(this.getMerchantBean().getMerchantId());
 			this.internationalIsAuditWeb.setCreatetime(new Date());
 			this.internationalIsAuditWeb.setIsAudit("0");
