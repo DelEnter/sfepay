@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.apache.commons.codec.binary.Hex;
 
+import vpn.PayClubMessage;
+import vpn.PayClubUtil;
+
 import com.ecpss.action.TemporarySynThread;
 import com.ecpss.util.AES;
 
@@ -33,8 +36,56 @@ public class test3
 	 	trade.setRemark("Payment Success!");
 	 	tt.get(trade);*/
 
-	 TemporarySynThread ts=new TemporarySynThread("https://api.mch.weixin.qq.com/pay/queryexchagerate","320986", "1","Payment Success!");
-	 ts.start();
+	 /*TemporarySynThread ts=new TemporarySynThread("https://api.mch.weixin.qq.com/pay/queryexchagerate","320986", "1","Payment Success!");
+	 ts.start();*/
+	 	PayClubMessage msg=new PayClubMessage();
+		PayClubUtil yu=new PayClubUtil();
+		msg.setP_mid("81129");
+		msg.setP_account_num("40000310");
+		/*msg.setP_mid("81094");
+		msg.setP_account_num("40000148");*/
+		msg.setP_transaction_type("SALE");
+		msg.setP_order_num("12345678974156");
+		msg.setP_currency("USD");
+		msg.setP_amount("66.66");
+		msg.setP_card_num("5222170010725408");
+		msg.setP_card_expmonth("06");
+		msg.setP_card_expyear("2021");
+		msg.setP_card_csc("035");
+		msg.setP_card_issuingbank("cardbank");
+		msg.setP_firstname("ccc");
+		msg.setP_lastname("zzz");
+		msg.setP_user_email("index2@gmail.com");
+		msg.setP_user_phone("704-429-6436");
+		msg.setP_user_ipaddress("94.23.35.125");
+		msg.setP_trans_url("www.sfepay.com");
+		msg.setP_return_url("www.sfepay.com");
+		msg.setP_bill_country("US");
+		msg.setP_bill_state("Alabama");
+		msg.setP_bill_city("Charlotte");
+		msg.setP_bill_address("1851 Kooter Lane");
+		msg.setP_bill_zip("28262");
+		msg.setP_ship_firstname("lll");
+		msg.setP_ship_lastname("xxx");
+		msg.setP_ship_country("US");
+		msg.setP_ship_state("Alabama");
+		msg.setP_ship_city("Charlotte");
+		msg.setP_ship_address("1851 Kooter Lane");
+		msg.setP_ship_zip("28262");
+		msg.setP_product_name("phone");
+		msg.setP_product_num("1");
+		msg.setP_product_desc("iphone XS");
+		
+		
+		//'mid','site_id','order_id','order_amount','order_currency','api_key'.
+		String key = "R2066dBx40lbbzj";
+//		String key = "vf6nljz0f0x08N4";
+		String sign=msg.getP_mid().trim()+msg.getP_account_num().trim()+msg.getP_order_num().trim()+msg.getP_currency().trim()+msg.getP_amount().trim()+key.trim();
+		String strDes = getSha256(sign.trim()); 
+		msg.setP_signmsg(strDes.toUpperCase());
+		//msg.setBillingstate("Alabama");
+					
+		yu.get(msg);
 /*	 TemporarySynThread ts=new TemporarySynThread("http://www.jjqsc.com/PayResult.php","320981", "1","Payment Success!");
 	 ts.start();*/
 /*	 testPayUtil tt = new testPayUtil();

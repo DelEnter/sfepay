@@ -2458,6 +2458,124 @@ public class SfePayAction extends BaseAction {
 						logger.info("*********************支付结果返回码***************************"+responseCode);
 						return SUCCESS;
 				}
+		}else if(chnals.equals("GD")){
+			logger.info("进入GooPay3D通道");
+			GooPayMessage msg=new GooPayMessage();
+			GooPayUtil yu=new GooPayUtil();
+			msg.setMerchantMID(posMerchantNo);
+			msg.setNewcardtype(cartype);
+			BASE64Encoder baseE=new BASE64Encoder(); 
+			msg.setCardnum(baseE.encode(cardNo.getBytes()));
+			msg.setCvv2(baseE.encode(cvv2.getBytes()));
+			msg.setYear(baseE.encode(("20"+year).getBytes()));
+			msg.setMonth(baseE.encode(month.getBytes()));
+			msg.setCardbank(cardBank);
+			msg.setBillNo(tradeInfo.getOrderNo());
+			msg.setAmount(tradeInfo.getRmbAmount() + "");
+			msg.setCurrency("3");
+			msg.setLanguage("en");
+			msg.setWebsite(tradeInfo.getTradeUrl());
+			msg.setReturnURL("www.sfepay.com");
+			String md5Hash=msg.getMerchantMID()+msg.getBillNo() +msg.getCurrency() +msg.getAmount() +msg.getLanguage()+msg.getReturnURL()+it.get(0).getHashcode();
+			msg.setHASH(md5.getMD5ofStr(md5Hash));
+			msg.setShippingFirstName(shippingFirstName);
+			msg.setShippingLastName(shippingLastName);
+			msg.setShippingEmail(shippingEmail);
+			msg.setShippingPhone(shippingPhone);
+			msg.setShippingZipcode(shippingZipcode);
+			msg.setShippingAddress(shippingAddress);
+			msg.setShippingCity(shippingCity);
+			msg.setShippingSstate(shippingSstate);
+			msg.setShippingCountry(shippingCountry.substring(3, 5));
+			msg.setProducts(products);
+			msg.setFirstname(firstname);
+			msg.setLastname(lastname);
+			msg.setEmail(email);
+			msg.setPhone(phone);
+			msg.setZipcode(zipcode);
+			msg.setAddress(address);
+			msg.setCity(city);
+			msg.setState(state);
+			msg.setCountry(country.substring(3, 5));
+			msg.setIpAddr(ip);
+			yu.get(msg);
+			if (msg.getSucceed().equals("88")) {//交易成功
+				this.message = "Payment Success!";
+				this.responseCode = 88;
+				billaddress=msg.getBillingAddress();
+				tradeInfo.setTradeState("1"
+						+ tradeInfo.getTradeState().substring(1,
+								tradeInfo.getTradeState().length()));
+				tradeInfo.setRemark(message);
+				tradeInfo.setVIPDisposePorson("System");
+				tradeInfo.setVIPDisposeDate(new Date());
+				tradeInfo.setVIPBatchNo(msg.getGrn());
+				this.commonService.update(tradeInfo);
+				card.setExpiryDate("0000");
+				card.setCvv2("XXX");
+				this.commonService.update(card);
+				MD5info = merchantOrderNo
+						+ Currency + ordercountValue
+						+ responseCode + MD5key;
+				md5Value = md5.getMD5ofStr(MD5info);
+				
+				logger.info("交易成功返回:"+merchantOrderNo+"**"+Currency+"**"+ordercount+"**"+responseCode+"**"+message+"**"+ReturnURL+"**"+md5Value);
+				logger.info("*********************支付结果返回码***************************"+responseCode);
+				return SUCCESS;
+			}else if(msg.getSucceed().equals("90")&&noPending.equals(Boolean.FALSE)){
+				// 支付成功
+				this.responseCode = 19;
+
+				MD5info = tradeInfo.getMerchantOrderNo()
+						+ tradeInfo.getMoneyType() + ordercountValue
+						+ responseCode + MD5key;
+				md5Value = md5.getMD5ofStr(MD5info);
+				tradeInfo.setTradeState("2"
+						+ tradeInfo.getTradeState().substring(1,
+								tradeInfo.getTradeState().length()));
+				if(StringUtils.isNotBlank(msg.getResult())){
+					tradeInfo.setRemark("GD*timeOut!");
+				}else{					
+					tradeInfo.setRemark("timeOut!");
+				}
+				this.commonService.update(tradeInfo);
+				shopManagerService.addTemporaryTradInfo(orderno, year, month,cvv2,country,MD5key, ip,"MSIE 10.0",tradeInfo.getRemark());
+				logger.info("*********************支付结果返回码***************************"+responseCode);
+				return SUCCESS;
+			}else if(bankBackRemark.toLowerCase().indexOf(msg.getRemark().toLowerCase())>=0&&noPending.equals(Boolean.FALSE)){
+				this.responseCode = 19;
+				
+				MD5info = tradeInfo.getMerchantOrderNo()
+						+ tradeInfo.getMoneyType() + ordercountValue
+						+ responseCode + MD5key;
+				md5Value = md5.getMD5ofStr(MD5info);
+				tradeInfo.setTradeState("2"
+						+ tradeInfo.getTradeState().substring(1,
+								tradeInfo.getTradeState().length()));
+				tradeInfo.setRemark("Waiting processing!");
+				remark=tradeInfo.getRemark();
+				this.commonService.update(tradeInfo);
+				shopManagerService.addTemporaryTradInfo(tradeInfo.getOrderNo(), year, month,cvv2,country,MD5key, ip,"MSIE 10.0","GD"+msg.getRemark());
+				logger.info("*********************支付结果返回码***************************"+responseCode);
+				return SUCCESS;					
+			} else {
+					this.message = "Payment Declined!"+msg.getRemark();
+					this.responseCode = 0;
+					remark=message;
+					tradeInfo.setTradeState("0"
+							+ tradeInfo.getTradeState().substring(1,
+									tradeInfo.getTradeState().length()));
+					tradeInfo.setRemark(message);
+					tradeInfo.setVIPDisposePorson("System");
+					tradeInfo.setVIPDisposeDate(new Date());
+					this.commonService.update(tradeInfo);
+					MD5info = merchantOrderNo
+							+ Currency + ordercountValue
+							+ responseCode + MD5key;
+					md5Value = md5.getMD5ofStr(MD5info);
+					logger.info("*********************支付结果返回码***************************"+responseCode);
+					return SUCCESS;
+			}
 		}else if(chnals.equals("GQ")){
 			logger.info("进入GOfpay通道");
 			GQPayMessage msg=new GQPayMessage();
