@@ -199,7 +199,6 @@ public class MerchantWebSiteManagerAction extends BaseAction {
 		}
 		hql.append(" order by t.isAudit asc,t.createtime desc");
 		info = commonService.listQueryResultByHql(hql.toString(), info);
-		
 		return SUCCESS;
 	}
 	/*
@@ -237,6 +236,7 @@ public class MerchantWebSiteManagerAction extends BaseAction {
 				e.printStackTrace();
 			}
 		}
+		
 		this.messageAction = "添加网址分类成功";
 		return OPERATE_SUCCESS;
 	}

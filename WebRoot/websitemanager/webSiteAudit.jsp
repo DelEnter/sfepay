@@ -111,16 +111,20 @@ function modify(id){
      
                   <table width="80%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 20px">
                     <tr>
-                      <td align="left">&nbsp;商户号： 
-                      <input type="text" name="merNo" />                      &nbsp;审核状态：
-                     <select name="auditStatus">
+                     <td align="left">&nbsp;商户号： 
+                     
+                     <s:textfield theme="simple"  name="merNo" type="text"/>
+                     <%-- <input type="text" name="merNo" value="${merNo}"/>  --%>                     &nbsp;审核状态：
+					 <s:select theme="simple" name='auditStatus' list="#{'':'---请选择---','0':'未审核','1':'审核通过','2':'拒绝'}"></s:select>
+                     <%-- <select name="auditStatus">
                      <option value="">---请选择---</option>
                      <option value="0">未审核</option>
                      <option value="1">审核通过</option>
                      <option value="2">拒绝</option>                   	
-                     </select>                       &nbsp; 网站分类：
+                     </select> --%>                       &nbsp; 网站分类：
                      <s:select name="webtype" theme="simple" list="webTypeList" headerKey="" headerValue="--请选择--" />
-                     <input type="submit" value="搜索"/> </td>
+                     <input type="submit" value="搜索"/> 
+                     </td>
                     </tr>
                     
                   </table>

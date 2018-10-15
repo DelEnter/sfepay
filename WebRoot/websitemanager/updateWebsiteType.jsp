@@ -5,8 +5,8 @@
 </head>
     <script language="JavaScript" type="text/JavaScript">
 	function addCourse(f) {	
-		var ids = document.getElementById("ids").value; 
-		var t = document.getElementById("webSiteType1"); 
+		var ids = document.getElementById("ids").value; //获取网站类型
+		var t = document.getElementById("webSiteType1"); //获取添加的网站类型的
 		var webSiteType1=t.options[t.selectedIndex].value;
 		var webSiteType2=document.getElementById("webSiteType2").value;
 		var webSiteType="";
