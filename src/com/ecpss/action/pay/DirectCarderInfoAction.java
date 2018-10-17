@@ -113,22 +113,22 @@ public class DirectCarderInfoAction extends BaseAction {
 	private String year; // 年
 	private String month; // 月
 	private Long date; // 日
-	private String firstname;
-	private String lastname;
+	private String firstname;//名字的第一个字
+	private String lastname;//名字后面的字
 	private String country; // 国家
 	private String state; // 州
 	private String city; // 城市
 	private String address; // 地址
 	private String zipcode; // 邮编编号
-	private String email;
-	private String phone;
-	private String cardbank;
+	private String email;//邮箱
+	private String phone;//电话
+	private String cardbank;//发卡行
 
-	private String ReturnURL;
-	private String MD5key;
+	private String ReturnURL;//返回网址
+	private String MD5key;//MD5k
 	// 卡信息
 	private String cardnum; // 卡号
-	private String cvv2;
+	private String cvv2;//银行卡后面的验证加密
 	private String ip;
 	private String cookie;
 	private String cookieId;

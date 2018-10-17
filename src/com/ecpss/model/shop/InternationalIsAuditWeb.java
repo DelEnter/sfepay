@@ -29,25 +29,25 @@ public class InternationalIsAuditWeb implements java.io.Serializable {
 	private Long merchanid;
 	
 	@Column(name = "website", nullable = true, length = 50)
-	private String website;
+	private String website;//交易网址
 	
 	@Column(name = "tradeWebsite", nullable = true, length = 50)
-	private String tradeWebsite;
+	private String tradeWebsite;//返回网址
 	
 	@Column(name = "createtime", nullable = true)
-	private Date createtime;
+	private Date createtime;//创建时间
 	
 	@Column(name = "modifytime", nullable = true)
-	private Date modifytime;
+	private Date modifytime;//修改时间
 	
 	@Column(name = "operator", nullable = true, length = 20)
-	private String operator;
+	private String operator;//操作员
 	
 	@Column(name = "remark", nullable = true, length = 100)
-	private String remark;
+	private String remark;//网址类别
 	
 	@Column(name = "isAudit")
-	private String isAudit;
+	private String isAudit;//是否通过 {0 ：不通过  1：通过}
 	
 	@Column(name="webcannelId")
 	private Long webcannelId;

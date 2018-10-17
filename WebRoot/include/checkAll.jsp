@@ -3,24 +3,24 @@
 <html>
   <head>
     <script language="JavaScript">
-		function chkall(input1,input2)
+		function chkall(input1,input2)//判断勾选
 		{
-		    var objForm = document.forms[input1];
-		    var objLen = objForm.length;
-		    for (var iCount = 0; iCount < objLen; iCount++)
+		    var objForm = document.forms[input1];//form表单重点所有数据
+		    var objLen = objForm.length;//数据的条数
+		    for (var iCount = 0; iCount < objLen; iCount++)//循环这些数据
 		    {
-		        if (input2.checked == true)
+		        if (input2.checked == true)//如果全选框被选中
 		        {
 		            if (objForm.elements[iCount].type == "checkbox")
 		            {
-		                objForm.elements[iCount].checked = true;
+		                objForm.elements[iCount].checked = true;//选中的数据状态为true
 		            }
 		        }
-		        else
+		        else//如果全选框没有被选中
 		        {
 		            if (objForm.elements[iCount].type == "checkbox")
 		            {
-		                objForm.elements[iCount].checked = false;
+		                objForm.elements[iCount].checked = false;//选中的数据状态为false
 		            }
 		        }
 		    }

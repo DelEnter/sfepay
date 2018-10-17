@@ -25,7 +25,7 @@ import com.ecpss.web.PageInfo;
 public class MerchantWebSiteManagerAction extends BaseAction {
 
 	private String hql;
-	private PageInfo info = new PageInfo();
+	private PageInfo info = new PageInfo();//分页
 	private InternationalWebchannels website = new InternationalWebchannels(); // 网址实体对象
 
 	private InternationalMerchant merchant = new InternationalMerchant(); // 商户实体
@@ -35,14 +35,14 @@ public class MerchantWebSiteManagerAction extends BaseAction {
 	/** 商户实体对象集合 */
 	private List<InternationalMerchant> internationalMerchantList;
 	private InternationalIsAuditWeb isAuditWeb=new InternationalIsAuditWeb();
-	private String merNo;
-	private String auditStatus;
+	private String merNo;//商户号
+	private String auditStatus;//审核状态
 	private String ids;
 	private String remark;
 	private String webId;
 	private List webSiteTypeList;
 	private String webSiteType;
-	private String webtype;
+	private String webtype;//网站类型
 	private List webTypeList;
 	
 
@@ -66,24 +66,23 @@ public class MerchantWebSiteManagerAction extends BaseAction {
 	 * 
 	 * @return
 	 */
-	public String webSiteManager() {
+	public String webSiteManager() {//查询语句根据搜索的条件去查询
 		StringBuffer hql = new StringBuffer();
-		hql
-				.append("select iw,im from InternationalWebchannels iw,InternationalMerchant im where iw.merchanid=im.id");
-		if (merchant.getMerno() != null && !"".equals(merchant.getMerno())) {
+			hql.append("select iw,im from InternationalWebchannels iw,InternationalMerchant im where iw.merchanid=im.id");//查询所有网址语句
+		if (merchant.getMerno() != null && !"".equals(merchant.getMerno())) {//是否有商户号
 			// hql.delete(0, hql.length());
-			hql.append(" and im.merno= '" + merchant.getMerno() + "' ");
+			hql.append(" and im.merno= '" + merchant.getMerno() + "' ");//拼接
 		}
-		if ((website.getWebsite() != null)
+		if ((website.getWebsite() != null)//是否有审核状态
 				&& (!website.getWebsite().equals(""))) {
 			// hql.delete(0, hql.length());
-			hql.append(" and iw.website like '%" + website.getWebsite() + "%'");
+			hql.append(" and iw.website like '%" + website.getWebsite() + "%'");//拼接
 		}
-		if ((website.getTradeWebsite() != null)
+		if ((website.getTradeWebsite() != null)//是否有网站的类型
 				&& (!website.getTradeWebsite().equals(""))) {
 			// hql.delete(0, hql.length());
 			hql.append(" and iw.tradeWebsite like '%"
-					+ website.getTradeWebsite() + "%'");
+					+ website.getTradeWebsite() + "%'");//拼接
 		}
 		info.setPageSize(2);
 		info = commonService.listQueryResultByHql(hql.toString(), info);

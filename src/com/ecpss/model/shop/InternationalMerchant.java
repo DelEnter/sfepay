@@ -24,103 +24,103 @@ public class InternationalMerchant implements java.io.Serializable{
 	private Long id;
 	
 	@Column(name = "merno", nullable = true, length = 6)
-	private Long merno;
+	private Long merno;//商户号
 	
 	@Column(name = "username", nullable = true, length = 20)
-	private String username;
+	private String username;//登录名
 	
 	@Column(name = "password", nullable = true, length = 50)
-	private String password;
+	private String password;//密码
 	
 	@Column(name = "md5key", nullable = true, length = 20)
-	private String md5key;
+	private String md5key;//md5k
 	
 	@Column(name = "mername", nullable = true, length = 20)
-	private String mername;
+	private String mername;//商户名
 	
 	@Column(name = "certificateno", nullable = true, length = 20)
-	private String certificateno;
+	private String certificateno;//身份证号
 	
 	@Column(name = "meradress", nullable = true, length = 100)
-	private String meradress;
+	private String meradress;//商户地址
 	
 	@Column(name = "merphone", nullable = true, length = 20)
-	private String merphone;
+	private String merphone;//商户电话
 	
 	@Column(name = "merfax", nullable = true, length = 20)
-	private String merfax;
+	private String merfax;//商户传真
 	
 	@Column(name = "mermobile", nullable = true, length = 15)
-	private String mermobile;
+	private String mermobile;//商户
 	
 	@Column(name = "meremail", nullable = true, length = 50)
-	private String meremail;
+	private String meremail;//商户邮箱
 	
 	@Column(name = "merqq", nullable = true, length = 15)
-	private String merqq;
+	private String merqq;//商户QQ
 	
 	@Column(name = "mermsn", nullable = true, length = 20)
-	private String mermsn;
+	private String mermsn;//商户msn
 	
 	@Column(name = "website", nullable = true, length = 100)
-	private String website;	
+	private String website;	//商户网址
 	
 	@Column(name = "mertype", nullable = true, length = 2)
-	private Long mertype;
+	private Long mertype;//账户类型
 	
 	@Column(name = "bank", nullable = true, length = 20)
-	private String bank;
+	private String bank;//开户银行
 	
 	@Column(name = "accountname", nullable = true, length = 20)
-	private String accountname;
+	private String accountname;//开户名
 	
 	@Column(name = "cardno", nullable = true, length = 20)
-	private String cardno;
+	private String cardno;//开户账号
 	
 	@Column(name = "businesstype", nullable = true, length = 2)
-	private Long businesstype;
+	private Long businesstype;//账户类型
 	
 	@Column(name = "businessyears", nullable = true, length = 3)
-	private Long businessyears;
+	private Long businessyears;//行业年限
 	
 	@Column(name = "gatheringway", nullable = true, length = 100)
-	private String gatheringway;
+	private String gatheringway;//以前的收款方式
 
 	@Column(name = "linkman", nullable = true, length = 20)
-	private String linkman;
+	private String linkman;//联系人
 	
 	@Column(name = "linkmanmobile", nullable = true, length = 15)
-	private String linkmanmobile;
+	private String linkmanmobile;//联系手机
 	
 	@Column(name = "linkmanadress", nullable = true, length = 100)
-	private String linkmanadress;
+	private String linkmanadress;//联系地址
 	
 	@Column(name = "linkmanphone", nullable = true, length = 15)
-	private String linkmanphone;
+	private String linkmanphone;//联系人手机号
 	
 	@Column(name = "linkmanfax", nullable = true, length = 15)
-	private String linkmanfax;
+	private String linkmanfax;//联系人传真
 	
 	@Column(name = "linkmanemail", nullable = true, length = 20)
-	private String linkmanemail;
+	private String linkmanemail;//联系人邮箱
 	
 	@Column(name = "linkmanqq", nullable = true, length = 20)
-	private String linkmanqq;
+	private String linkmanqq;//联系人QQ
 	
 	@Column(name = "linkmanmsn", nullable = true, length = 20)
-	private String linkmanmsn;
+	private String linkmanmsn;//联系人msn
 	
 	@Column(name = "linkmancertificateno", nullable = true, length = 20)
-	private String linkmancertificateno;
+	private String linkmancertificateno;//
 	
 	@Column(name = "salesman", nullable = true, length = 20)
-	private String salesman;
+	private String salesman;//业务员
 	
 	@Column(name = "mertypename", nullable = true, length = 20)
-	private String mertypename;
+	private String mertypename;//商户类型
 	
 	@Column(name = "businesstypename", nullable = true, length = 20)
-	private String businesstypename;
+	private String businesstypename;//行业类型
 	
 	//0 未开通，1开通
 	@Column(name = "isopen", nullable = true, length = 20)

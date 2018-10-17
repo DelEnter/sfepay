@@ -27,19 +27,19 @@ public class InternationalWebchannels implements java.io.Serializable{
 	private Long merchanid;
 	
 	@Column(name = "website", nullable = true, length = 50)
-	private String website;
+	private String website;//返回网址
 	
 	@Column(name = "tradeWebsite", nullable = true, length = 50)
-	private String tradeWebsite;
+	private String tradeWebsite;//交易网址
 	
 	@Column(name = "channels", nullable = true, length = 20)
 	private String channels;
 	
 	@Column(name = "executetime", nullable = true)
-	private Date executetime;
+	private Date executetime;//执行时间
 	
 	@Column(name = "operator", nullable = true, length = 20)
-	private String operator;
+	private String operator;//操作员
 	
 	@Column(name = "remark", nullable = true, length = 50)
 	private String remark;
@@ -47,8 +47,8 @@ public class InternationalWebchannels implements java.io.Serializable{
 	@Column(name = "isblack")
 	private String isblack;
 	
-	@Column(name = "webSiteType")
-	private String webSiteType;
+	@Column(name = "webSiteType")//返回网址类型
+	private String webSiteType;//网址类型
 	
 	public Long getId() {
 		return Id;

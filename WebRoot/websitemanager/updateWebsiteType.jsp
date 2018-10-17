@@ -5,18 +5,18 @@
 </head>
     <script language="JavaScript" type="text/JavaScript">
 	function addCourse(f) {	
-		var ids = document.getElementById("ids").value; //获取网站类型
-		var t = document.getElementById("webSiteType1"); //获取添加的网站类型的
-		var webSiteType1=t.options[t.selectedIndex].value;
-		var webSiteType2=document.getElementById("webSiteType2").value;
-		var webSiteType="";
+		var ids = document.getElementById("ids").value; //获取选中的网址ID
+		var t = document.getElementById("webSiteType1"); //获取已有的网址类型的
+		var webSiteType1=t.options[t.selectedIndex].value;//获取选中的网址类型
+		var webSiteType2=document.getElementById("webSiteType2").value;//获取新添加的网址类型
+		var webSiteType="";//定义一个网址类型为空
 		if(webSiteType1!=""){
-			webSiteType=webSiteType1;
+			webSiteType=webSiteType1;//赋值已有的网址类型
 		}
 		if(webSiteType2!=""){
-			webSiteType=webSiteType2;
+			webSiteType=webSiteType2;//赋值新加的网址类型
 		}
-		goFormWindow(f,"../PaySystem/auditWebSiteManager.action?ids="+ids+"&webSiteType="+webSiteType);
+		goFormWindow(f,"../PaySystem/auditWebSiteManager.action?ids="+ids+"&webSiteType="+webSiteType);//选中的ID和网址类型传到action去执行操作
 	}
 </script>  
 <body>
