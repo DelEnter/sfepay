@@ -123,7 +123,6 @@ public class DirectCarderInfoAction extends BaseAction {
 	private String email;//邮箱
 	private String phone;//电话
 	private String cardbank;//发卡行
-
 	private String ReturnURL;//返回网址
 	private String MD5key;//MD5k
 	// 卡信息
@@ -132,72 +131,60 @@ public class DirectCarderInfoAction extends BaseAction {
 	private String ip;
 	private String cookie;
 	private String cookieId;
-
 	// 定单
 	private Double ordercount; // 订单金额
-
-	// 返回参数
-	private int responseCode;
-
+	private int responseCode;// 返回参数
 	private String remark; // 备注
 	private String MD5info; // MD5加密
 
 	// md5 数据校验
-	private String tradeMoneyType;
-	private String merchantOrderNo;
+	private String tradeMoneyType;//支付金额类型
+	private String merchantOrderNo;//商户订单号
 	private String md5Value; // 支付网关对商户信息进行加密
-	private String message;
-
+	private String message;//信息
 	// 2.5方支付参数
 	private String vpc_Card;
 	// maxmin参数
-	private String maxmindValue;
-	String bankName = null;
-	String bankCountry = null;
-	String bankPhone = null;
+	private String maxmindValue;//风控值
+	String bankName = null;//卡名
+	String bankCountry = null;//发卡行
+	String bankPhone = null;//银行电话
 	String ipRegionName = null;
 	private String values;
 	private String SECURE_SECRET;
 	private MaxMindExample exam = new MaxMindExample();
 	// shipping Address 信息
 	// shippingAddress
-	private String shippingFirstName;
-	private String shippingLastName;
-	private String shippingEmail;
-	private String shippingPhone;
-	private String shippingZipcode;
-	private String shippingAddress;
-	private String shippingCity;
-	private String shippingSstate;
-	private String shippingCountry;
-	private String products;
-
+	private String shippingFirstName;//持卡人姓名第一个字
+	private String shippingLastName;//持卡人姓名后面的字
+	private String shippingEmail;//邮箱
+	private String shippingPhone;//电话
+	private String shippingZipcode;//邮编
+	private String shippingAddress;//账单地址
+	private String shippingCity;//城市
+	private String shippingSstate;//区域
+	private String shippingCountry;//国家
+	private String products;//商品信息
 	// 非三D参数
 	private String virtualPaymentClientURL;// 请求地址
 	private String accessCode;// 接入码
-
 	private String merchantId;// 商户ID
 	private String vpc_CardExp;// 卡有效期
 	private int tradeOrder;// 交易金额
 	private String connectURL;// 返回地址
 	private String vpc_CardNum;// 卡号
-
 	// dcc 参数
 	private String amount_Transaction_Foreign;
 	private String conversion_Rate;// 汇率
 	private String currency_Code_Foreign;
 	private String tradeType; // 交易类型
-
 	// dcc 参数
-
 	private String local_money;// 本地
 	private String foreign_money;// 外币
 	private String conversion_Rate_show;
 	private String car_termanal;// 返回终端
-	private String cardMessage;
-
-	private String newcardtype;
-
+	private String cardMessage;//卡的信息
+	private String newcardtype;//卡类型
 	//3d交易
 	private String token_id=""; 
 	private String HASH="";
@@ -208,9 +195,7 @@ public class DirectCarderInfoAction extends BaseAction {
 	private String redInfo;
 	private String isWeb="0";
 	private String isQWeb="0";
-	
 	private String csid;
-	
 	public String getCsid() {
 		return csid;
 	}
@@ -258,32 +243,32 @@ public class DirectCarderInfoAction extends BaseAction {
 	public void setSend_Url(String send_Url) {
 		Send_Url = send_Url;
 	}
-	Logger logger = Logger.getLogger(DirectCarderInfoAction.class.getName());
+	Logger logger = Logger.getLogger(DirectCarderInfoAction.class.getName());//日志
 	/**
 	 * 添加持卡人信息 input vip success 非三D
 	 * 
 	 * @return添加流程 卡号，商户号确定通道，风控，mixmad， 通道抛人民币处理。
 	 */
-	public String addCardMessage() {
+	public String addCardMessage() {// 添加持卡人信息
 		try {
-			if(StringUtils.isBlank(shippingCountry)||shippingCountry.length()<5){
+			if(StringUtils.isBlank(shippingCountry)||shippingCountry.length()<5){//国家
 				this.shippingCountry="USAUS";
 			}
-			if(StringUtils.isBlank(shippingFirstName)){
+			if(StringUtils.isBlank(shippingFirstName)){//名字
 				this.shippingFirstName="test";
 			}
-			if(StringUtils.isBlank(shippingLastName)){
+			if(StringUtils.isBlank(shippingLastName)){//名字
 				this.shippingLastName="test";
 			}
 			//___________________________
 			
-				if(StringUtils.isBlank(firstname)){
+				if(StringUtils.isBlank(firstname)){//名字
 				this.firstname = this.shippingFirstName;
 				}
-				if(StringUtils.isBlank(lastname)){
+				if(StringUtils.isBlank(lastname)){//名字
 				this.lastname = this.shippingLastName;
 				}
-				if(StringUtils.isBlank(country)||country.length()<5){
+				if(StringUtils.isBlank(country)||country.length()<5){//
 				this.country = this.shippingCountry;// 国家
 				}
 				if(StringUtils.isBlank(state)){
@@ -299,15 +284,15 @@ public class DirectCarderInfoAction extends BaseAction {
 				this.zipcode = this.shippingZipcode; // 邮编编号
 				}
 				if(StringUtils.isBlank(email)){
-				this.email = this.shippingEmail;
+				this.email = this.shippingEmail;//邮箱
 				}
-				if(StringUtils.isBlank(phone)){
+				if(StringUtils.isBlank(phone)){//电话
 				this.phone = this.shippingPhone;
 				}
 			//直连通道卡信息解密
-			BASE64Decoder base64=new BASE64Decoder();
-			cardnum=new String((base64.decodeBuffer(cardnum)));
-			logger.info("64位加密转过的卡号"+cardnum.substring(0, 6)+"******"+cardnum.substring(12, cardnum.length()));
+			BASE64Decoder base64=new BASE64Decoder();//加密工具
+			cardnum=new String((base64.decodeBuffer(cardnum)));//解码卡号
+			logger.info("64位加密转过的卡号"+cardnum.substring(0, 6)+"******"+cardnum.substring(12, cardnum.length()));//打印日志
 			cvv2=new String((base64.decodeBuffer(cvv2)));
 			month=new String((base64.decodeBuffer(month)));
 			year=new String((base64.decodeBuffer(year)));
@@ -5717,7 +5702,7 @@ public class DirectCarderInfoAction extends BaseAction {
 		} catch (Exception e) {
 			logger.error(e);
 			e.printStackTrace();
-			this.responseCode = 35;
+			this.responseCode = 35;//系统未知错误
 			message = "Payment Declined";
 			logger.info("*********************支付结果返回码***************************"+responseCode);
 			return SUCCESS;

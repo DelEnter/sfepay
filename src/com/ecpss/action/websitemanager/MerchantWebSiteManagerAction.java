@@ -203,17 +203,17 @@ public class MerchantWebSiteManagerAction extends BaseAction {
 	/*
 	 * 去网址分类(jiahui)
 	 */
-	public String toWebSiteType(){
+	public String toWebSiteType(){                                                        //单机通过显示的弹窗（分类的列表）
 		webSiteTypeList=getWebSiteTypesList();
 		return SUCCESS;
 	}
 	/*
 	 * 商户网址审核(jiahui)
-	 */
+	 */																					   //更新分类
 	public String auditWebSiteManager(){
 		if(StringUtils.isNotBlank(ids)){
 			try {
-			String[] id=ids.split(",");
+			String[] id=ids.split(",");//字符串类型
 			for(int i=0;i<id.length;i++){
 				InternationalIsAuditWeb isAudit=(InternationalIsAuditWeb)commonService.uniqueResult("from InternationalIsAuditWeb where id='"+id[i]+"'");
 				InternationalWebchannels webChannels=new InternationalWebchannels();
@@ -239,8 +239,8 @@ public class MerchantWebSiteManagerAction extends BaseAction {
 		this.messageAction = "添加网址分类成功";
 		return OPERATE_SUCCESS;
 	}
-	//拒绝
-	public String notAuditWebSiteManager(){
+	
+	public String notAuditWebSiteManager(){																		//拒绝********
 		try {
 		if(StringUtils.isNotBlank(ids)){
 			String[] id=ids.split(",");
@@ -259,8 +259,8 @@ public class MerchantWebSiteManagerAction extends BaseAction {
 		toAuditWebSiteManager();
 		return SUCCESS;
 	}
-	//删除
-	public String delAuditWebSiteManager(){
+	
+	public String delAuditWebSiteManager(){															//删除*****
 		if(StringUtils.isNotBlank(ids)){
 			String[] id=ids.split(",");
 			for(int i=0;i<id.length;i++){
@@ -292,7 +292,7 @@ public class MerchantWebSiteManagerAction extends BaseAction {
 		toAuditWebSiteManager();
 		return SUCCESS;
 	}
-	//去待审核网址修改
+	//去待审核网址修改																									//重审
 	public String toModifyWebSite(){
 		isAuditWeb=(InternationalIsAuditWeb) commonService.uniqueResult("from InternationalIsAuditWeb where id='"+webId+"'");
 		return SUCCESS;

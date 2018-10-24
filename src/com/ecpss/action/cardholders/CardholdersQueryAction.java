@@ -34,7 +34,7 @@ private PageInfo info = new PageInfo();
 	private Long merchantNo;
 	private String cardnum;
 	private String isresult;
-	private String startDate;
+	private String startDate;//时间
 	private String endDate;
 	private String email;
 	private String six;

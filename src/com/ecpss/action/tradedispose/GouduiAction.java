@@ -17,6 +17,7 @@ import jxl.Sheet;
 import jxl.Workbook;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -49,7 +50,8 @@ public class GouduiAction extends BaseAction{
 	String orderno = null;
 	String isreuslt = null;
 	String tradeAmount = null;
-	String tradeTime = null;
+	String tradeTime = null;//交易时间
+	String balancetime = null;//结束时间（结算时间）
 	private String uploadFileName;
 	private File upload;
 	private InternationalMerchant merchant = new InternationalMerchant();
@@ -61,7 +63,8 @@ public class GouduiAction extends BaseAction{
 	private List<InternationalTradeinfo> echoList = new ArrayList<InternationalTradeinfo>();
 	private List<InternationalTradeinfo> excptionList = new ArrayList<InternationalTradeinfo>();
 	
-	
+	private String atime;
+	private String btime;
 	/**
 	 * 上传文件
 	 */
@@ -370,9 +373,12 @@ public class GouduiAction extends BaseAction{
 			sb = new StringBuffer("FROM InternationalTradeinfo trade, InternationalMerchant merchant, InternationalChannels chan, " +
 					"InternationalMerchantChannels merchan, InternationalCardholdersInfo card WHERE trade.merchantId = merchant.id " +
 					"AND trade.tradeChannel = merchan.id AND merchan.channelId = chan.id AND card.tradeId=trade.id" +
-					" AND substr(trade.tradeState,1,1) in (0,1,5) AND substr(trade.tradeState,5,1)='0'");
+					" AND substr(trade.tradeState,1,1) in (1) AND substr(trade.tradeState,5,1)='0'");
 			if(merchant.getMerno()!=null){
 				sb.append(" AND merchant.merno="+merchant.getMerno()+"");
+			}
+			if(atime!=null && btime!=null ){
+				sb.append(" AND trade.tradeTime between to_date('"+atime+"','yyyy-MM-dd hh24:mi:ss') and to_date('"+btime+"','yyyy-MM-dd hh24:mi:ss')");//增加时间
 			}
 			if(trade.getTradeState()!=null && !trade.getTradeState().equals("")){
 				sb.append(" AND substr(trade.tradeState,1,1)='"+trade.getTradeState()+"'");
@@ -404,51 +410,109 @@ public class GouduiAction extends BaseAction{
 			return this.OPERATE_SUCCESS;
 		}
 	}
-	
+	//勾兑查询数据
+	public String goudui2(){
+		try{
+			if(merchant.getMerno()!=null){
+				String sql="select b.id from INTERNATIONAL_MERCHANT b where b.merno='"+merchant.getMerno()+"'";
+				InternationalMerchant mer=(InternationalMerchant) commonService.uniqueResult("from InternationalMerchant where merno='"+merchant.getMerno()+"'");
+				if(mer!=null){
+					long merchantId=mer.getId();
+					String hql1="select count(*) from international_tradeinfo t "
+							+ " where t.tradeTime between to_date('"+atime+"','yyyy-MM-dd hh24:mi:ss') and to_date('"+btime+"','yyyy-MM-dd hh24:mi:ss') "
+									+ "and t.merchantId='"+merchantId+"'"
+							+"and substr(t.tradeState,1,1) in (0,1,5) AND substr(t.tradeState,5,1)='0'";
+					hql=hql1;
+				}else{
+					this.flag = "3";//商户号错误
+					return SUCCESS;
+				}
+			}else{
+				String hql2="select count(*) from international_tradeinfo t"
+						+ " where t.tradeTime between to_date('"+atime+"','yyyy-MM-dd hh24:mi:ss') and to_date('"+btime+"','yyyy-MM-dd hh24:mi:ss')"
+						+"and substr(t.tradeState,1,1) in (0,1,5) AND substr(t.tradeState,5,1)='0'";
+				hql=hql2;
+			}
+			List<Object> merchantlist1=commonService.getByList(hql);
+			String count=merchantlist1.get(0).toString();
+			this.flag =count;//查询结果返回
+			return SUCCESS;
+		}catch(Exception e){
+			e.printStackTrace();
+			this.flag = "2";//系统出现错误
+			return SUCCESS;
+		}
+	}
+	//勾兑操作(针对某个时间段某个用户的勾兑)
+	public String goudui1(){
+		try{
+			if(merchant.getMerno()!=null){//根据商户号和时间段进行操作
+				//查询商户号所对应的商户id
+				String sql="select b.id from INTERNATIONAL_MERCHANT b where b.merno='"+merchant.getMerno()+"'";
+				InternationalMerchant mer=(InternationalMerchant) commonService.uniqueResult("from InternationalMerchant where merno='"+merchant.getMerno()+"'");
+				if(mer!=null){
+					long merchantId=mer.getId();
+					String hql1="update international_tradeinfo t set"
+							+ " t.tradestate='0'||substr(t.tradestate,2,3)||'1'||substr(t.tradestate,6, length(t.tradestate)-5)"
+							+ " where t.tradeTime between to_date('"+atime+"','yyyy-MM-dd hh24:mi:ss') and to_date('"+btime+"','yyyy-MM-dd hh24:mi:ss') "
+									+ "and t.merchantId='"+merchantId+"'"
+									+"and substr(t.tradeState,1,1) in (0,1,5) AND substr(t.tradeState,5,1)='0'";
+					hql=hql1;
+				}else{
+					this.flag = "3";//商户号错误
+					return SUCCESS;
+				}
+			}
+			else{//只根据时间段进行操作
+				String hql2="update international_tradeinfo t set"
+						+ " t.tradestate='0'||substr(t.tradestate,2,3)||'1'||substr(t.tradestate,6, length(t.tradestate)-5)"
+						+ " where t.tradeTime between to_date('"+atime+"','yyyy-MM-dd hh24:mi:ss') and to_date('"+btime+"','yyyy-MM-dd hh24:mi:ss')"
+						+"and substr(t.tradeState,1,1) in (0,1,5) AND substr(t.tradeState,5,1)='0'";
+				hql=hql2;
+			}
+			commonService.deleteBySql(hql);
+			this.flag = "1";//修改成功
+			return SUCCESS;
+		}catch(Exception e){
+			e.printStackTrace();
+			this.flag = "2";//系统出现错误
+			return SUCCESS;
+		}
+	}
 	/**
 	 * 勾兑操作
 	 */
 	public String goudui(){
 		try{
-			StringBuffer sb1 = new StringBuffer();
-			sb = new StringBuffer();
-			for(int i=0; i<disposeId.length; i++){
+			StringBuffer sb1 = new StringBuffer();//创建字符对象1
+			sb = new StringBuffer();//创建字符对象 2
+			for(int i=0; i<disposeId.length; i++){//循环选中的数据（每循环一次  字符对象2加ID）
 				sb.append(disposeId[i]+",");
 			}
-			
-			String value = sb.toString();
+			String value = sb.toString();//转化成字符value
 			//System.out.println("value-----------"+value.subSequence(0, value.length()-1));
-			sb1.append(value.subSequence(0, value.length()-1));
-			hql = "FROM InternationalTradeinfo t WHERE t.id in("+sb1.toString()+")";
-			List<InternationalTradeinfo> list = commonService.list(hql);
+			sb1.append(value.subSequence(0, value.length()-1));//去逗号赋值发给字符对象1
+			hql = "FROM InternationalTradeinfo t WHERE t.id in("+sb1.toString()+")";//拼接更新条件
+			List<InternationalTradeinfo> list = commonService.list(hql);//根据条件查询出来的数据list
 			//ti.getTradeState().substring(7,8).equals("1")
-			for(InternationalTradeinfo trade : list){
-				if(trade.getTradeState().substring(0,1).equals("5")){
-					hql = "update international_tradeinfo t set " +
-					"t.tradestate='0'||substr(t.tradestate,2,3)||'1'||substr(t.tradestate,6, length(t.tradestate)-5)" +
-					" where t.id in("+sb1.toString()+")";
-					//commonService.deleteBySql(hql);
+			for(InternationalTradeinfo trade : list){//循环这个list每一个数据是trade
+				if(trade.getTradeState().substring(0,1).equals("5")){//如果交易状态组合字段第一位是5
+					hql = "update international_tradeinfo t set " +//更新语句
+					"t.tradestate='0'||substr(t.tradestate,2,3)||'1'||substr(t.tradestate,6, length(t.tradestate)-5)" +//组建更新数据语句
+					" where t.id in("+sb1.toString()+")";//更新条件语句
 				}else{
-					hql = "update international_tradeinfo t set " +
-					"t.tradestate=substr(t.tradestate,1,4)||'1'||substr(t.tradestate,6, length(t.tradestate)-5)" +
-					" where t.id in("+sb1.toString()+")";
-					//commonService.deleteBySql(hql);
+					hql = "update international_tradeinfo t set " +//更新语句
+					"t.tradestate=substr(t.tradestate,1,4)||'1'||substr(t.tradestate,6, length(t.tradestate)-5)" +//组建更新数据语句
+					" where t.id in("+sb1.toString()+")";//更新条件语句
 				}
 				commonService.deleteBySql(hql);
 			}
-			
-			
 			this.flag = "1";
-			//this.toHeadGoudui();
-			//this.messageAction = "勾兑成功";
-			//return this.OPERATE_SUCCESS;
 			return SUCCESS;
 		}catch(Exception e){
 			e.printStackTrace();
 			this.flag = "2";
 			return SUCCESS;
-			//this.messageAction = "勾兑失败";
-			//return this.OPERATE_SUCCESS;
 		}
 	}
 	/**
@@ -654,4 +718,17 @@ public class GouduiAction extends BaseAction{
 	public void setFlag(String flag) {
 		this.flag = flag;
 	}
+	public String getAtime() {
+		return atime;
+	}
+	public void setAtime(String atime) {
+		this.atime = atime;
+	}
+	public String getBtime() {
+		return btime;
+	}
+	public void setBtime(String btime) {
+		this.btime = btime;
+	}
+	
 }

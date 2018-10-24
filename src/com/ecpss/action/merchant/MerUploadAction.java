@@ -59,7 +59,7 @@ public class MerUploadAction extends BaseAction {
 	private File trackingName;
 
 	/**
-	 * ��ѯ�ϴ�ͼƬ
+	 * 锟斤拷询锟较达拷图片
 	 */
 	public String findUploadPicture() {
 		try {
@@ -73,26 +73,26 @@ public class MerUploadAction extends BaseAction {
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.messageAction = "�ϴ�ͼƬ��ѯʧ��";
+			this.messageAction = "锟较达拷图片锟斤拷询失锟斤拷";
 			return this.OPERATE_SUCCESS;
 		}
 	}
 
 	/**
-	 * ��ת���ϴ�ͼƬҳ��
+	 * 锟斤拷转锟斤拷锟较达拷图片页锟斤拷
 	 */
 	public String toUploadPicture() {
 		try {
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.messageAction = "��ת���ϴ�ͼƬҳ��ʧ��";
+			this.messageAction = "锟斤拷转锟斤拷锟较达拷图片页锟斤拷失锟斤拷";
 			return this.OPERATE_SUCCESS;
 		}
 	}
 
 	/**
-	 * �ϴ�
+	 * 锟较达拷
 	 */
 	public String uploadPicture() {
 		try {
@@ -106,11 +106,11 @@ public class MerUploadAction extends BaseAction {
 			} else {
 				targetDirectory = "D:\\\\upload\\\\";// this.getSavePath();
 				// targetFileName = uploadFileName;
-				// this.setDir(targetDirectory + uploadFileName);//�Ѵ�˫б�ܵ�·��д��������
+				// this.setDir(targetDirectory + uploadFileName);//锟窖达拷双斜锟杰碉拷路锟斤拷写锟斤拷锟斤拷锟斤拷锟斤拷
 				target = new File(targetDirectory, uploadFileName);
-				FileUtils.copyFile(upload, target);// ��tomcat ��ʱ��upload·��,copy
-				// ��Ŀ��target·��
-				fos = new FileOutputStream(target);// ���ļ�д��Ŀ��·��
+				FileUtils.copyFile(upload, target);// 锟斤拷tomcat 锟斤拷时锟斤拷upload路锟斤拷,copy
+				// 锟斤拷目锟斤拷target路锟斤拷
+				fos = new FileOutputStream(target);// 锟斤拷锟侥硷拷写锟斤拷目锟斤拷路锟斤拷
 				fis = new FileInputStream(getUpload());
 			}
 
@@ -125,17 +125,17 @@ public class MerUploadAction extends BaseAction {
 					.load(InternationalTradeinfo.class, trade.getId());
 			tradeinfo.setIsPicture(targetDirectory + "" + uploadFileName);
 			commonService.update(tradeinfo);
-			this.messageAction = "�ϴ�ͼƬ�ɹ�";
+			this.messageAction = "锟较达拷图片锟缴癸拷";
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.messageAction = "�ϴ�ͼƬʧ��";
+			this.messageAction = "锟较达拷图片失锟斤拷";
 			return this.OPERATE_SUCCESS;
 		}
 	}
 
 	/**
-	 * �鿴�ϴ����ٵ���
+	 * 锟介看锟较达拷锟斤拷锟劫碉拷锟斤拷
 	 */
 	public String findUploadNumber() throws Exception {
 		try {
@@ -177,21 +177,21 @@ public class MerUploadAction extends BaseAction {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.messageAction = "�鿴�ϴ����ٵ���ʧ��";
+			this.messageAction = "锟介看锟较达拷锟斤拷锟劫碉拷锟斤拷失锟斤拷";
 			return this.OPERATE_SUCCESS;
 		}
 	}
 
 	/**
-	 * ������Ҫ�ϴ��������ŵĽ���
+	 * 锟斤拷锟斤拷锟斤拷要锟较达拷锟斤拷锟斤拷锟斤拷锟脚的斤拷锟斤拷
 	 * 
 	 * @param oArray
 	 * @return
 	 */
 	public void downloadTradeQuery(List<Object> oArray) throws IOException {
 		TableExport export = TableExportFactory.createExcelTableExport();
-		export.addTitle(new String[] { "���", "������ˮ��", "�̻�������", "��������", "�������",
-				"��ݹ�˾", "���ٵ���", "��ַ" });
+		export.addTitle(new String[] { "锟斤拷锟�, "锟斤拷锟斤拷锟斤拷水锟斤拷", "锟教伙拷锟斤拷锟斤拷锟斤拷", "锟斤拷锟斤拷锟斤拷锟斤拷", "锟斤拷锟斤拷锟斤拷锟�,
+				"锟斤拷莨锟剿�, "锟斤拷锟劫碉拷锟斤拷", "锟斤拷址" });
 		export.setTableName("tracking");
 		InternationalTradeinfo t = new InternationalTradeinfo();
 		int i = 1;
@@ -207,7 +207,7 @@ public class MerUploadAction extends BaseAction {
 		DownloadUtils.closeResponseOutput();
 	}
 
-	// ȷ�������ϴ�
+	// 确锟斤拷锟斤拷锟斤拷锟较达拷
 	public String confirmImport() throws Exception {
 		try {
 			if (trackingName != null) {
@@ -231,7 +231,7 @@ public class MerUploadAction extends BaseAction {
 						.load(InternationalMerchant.class, getMerchantBean()
 								.getMerchantId());
 				for (RowResult<ImportTrackingOrder> rowResult : cons) {
-					// ��ȡexcel���ݵ��뵽bean ImportTrackingOrder
+					// 锟斤拷取excel锟斤拷锟捷碉拷锟诫到bean ImportTrackingOrder
 					track = rowResult.getRowObject();
 					
 					String oql1 = "select ti from InternationalTradeinfo ti where ti.isTrackNo='"+track.getTrackingType()
@@ -240,7 +240,7 @@ public class MerUploadAction extends BaseAction {
 						+ " ";
 					List<InternationalTradeinfo> list1 = commonService.list(oql1);
 					if(list1.size()==0){
-						// �жϸ��ٵ����ͺ͸��ٺ��Ƿ�Ϊ��,�յĻ������ϴ�
+						// 锟叫断革拷锟劫碉拷锟斤拷锟酵和革拷锟劫猴拷锟角凤拷为锟斤拷,锟秸的伙拷锟斤拷锟斤拷锟较达拷
 						String oql = "select ti from InternationalTradeinfo ti where ti.isTrackNo is null and ti.merchantId = "
 								+ getMerchantBean().getMerchantId()
 								+ " and ti.orderNo = '"
@@ -279,11 +279,11 @@ public class MerUploadAction extends BaseAction {
 						sameCount++;
 					}
 				}
-				messageAction = "�ɹ����" + succCount + "��,ʧ��" + failedCount
-						+ "��,��"+sameCount+"�����ٵ����Ѿ�����.������������Ϣ��д���ϴ������ֶ���ӵ���";
+				messageAction = "锟缴癸拷锟斤拷锟� + succCount + "锟斤拷,失锟斤拷" + failedCount
+						+ "锟斤拷,锟斤拷"+sameCount+"锟斤拷锟斤拷锟劫碉拷锟斤拷锟窖撅拷锟斤拷锟斤拷.锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷息锟斤拷写锟斤拷锟较达拷锟斤拷锟斤拷锟街讹拷锟斤拷拥锟斤拷锟�;
 				return SUCCESS;
 			} else {
-				messageAction = "��ѡ��һ����Ҫ�ϴ����ļ�";
+				messageAction = "锟斤拷选锟斤拷一锟斤拷锟斤拷要锟较达拷锟斤拷锟侥硷拷";
 				return SUCCESS;
 			}
 		} catch (Exception e) {
@@ -293,7 +293,7 @@ public class MerUploadAction extends BaseAction {
 	}
 
 	/**
-	 * �����ϴ�����
+	 * 锟斤拷锟斤拷锟较达拷锟斤拷锟斤拷
 	 * 
 	 * @return
 	 */
@@ -302,20 +302,20 @@ public class MerUploadAction extends BaseAction {
 	}
 
 	/**
-	 * �鿴���ظ��ٵ���
+	 * 锟介看锟斤拷锟截革拷锟劫碉拷锟斤拷
 	 */
 	public String download() {
 		try {
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.messageAction = "���ظ��ٵ���ʧ��";
+			this.messageAction = "锟斤拷锟截革拷锟劫碉拷锟斤拷失锟斤拷";
 			return this.OPERATE_SUCCESS;
 		}
 	}
 
 	/**
-	 * �ϴ����ٵ���
+	 * 锟较达拷锟斤拷锟劫碉拷锟斤拷
 	 */
 	public String uploadNumber() {
 		try {
@@ -323,17 +323,17 @@ public class MerUploadAction extends BaseAction {
 					.load(InternationalTradeinfo.class, trade.getId());
 			tradeInfo.setIsTrackNo(mail + trade.getIsTrackNo());
 			commonService.update(tradeInfo);
-			this.messageAction = "�ϴ����ٵ��ųɹ�!";
+			this.messageAction = "锟较达拷锟斤拷锟劫碉拷锟脚成癸拷!";
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.messageAction = "�ϴ����ٵ���ʧ��";
+			this.messageAction = "锟较达拷锟斤拷锟劫碉拷锟斤拷失锟斤拷";
 			return this.OPERATE_SUCCESS;
 		}
 	}
 
 	/**
-	 * ��ת���ϴ����ٵ���ҳ��
+	 * 锟斤拷转锟斤拷锟较达拷锟斤拷锟劫碉拷锟斤拷页锟斤拷
 	 */
 	public String toUploadNumber() {
 		try {
@@ -343,7 +343,7 @@ public class MerUploadAction extends BaseAction {
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
-			this.messageAction = "�ϴ����ٵ���ʧ��";
+			this.messageAction = "锟较达拷锟斤拷锟劫碉拷锟斤拷失锟斤拷";
 			return this.OPERATE_SUCCESS;
 		}
 	}

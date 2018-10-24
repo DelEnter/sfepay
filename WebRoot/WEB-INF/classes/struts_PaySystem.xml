@@ -1728,6 +1728,18 @@
 			<result name="success" type="redirect">toHeadGoudui?flag=${flag}</result>
 			<interceptor-ref name="loginByInterceptor" />
 		</action>
+		<!-- 勾兑处理(针对用户和时间段) -->
+		<action name="goudui1"
+			class="com.ecpss.action.tradedispose.GouduiAction" method="goudui1">
+			<result name="success" type="redirect">toHeadGoudui?flag=${flag}</result>
+			<interceptor-ref name="loginByInterceptor" />
+		</action>
+		<!-- 勾兑查询处理(针对用户和时间段) -->
+		<action name="goudui2"
+			class="com.ecpss.action.tradedispose.GouduiAction" method="goudui2">
+			<result name="success" type="redirect">toHeadGoudui?flag=${flag}</result>
+			<interceptor-ref name="loginByInterceptor" />
+		</action>
 		<!-- 跳转到3d勾兑页面 -->
 		<action name="to3DGoudui"
 			class="com.ecpss.action.tradedispose.GouduiAction"

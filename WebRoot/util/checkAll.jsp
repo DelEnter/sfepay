@@ -5,6 +5,7 @@
     <script language="JavaScript">
 		function chkall(input1,input2)
 		{
+			alert("此复选框针对所有按条件查找出来的数据，请确保条件准确有效!");
 		    var objForm = document.forms[input1];
 		    var objLen = objForm.length;
 		    for (var iCount = 0; iCount < objLen; iCount++)

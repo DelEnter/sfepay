@@ -11,28 +11,29 @@
 <%@ include file="../include/checkAll.jsp" %>
 </head>
 <script language="JavaScript" type="text/JavaScript">
-function audit(){
+function audit(){		//通过
+	var chk=document.getElementsByName("chk")
 	var str=document.getElementsByName("merIdAndStatus");
 	var ids="";
-	for(var i=0;i<str.length;i++){
-		if(str[i].checked==true){
-			var value=str[i].value.split("/");
-			if(value[1]!="0"){
-				alert("选项内有已审核过的项！");
-				return false;
+	if(chk.checked==false){
+		for(var i=0;i<str.length;i++){
+			if(str[i].checked==true){
+				var value=str[i].value.split("/");
+				if(value[1]!="0"){
+					alert("选项内有已审核过的项！");
+					return false;
+				}
+					ids+=value[0]+",";
 			}
-				ids+=value[0]+",";
+		}
+		if(ids==""){
+			alert("请选择要审核的项！");
+			return  false;
 		}
 	}
-	if(ids==""){
-		alert("请选择要审核的项！");
-		return  false;
-	}
  	openWindow("../PaySystem/toWebSiteType.action?ids="+ids,"12"); 
-	
-	
 }
-function noAudit(){
+function noAudit(){																	//拒绝
 	var str=document.getElementsByName("merIdAndStatus");
 	var ids="";
 	for(var i=0;i<str.length;i++){
@@ -59,7 +60,7 @@ function noAudit(){
 		}
 	}
 }
-function delWebSite(){
+function delWebSite(){																//删除****
 	var str=document.getElementsByName("merIdAndStatus");
 	var ids="";
 	for(var i=0;i<str.length;i++){
@@ -80,7 +81,7 @@ function delWebSite(){
 	window.location="../PaySystem/delAuditWebSiteManager?ids="+ids;
 	}
 }
-function againAudit(){
+function againAudit(){																	//重审****
 	var str=document.getElementsByName("merIdAndStatus");
 	var ids="";
 	for(var i=0;i<str.length;i++){
@@ -112,7 +113,6 @@ function modify(id){
                   <table width="80%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 20px">
                     <tr>
                      <td align="left">&nbsp;商户号： 
-                     
                      <s:textfield theme="simple"  name="merNo" type="text"/>
                      <%-- <input type="text" name="merNo" value="${merNo}"/>  --%>                     &nbsp;审核状态：
 					 <s:select theme="simple" name='auditStatus' list="#{'':'---请选择---','0':'未审核','1':'审核通过','2':'拒绝'}"></s:select>

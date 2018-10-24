@@ -26,7 +26,7 @@ public class InternationalIsAuditWeb implements java.io.Serializable {
 	private long id;
 	
 	@Column(name = "merchanid", nullable = true, length = 100)
-	private Long merchanid;
+	private Long merchanid;//商户ID
 	
 	@Column(name = "website", nullable = true, length = 50)
 	private String website;//交易网址

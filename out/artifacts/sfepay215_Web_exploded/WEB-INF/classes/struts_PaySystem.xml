@@ -2338,7 +2338,7 @@
 			</result>
 			<interceptor-ref name="loginByInterceptor" />
 		</action>
-		<!-- 网站分类 -->
+		<!-- 网站分类 -->                                                   							  
 		<action name="toWebSiteType"
 			class="com.ecpss.action.websitemanager.MerchantWebSiteManagerAction"
 			method="toWebSiteType">

@@ -24,7 +24,7 @@ public class InternationalWebchannels implements java.io.Serializable{
 	private Long Id;
 	
 	@Column(name = "merchanid", nullable = true, length = 100)
-	private Long merchanid;
+	private Long merchanid;//商户ID
 	
 	@Column(name = "website", nullable = true, length = 50)
 	private String website;//返回网址
@@ -42,7 +42,7 @@ public class InternationalWebchannels implements java.io.Serializable{
 	private String operator;//操作员
 	
 	@Column(name = "remark", nullable = true, length = 50)
-	private String remark;
+	private String remark;//网址类别
 
 	@Column(name = "isblack")
 	private String isblack;

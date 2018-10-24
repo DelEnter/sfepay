@@ -5,6 +5,7 @@
     <script language="JavaScript">
 		function chkall(input1,input2)//判断勾选
 		{
+			alert("此复选框针，针对的是当前条件搜索出来的所有数据!");
 		    var objForm = document.forms[input1];//form表单重点所有数据
 		    var objLen = objForm.length;//数据的条数
 		    for (var iCount = 0; iCount < objLen; iCount++)//循环这些数据

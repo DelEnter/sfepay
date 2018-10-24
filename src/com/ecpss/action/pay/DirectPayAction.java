@@ -54,11 +54,11 @@ public class DirectPayAction extends BaseAction {
 	private String md5src; // 网关加密md5
 	private String cookie; // cookies
 	private String cooknumber;
-	private String MD5info; // MD5加密
+	private String MD5info; //传过来的MD5加密数据
 	// 程序处理需要的参数
 	private int responseCode;// 响应代号；
 	private String MD5key; // MD5key值
-	private String tradeAdd;
+	private String tradeAdd;//交易网址
 	private Long moneyType;//金额类型
 	private String message;//信息
 	// md5 数据校验
@@ -466,19 +466,19 @@ public class DirectPayAction extends BaseAction {
 				url=ReturnURL;//赋值
 			}
 			String a[] = url.split("/");//以/分割字符串转换成数组的形式
-			if(a.length>2){
-				tradeAdd = a[2];
+			if(a.length>2){//长度大于2（至少有三个）
+				tradeAdd = a[2];//获取数组三个对象（交易网址）
 			}else{
-				tradeAdd=url;
+				tradeAdd=url;//交易网址
 			}
 			System.out.println("==========================================="
-					+ tradeAdd);
+					+ tradeAdd);//输出这个网址
 			String sqlCheckWeb = " select count(*) from International_Webchannels t where t.tradeWebsite like '%"
 					+ tradeAdd
 					+ "' and t.merchanid='"
 					+ merchant.getId()
-					+ "' ";
-			int checkWeb = this.tradeManager.intBySql(sqlCheckWeb);
+					+ "' ";//根据商户的ID和交易网址去查询（模糊查询）
+			int checkWeb = this.tradeManager.intBySql(sqlCheckWeb);//查询结果1
 //			String sqlCheckWebReturn = " select count(*) from International_Webchannels t where t.website='"
 //					+ this.ReturnURL
 //					+ "' and t.merchanid='"
@@ -489,16 +489,16 @@ public class DirectPayAction extends BaseAction {
 				+ tradeAdd
 				+ "'and t.isblack='0' and t.merchanid='"
 				+ merchant.getId()
-				+ "'";
-			int checkurlstatus=this.tradeManager.intBySql(sqlstatus);
+				+ "'";//根据商户ID交易网址，审核状态去查寻
+			int checkurlstatus=this.tradeManager.intBySql(sqlstatus);//查询结果2
 			// 交易网址必须注册
-			if (checkWeb == 0) {
-				responseCode = 22;
+			if (checkWeb == 0) {//查询结果1=0（没有查到）
+				responseCode = 22;//交易网址不正确
 				resultMd5 = BillNo + Currency + Amount + responseCode + MD5key;
-				md5Value = md5.getMD5ofStr(resultMd5);
-				message = "Payment Declined";
-				logger.info("*********************支付结果返回码***************************"+responseCode);
-				return INPUT;
+				md5Value = md5.getMD5ofStr(resultMd5);//组建MD5info
+				message = "Payment Declined";//加密
+				logger.info("*********************支付结果返回码***************************"+responseCode);//打印日志：返回码 22：建议地址不正确
+				return INPUT;//返回：xml配置的文件有相应的代码（对应的jsp）
 			}
 			// 返回网址必须注册
 //			if (checkWebReturn == 0) {
@@ -510,104 +510,104 @@ public class DirectPayAction extends BaseAction {
 //				return INPUT;
 //			}
 			// 交易网址必须是没有禁止交易的
-			if (checkurlstatus == 0) {
+			if (checkurlstatus == 0) {//查询结果2=0（没有查到）
 				responseCode = 32;//交易网址禁止交易
-				resultMd5 = BillNo + Currency + Amount + responseCode + MD5key;
-				md5Value = md5.getMD5ofStr(resultMd5);
+				resultMd5 = BillNo + Currency + Amount + responseCode + MD5key;//组建MD5info
+				md5Value = md5.getMD5ofStr(resultMd5);//加密
 				message = "Payment Declined";
-				logger.info("*********************支付结果返回码***************************"+responseCode);
-				return INPUT;
+				logger.info("*********************支付结果返回码***************************"+responseCode);//打印日志：返回码 32：交易网址禁止交易
+				return INPUT;//返回：xml配置的文件有相应的代码（对应的jsp）
 			}
 			// 获取通道卡种
-			logger.info("********************************开始获取商户通道卡种*********************************");
+			logger.info("********************************开始获取商户通道卡种*********************************");//打印日志：开始获取商户通道卡种
 			String cardlistsql = "select cct.shortName from InternationalMerchantChannels mc," +
 					"InternationalMerchant m,InternationalMerCreditCard mcc,InternationalCreditCardType cct " +
 					"where m.id=mc.merchantId " +
 					"and mcc.merChannelId=mc.id " +
 					"and cct.id=mcc.creditCardId " +
 					"and mcc.onoff=1 and mc.onoff=1 " +
-					"and m.merno="+MerNo;
-			List<String> cardlist = this.commonService.list(cardlistsql);
+					"and m.merno="+MerNo;//根据商户号三表联查 
+			List<String> cardlist = this.commonService.list(cardlistsql);//查询结果
 			//新增直连所需
-			boolean cType=false;
-			if(StringUtils.isNotBlank(newcardtype)){
-				for (String c : cardlist) {
-					if(c.equals(newcardtype)){
-						cType=true;
+			boolean cType=false;//定义一个卡类型为false
+			if(StringUtils.isNotBlank(newcardtype)){//卡的类型不是null
+				for (String c : cardlist) {//循环查询结果
+					if(c.equals(newcardtype)){//查询结果中有卡的类型
+						cType=true;//卡类型设置为true
 					}
 				}
 			}
-			if(cType=false){
+			if(cType=false){//如果卡的类型为false
 				responseCode = 34;//商户没有开通和输入卡相同的通道
-				resultMd5 = BillNo + Currency + Amount + responseCode + MD5key;
-				md5Value = md5.getMD5ofStr(resultMd5);
+				resultMd5 = BillNo + Currency + Amount + responseCode + MD5key;//组建MD5info
+				md5Value = md5.getMD5ofStr(resultMd5);//加密
 				message = "Payment Declined";
-				logger.info("*********************支付结果返回码***************************"+responseCode);
-				return INPUT;
+				logger.info("*********************支付结果返回码***************************"+responseCode);//打印日志 返回码：34 ：商户没有开通和输入卡相同的通道
+				return INPUT;//返回：xml配置的文件有相应的代码（对应的jsp）
 			}
 			
-			logger.info("***************************获取商户通道卡种结束***************************");
-			logger.info("***************************开始获取商户交易金额*******************************");
+			logger.info("***************************获取商户通道卡种结束***************************");//打印日志：获取卡通道结束
+			logger.info("***************************开始获取商户交易金额*******************************");//打印日志：获取商户交易金额
 			
 			// 获取交易金额
 			md5src = merchantnoValue + BillNo + this.Currency 
-					+ Amount + Language + ReturnURL + MD5key;
+					+ Amount + Language + ReturnURL + MD5key;//组建MD5info
 			logger.info("***************************获取商户交易金额结束*********************************");
 			logger.info("***************************开始验证商户交易签名**********************************");
-			logger.info("签名数据:"+md5src);
-			md5src = md5.getMD5ofStr(md5src);
-			logger.info("**********************传过来的签名："+MD5info);
-			logger.info("**********************计算的签名："+md5src);
+			logger.info("签名数据:"+md5src);//打印日志：签名数据+md5src
+			md5src = md5.getMD5ofStr(md5src);//加密后的签名数据
+			logger.info("**********************传过来的签名："+MD5info);//打印日志：传过来的签名：MD5info
+			logger.info("**********************计算的签名："+md5src);//打印日志 ：计算的签名 ：md5src
 			// 信息被篡改
 			// System.out.println("========"+merchantnoValue +"========"+
 			// BillNo+"========" + moneykind.getMoneykindno()+"========" +
 			// Amount+"========" + Language+"========" + ReturnURL+"========" +
 			// MD5key+"========" +"========5555============"+md5src);
 			// System.out.println("===============666666============="+MD5info);
-			if (!(md5src.equals(MD5info))) 
+			if (!(md5src.equals(MD5info))) //计算的签名和传过来的签名是不相同
 			{
-				responseCode = 13;
-				resultMd5 = BillNo + Currency + Amount + responseCode + MD5key;
-				md5Value = md5.getMD5ofStr(resultMd5);
+				responseCode = 13;//签名不匹配数据发生篡改（出现的原因：MD5info（顺序）或者MD5k不一样）
+				resultMd5 = BillNo + Currency + Amount + responseCode + MD5key;//组建MD5info
+				md5Value = md5.getMD5ofStr(resultMd5);//加密
 				message = "Payment Declined";
-				logger.info("**********************商户交易签名错误，请检查*********************************");
-				return INPUT;
+				logger.info("**********************商户交易签名错误，请检查*********************************");//打印日志：返回码：13 ：获取商户交易金额
+				return INPUT;//返回：xml配置的文件有相应的代码（对应的jsp）
 			}
-			logger.info("**********************商户交易签名验证结束*********************************");
-			logger.info("**********************开始插入商户交易数据**********************************");
-			tradeMoney = (double) (Math.round((double) tradeMoney * 100) / 100.00);
-			rmbmoney = (double) (Math.round((double) rmbmoney * 100) / 100.00);
-			InternationalTradeinfo trade = new InternationalTradeinfo();
-			trade.setOrderNo(rorderno);
-			trade.setMerchantOrderNo(merchantOrderNo);
-			trade.setMerchantId(merchant.getId());
-			trade.setTradeTime(tradetime);
-			trade.setTradeAmount(Double.valueOf(this.Amount));
-			trade.setRmbAmount(this.rmbmoney);
-			trade.setMoneyType(Long.valueOf(Currency));
-			trade.setTradeState("30000000000000000000");
-			trade.setTradeRate(changerate.getId());
-			trade.setBalanceRate(settlementrate.getId());
-			trade.setTradeUrl(tradeAdd);
-			trade.setReturnUrl(this.ReturnURL);
-			trade.setLastDate(new Date());
-			trade.setBackCount(0d);
-			trade.setCsid(csid);
-			this.commonService.saveOrUpdate(trade);
-			responseCode = 0;
-			logger.info("*****************商户交易数据插入结束********************");
-			logger.info("*****************开始跳转到支付页面********************");
-			return SUCCESS;
-		} catch (Exception e){
-			logger.error("系统接受交易请求出现未知错误：");
+			logger.info("**********************商户交易签名验证结束*********************************");//打印日志：商户签名验证结束
+			logger.info("**********************开始插入商户交易数据**********************************");//打印日志：开始插入商户交易数据
+			tradeMoney = (double) (Math.round((double) tradeMoney * 100) / 100.00);//支付金额
+			rmbmoney = (double) (Math.round((double) rmbmoney * 100) / 100.00);//RMB交易金额
+			InternationalTradeinfo trade = new InternationalTradeinfo();//创建订单
+			trade.setOrderNo(rorderno);//流水订单号
+			trade.setMerchantOrderNo(merchantOrderNo);//商户订单号
+			trade.setMerchantId(merchant.getId());//商户ID
+			trade.setTradeTime(tradetime);//交易时间
+			trade.setTradeAmount(Double.valueOf(this.Amount));//支付金额
+			trade.setRmbAmount(this.rmbmoney);//RMB支付金额
+			trade.setMoneyType(Long.valueOf(Currency));//币种
+			trade.setTradeState("30000000000000000000");//交易状态组合字段
+			trade.setTradeRate(changerate.getId());//交易汇率ID
+			trade.setBalanceRate(settlementrate.getId());//结算汇率
+			trade.setTradeUrl(tradeAdd);//交易网址
+			trade.setReturnUrl(this.ReturnURL);////返回网址
+			trade.setLastDate(new Date());//添加时间
+			trade.setBackCount(0d);//退款金额
+			trade.setCsid(csid);//
+			this.commonService.saveOrUpdate(trade);//添加订单
+			responseCode = 0;//失败
+			logger.info("*****************商户交易数据插入结束********************");//打印日志：插入交易数据结束
+			logger.info("*****************开始跳转到支付页面********************");//打印日志：跳转到支付页面
+			return SUCCESS;//返回：xml配置的文件有相应的代码（对应的jsp）
+		} catch (Exception e){//进入到catch中
+			logger.error("系统接受交易请求出现未知错误：");//打印日志：系统接受交易请求出现未知错误
 			logger.error(e);
 			e.printStackTrace();
-			responseCode = 35;
-			resultMd5 = BillNo + Currency + Amount + responseCode + MD5key;
-			md5Value = md5.getMD5ofStr(resultMd5);
+			responseCode = 35;//系统位置错误（一般指代码错误）
+			resultMd5 = BillNo + Currency + Amount + responseCode + MD5key;//组建
+			md5Value = md5.getMD5ofStr(resultMd5);//加密
 			message = "Payment Declined";
-			logger.info("*********************支付结果返回码***************************"+responseCode);
-			return INPUT;
+			logger.info("*********************支付结果返回码***************************"+responseCode);//打印日志：返回码：0 ：失败
+			return INPUT;//返回：xml配置的文件有相应的代码（对应的jsp）
 		}
 	}
 
