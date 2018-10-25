@@ -61,7 +61,7 @@ public class SYXPayUtil{
 	 NameValuePair v_expire_m  = new BasicNameValuePair("v_expire_m",trade.getV_expire_m());
 	 NameValuePair v_expire_y  = new BasicNameValuePair("v_expire_y",trade.getV_expire_y());
 	 NameValuePair v_card_cvv2  = new BasicNameValuePair("v_card_cvv2",trade.getV_card_cvv2());
-	 NameValuePair v_ordip  = new BasicNameValuePair("v_ordip",trade.getV_oid());
+	 NameValuePair v_ordip  = new BasicNameValuePair("v_ordip",trade.getV_ordip());
 	 NameValuePair v_billstreet  = new BasicNameValuePair("v_billstreet",trade.getV_billstreet());
 	 NameValuePair v_billcity  = new BasicNameValuePair("v_billcity",trade.getV_billcity());
 	 NameValuePair v_billstate  = new BasicNameValuePair("v_billstate",trade.getV_billstate());
@@ -223,6 +223,7 @@ public class SYXPayUtil{
 	public static HttpClient getInstance(HttpClient client)
 			throws KeyManagementException, NoSuchAlgorithmException {
 		SSLContext ctx = SSLContext.getInstance("TLS");
+		System.setProperty("https.protocols", "TLSv1.2,TLSv1.1,SSLv3");
 		X509TrustManager tm = new X509TrustManager() {
 			public X509Certificate[] getAcceptedIssuers() {
 				return null;

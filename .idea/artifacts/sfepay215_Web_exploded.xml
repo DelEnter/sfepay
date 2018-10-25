@@ -51,10 +51,6 @@
           <element id="library" level="module" name="ezmorph-1.0.2.jar" module-name="sfepay215" />
           <element id="library" level="module" name="fluent-hc-4.2.2.jar" module-name="sfepay215" />
           <element id="library" level="module" name="gson-2.0.jar" module-name="sfepay215" />
-          <element id="library" level="module" name="httpclient-4.2.2.jar" module-name="sfepay215" />
-          <element id="library" level="module" name="httpclient-cache-4.2.2.jar" module-name="sfepay215" />
-          <element id="library" level="module" name="httpcore-4.2.2.jar" module-name="sfepay215" />
-          <element id="library" level="module" name="httpmime-4.2.2.jar" module-name="sfepay215" />
           <element id="library" level="module" name="javassist-3.11.0.GA.jar" module-name="sfepay215" />
           <element id="library" level="module" name="json-lib-2.4-jdk15.jar" module-name="sfepay215" />
           <element id="library" level="module" name="jstl-1.2.jar" module-name="sfepay215" />
@@ -81,6 +77,11 @@
           <element id="library" level="module" name="ognl-3.0.14.jar" module-name="sfepay215" />
           <element id="library" level="module" name="wsdl4j.jar" module-name="sfepay215" />
           <element id="library" level="module" name="xwork-core-2.3.28.1.jar" module-name="sfepay215" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/httpclient-cache-4.5.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/httpclient-4.5.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/httpcore-4.4.10.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebRoot/WEB-INF/lib/httpmime-4.5.3.jar" />
+          <element id="library" level="project" name="struts2-core-2.3.28.1" />
         </element>
       </element>
     </root>

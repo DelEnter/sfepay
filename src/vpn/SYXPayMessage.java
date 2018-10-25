@@ -438,7 +438,7 @@ public class SYXPayMessage {
             
             for(String key : Country.keySet()){ 
                 String value = Country.get(key); 
-                if(v_billcountry.equals(value)){
+                if(billcountry.equals(value)){
                 	v_billcountry = key;
                 	break;
                 }else{

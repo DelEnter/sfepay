@@ -54,7 +54,7 @@ public class test3
 		syx.setV_orderstatus("1");
 		syx.setV_ordername("cczz");
 		syx.setV_moneytype("1");
-		syx.setV_url("");
+		syx.setV_url("www.baidu.com");
 		String pfxFile = "F:/cfca_private_7606.pfx";//商户私钥文件路径
 		String pfxPassword = "lh121121";
 		String aliasPassword = "lh121121";
@@ -72,6 +72,11 @@ public class test3
 		syx.setV_ordip("94.23.35.125");
 		syx.setV_billstreet("1851 Kooter Lane");
 		syx.setV_billcity("Charlotte");
+		syx.setV_billstate("Alabama");
+		syx.setV_billpost("28262");
+		syx.setV_billcountry("US");
+		syx.setV_billphone("704-429-6436");
+		syx.setV_billemail("index@gmail.com");
 
 		syxp.get(syx);
 
